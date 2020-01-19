@@ -927,6 +927,9 @@ pre .javascript .function {
     width: 900px;
   }
 }
+.main-inner body {
+  background: url '/images/banner.jpg';
+}
 .header {
   background: transparent;
 }
@@ -1165,7 +1168,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #fff91f;
+  background: #095e00;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
