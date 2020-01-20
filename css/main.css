@@ -928,7 +928,7 @@ pre .javascript .function {
   }
 }
 .header {
-  background: transparent;
+  background: url("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1579502896021&di=57f4640cee4193f018ae0a351ffd5d0d&imgtype=0&src=http%3A%2F%2Fdingyue.nosdn.127.net%2FvqYTorwYjmUYZj8XCZrXNiyBycKWJogSYrcEZayvADHU81510640085766.gif");
 }
 .header-inner {
   margin: 0 auto;
@@ -1165,7 +1165,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ff13e0;
+  background: #6fd06e;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
