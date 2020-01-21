@@ -912,10 +912,12 @@ pre .javascript .function {
 .container {
   min-height: 100%;
   position: relative;
+  background: url("https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3523945084,1297260350&fm=26&gp=0.jpg");
 }
 .main-inner {
   margin: 0 auto;
   width: 700px;
+  background-color: rgba(255,255,255,0.8);
 }
 @media (min-width: 1200px) {
   .main-inner {
@@ -928,7 +930,6 @@ pre .javascript .function {
   }
 }
 .header {
-  width: $content-largest;
   background: url("https://s1.ax1x.com/2018/03/01/9rCfL4.md.jpg");
 }
 .header-inner {
@@ -1166,7 +1167,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #9054a1;
+  background: #1c01e3;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
