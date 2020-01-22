@@ -5,9 +5,9 @@
   <subtitle>A research team studying artificial intelligence</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="http://uscair.club/"/>
   <updated>2020-01-13T08:55:07.598Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>http://uscair.club/</id>
   
   <author>
     <name>AIR@USC</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://yoursite.com/2020/01/13/hello-world/"/>
-    <id>http://yoursite.com/2020/01/13/hello-world/</id>
+    <link href="http://uscair.club/2020/01/13/hello-world/"/>
+    <id>http://uscair.club/2020/01/13/hello-world/</id>
     <published>2020-01-13T08:55:07.598Z</published>
     <updated>2020-01-13T08:55:07.598Z</updated>
     
