@@ -58,12 +58,12 @@
   };
 </script>
 
-  <meta name="description" content="- 图片的阅读、显示、保存：- 阅读：cv2.imread(&#x3D;&#x3D;”图片的路径”&#x3D;&#x3D;, &#x3D;&#x3D;打开方式&#x3D;&#x3D;) 图片路径：     - 绝对路径：与代码不在同一目录里，写出详细地址，如“E:\\Photos\\aobing.jpg” - 相对路径:代码相同目录中，只需写出图片名即可，如：“ao_bing.jpg” - &lt;font color&#x3D;#FF0000&gt;注：&lt;&#x2F;font&gt;不知">
+  <meta name="description" content="图片的阅读、显示、保存：    阅读：cv2.imread(&#x3D;&#x3D;”图片的路径”&#x3D;&#x3D;, &#x3D;&#x3D;打开方式&#x3D;&#x3D;)  图片路径：      绝对路径：与代码不在同一目录里，写出详细地址，如“E:\Photos\aobing.jpg”  相对路径:代码相同目录中，只需写出图片名即可，如：“ao_bing.jpg”  注：不知道图片路径时，pycharm支持查看：点击图片文件名，单机单击鼠标右键，&#x3D;&#x3D;Copy">
 <meta property="og:type" content="article">
 <meta property="og:title" content="OpenCV——Python:（一）图片的读取、显示、保存">
 <meta property="og:url" content="http://uscair.club/2019/08/18/opencv-read/index.html">
 <meta property="og:site_name" content="AIR">
-<meta property="og:description" content="- 图片的阅读、显示、保存：- 阅读：cv2.imread(&#x3D;&#x3D;”图片的路径”&#x3D;&#x3D;, &#x3D;&#x3D;打开方式&#x3D;&#x3D;) 图片路径：     - 绝对路径：与代码不在同一目录里，写出详细地址，如“E:\\Photos\\aobing.jpg” - 相对路径:代码相同目录中，只需写出图片名即可，如：“ao_bing.jpg” - &lt;font color&#x3D;#FF0000&gt;注：&lt;&#x2F;font&gt;不知">
+<meta property="og:description" content="图片的阅读、显示、保存：    阅读：cv2.imread(&#x3D;&#x3D;”图片的路径”&#x3D;&#x3D;, &#x3D;&#x3D;打开方式&#x3D;&#x3D;)  图片路径：      绝对路径：与代码不在同一目录里，写出详细地址，如“E:\Photos\aobing.jpg”  相对路径:代码相同目录中，只需写出图片名即可，如：“ao_bing.jpg”  注：不知道图片路径时，pycharm支持查看：点击图片文件名，单机单击鼠标右键，&#x3D;&#x3D;Copy">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2019-08-18T09:34:16.000Z">
 <meta property="article:modified_time" content="2019-08-18T09:34:16.000Z">
@@ -279,19 +279,33 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="图片的阅读、显示、保存："><a href="#图片的阅读、显示、保存：" class="headerlink" title="- 图片的阅读、显示、保存："></a>- <font color=#FF800 size=4>图片的阅读、显示、保存：</h2><h3 id="阅读：cv2-imread-”图片的路径”-打开方式"><a href="#阅读：cv2-imread-”图片的路径”-打开方式" class="headerlink" title="- 阅读：cv2.imread(==”图片的路径”==, ==打开方式==)"></a>- <font color=#FF69>阅读</font>：cv2.imread(==”图片的路径”==, ==打开方式==)</h3><pre><code> 图片路径：    
-- 绝对路径：与代码不在同一目录里，写出详细地址，如“E:\\Photos\\aobing.jpg”
-- 相对路径:代码相同目录中，只需写出图片名即可，如：“ao_bing.jpg”
-- &lt;font color=#FF0000&gt;注：&lt;/font&gt;不知道图片路径时，pycharm支持查看：点击图片文件名，单机单击鼠标右键，
- ==Copy Path==是绝对路径，==Copy Relative Path== 是相对路径!
-
-  打开方式：
-
-- ==1==， 默认打开方式，加载彩色图像，任何图像的透明度都将忽略
+        <ul>
+<li><p><font color=#FF800 size=4>图片的阅读、显示、保存：</p>
+</li>
+<li><p>  <font color=#FF69>阅读</font>：cv2.imread(==”图片的路径”==, ==打开方式==)<br>  图片路径：    </p>
+<ul>
+<li><p>绝对路径：与代码不在同一目录里，写出详细地址，如“E:\Photos\aobing.jpg”</p>
+</li>
+<li><p>相对路径:代码相同目录中，只需写出图片名即可，如：“ao_bing.jpg”</p>
+</li>
+<li><p><font color=#FF0000>注：</font>不知道图片路径时，pycharm支持查看：点击图片文件名，单机单击鼠标右键，<br>==Copy Path==是绝对路径，==Copy Relative Path== 是相对路径!</p>
+<p>打开方式：</p>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>- ==1==， 默认打开方式，加载彩色图像，任何图像的透明度都将忽略
 - ==0==， 加载灰度图像
-- ==-1==，加载图像，包括alpha通道</code></pre><h3 id="显示：cv2-imshow-“-窗口名称-”，-图片"><a href="#显示：cv2-imshow-“-窗口名称-”，-图片" class="headerlink" title="- 显示：cv2.imshow(“==窗口名称==”，==图片==)"></a>- <font color=#FF69>显示</font>：cv2.imshow(“==窗口名称==”，==图片==)</h3><pre><code>-窗口名称：自己命名（不同的窗口使用不同的名称，但可以是同一张图片）
- -图片：打开图片时自己命名的变量,如</code></pre><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#img即图片</span></span><br><span class="line">img=cv2.imread(<span class="string">"ao_bing.jpg"</span>)</span><br></pre></td></tr></table></figure>
-<h3 id="保存：cv2-imwrite-“-文件名-”-要保存的图像"><a href="#保存：cv2-imwrite-“-文件名-”-要保存的图像" class="headerlink" title="- 保存：cv2.imwrite(“==文件名==”,==要保存的图像==)"></a>- <font color=#FF69>保存</font>：cv2.imwrite(“==文件名==”,==要保存的图像==)</h3><h3 id="总结："><a href="#总结：" class="headerlink" title="- 总结："></a>- <font color=FF000 size=5>总结：</font></h3><p>完整代码如下：</p>
+- ==-1==，加载图像，包括alpha通道</code></pre><ul>
+<li><font color=#FF69>显示</font>：cv2.imshow(“==窗口名称==”，==图片==)<br>  -窗口名称：自己命名（不同的窗口使用不同的名称，但可以是同一张图片）<br>  -图片：打开图片时自己命名的变量,如</li>
+</ul>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#img即图片</span></span><br><span class="line">img=cv2.imread(<span class="string">"ao_bing.jpg"</span>)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p><font color=#FF69>保存</font>：cv2.imwrite(“==文件名==”,==要保存的图像==)</p>
+</li>
+<li><p><font color=FF000 size=5>总结：</font><br>完整代码如下：</p>
+</li>
+</ul>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#-*- coding:utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#也可以 import cv2 as cv ,使用时用cv代替cv2</span></span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"></span><br><span class="line"><span class="comment">#宏定义文件名，便于修改</span></span><br><span class="line">filename=<span class="string">"ao_bing.jpg"</span>	<span class="comment">#这里取的是相对路径</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#读入图片</span></span><br><span class="line">img=cv2.imread(filename)	<span class="comment">#默认打开，彩色图像</span></span><br><span class="line">img_gray=cv2.imread(filename,<span class="number">0</span>)<span class="comment">#灰度图打开，黑白图像</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#显示图片</span></span><br><span class="line">cv2.imshow(<span class="string">"Img"</span>,img)</span><br><span class="line">cv2.imshow(<span class="string">"Img_gray"</span>,img_gray)</span><br><span class="line"></span><br><span class="line"><span class="comment">#使图片长时间停留，不闪退</span></span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#保存图片</span></span><br><span class="line">cv2.imwrite(<span class="string">"ao_bing_gray.jpg"</span>,img_gray)</span><br><span class="line"></span><br><span class="line"><span class="comment">#摧毁所有窗口</span></span><br><span class="line">cv2.destroyAllWindows()</span><br></pre></td></tr></table></figure>
 
 
@@ -415,7 +429,6 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#图片的阅读、显示、保存："><span class="nav-number">1.</span> <span class="nav-text">- 图片的阅读、显示、保存：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#阅读：cv2-imread-”图片的路径”-打开方式"><span class="nav-number">1.1.</span> <span class="nav-text">- 阅读：cv2.imread(&#x3D;&#x3D;”图片的路径”&#x3D;&#x3D;, &#x3D;&#x3D;打开方式&#x3D;&#x3D;)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#显示：cv2-imshow-“-窗口名称-”，-图片"><span class="nav-number">1.2.</span> <span class="nav-text">- 显示：cv2.imshow(“&#x3D;&#x3D;窗口名称&#x3D;&#x3D;”，&#x3D;&#x3D;图片&#x3D;&#x3D;)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#保存：cv2-imwrite-“-文件名-”-要保存的图像"><span class="nav-number">1.3.</span> <span class="nav-text">- 保存：cv2.imwrite(“&#x3D;&#x3D;文件名&#x3D;&#x3D;”,&#x3D;&#x3D;要保存的图像&#x3D;&#x3D;)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结："><span class="nav-number">1.4.</span> <span class="nav-text">- 总结：</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -527,7 +540,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共443字</span>
+  <span class="post-count">博客全站共435字</span>
 </div>
         
 <div class="busuanzi-count">
