@@ -3,8 +3,7 @@
   <entry>
     <title>吴恩达机器学习第一章【Introduction】</title>
     <url>/2020/02/06/Introduction/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="吴恩达机器学习第一章【Introduction】"><a href="#吴恩达机器学习第一章【Introduction】" class="headerlink" title="吴恩达机器学习第一章【Introduction】"></a>吴恩达机器学习第一章【Introduction】</h1><p>[toc]</p>
-<h2 id="Machine-Learning"><a href="#Machine-Learning" class="headerlink" title="Machine Learning"></a>Machine Learning</h2><p>机器学习所研究的主要内容，是关于计算机上从数据中产生“模型”（model）的算法，即“学习算法”（learning algorithm），有了学习算法，我们把经验数据提供给它，它就能基于这些数据产生模型；面对新的情况时，模型会给我们提供相应的判断。其中从数据中学得模型的过程称为称为<code>“训练”（training）或“学习”（learning）</code></p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="Machine-Learning"><a href="#Machine-Learning" class="headerlink" title="Machine Learning"></a>Machine Learning</h2><p>机器学习所研究的主要内容，是关于计算机上从数据中产生“模型”（model）的算法，即“学习算法”（learning algorithm），有了学习算法，我们把经验数据提供给它，它就能基于这些数据产生模型；面对新的情况时，模型会给我们提供相应的判断。其中从数据中学得模型的过程称为称为<code>“训练”（training）或“学习”（learning）</code></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">graph LR</span><br><span class="line">机器学习--有标记信息--&gt;监督学习</span><br><span class="line">机器学习--无标记信息--&gt;无监督学习</span><br></pre></td></tr></table></figure>
 
 <p>机器学习的目标是使学得的模型能很好的适应于“新样本”，而不是在新样本上工作的好好的，学得的模型适用于新样本的能力，称为<code>“泛化”</code>能力。</p>
