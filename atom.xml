@@ -1,90 +1,138 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>AIR</title>
+  <title>{{ config.title }}</title>
   
-  <subtitle>A research team studying artificial intelligence</subtitle>
-  <link href="/atom.xml" rel="self"/>
+  <subtitle>{{ config.subtitle }}</subtitle>
+  <link href="{{ feed_url | uriencode }}" rel="self"/>
   
-  <link href="http://uscair.club/"/>
-  <updated>2020-02-06T04:58:21.048Z</updated>
-  <id>http://uscair.club/</id>
+  <link href="{{ url | uriencode }}"/>
+  <updated>{{ posts.first().updated.toISOString() }}</updated>
+  <id>{{ url | uriencode }}</id>
   
   <author>
-    <name>AIR@USC</name>
+    <name>{{ config.author }}</name>
     
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>吴恩达机器学习第一章【Introduction】</title>
-    <link href="http://uscair.club/2020/02/06/Introduction/"/>
-    <id>http://uscair.club/2020/02/06/Introduction/</id>
-    <published>2020-02-06T04:58:21.048Z</published>
-    <updated>2020-02-06T04:58:21.048Z</updated>
+    <title>{{ post.title }}</title>
+    <link href="{{ post.permalink | uriencode }}"/>
+    <id>{{ post.permalink | uriencode }}</id>
+    <published>{{ post.date.toISOString() }}</published>
+    <updated>{{ post.updated.toISOString() }}</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="Machine-Learning"><a href="#Machine-Learning" class="headerlink" title="Machine Learning"></a>Machine Learning</h2><p>机器学习所研究的主要内容，是关于计算机上从数据中产生“模型”（model）的算法，即“学习算法”（learning algorithm），有了学习算法，我们把经验数据提供给它，它就能基于这些数据产生模型；面对新的情况时，模型会给我们提供相应的判断。其中从数据中学得模型的过程称为称为<code>“训练”（training）或“学习”（learning）</code></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">机器学习--有标记信息--&gt;监督学习</span><br><span class="line">机器学习--无标记信息--&gt;无监督学习</span><br></pre></td></tr></table></figure><p>机器学习的目标是使学得的模型能很好的适应于“新样本”，而不是在新样本上工作的好好的，学得的模型适用于新样本的能力，称为<code>“泛化”</code>能力。</p><h2 id="Supervised-Learning【监督学习】"><a href="#Supervised-Learning【监督学习】" class="headerlink" title="Supervised Learning【监督学习】"></a>Supervised Learning【监督学习】</h2><p><strong>定义</strong>：根据已有的数据集，知道输入和输出结果之间的关系。根据这种已知的关系，训练得到一个最优的模型。也就是说，在监督学习中训练数据==既有特征(feature)又有标签(label)==，通过训练，让机器可以自己找到特征和标签之间的联系，在面对只有特征没有标签的数据时，可以判断出标签。</p><p><strong>监督学习的分类：</strong>回归(Regression）、分类（Classification)</p><p><strong>回归问题</strong>：针对连续型问题</p><p>回归通俗一点就是，对已经存在的点（训练数据）进行分析，拟合出适当的函数模型y=f(x)，这里y就是数据的标签，而对于一个新的自变量x，通过这个函数模型得到标签y。</p><p><strong>分类问题</strong>：针对离散型问题</p><h2 id="Unsupervised-Learning【无监督学习】"><a href="#Unsupervised-Learning【无监督学习】" class="headerlink" title="Unsupervised Learning【无监督学习】"></a>Unsupervised Learning【无监督学习】</h2><p>定义：我们不知道数据集中数据、特征之间的关系，而是要根据聚类或一定的模型得到数据之间的关系。</p><p>可以这么说，比起监督学习，无监督学习更像是自学，让机器学会自己做事情，是没有标签（label）的。我们只是给定了一组数据，我们的目标是发现这组数据中的特殊结构。例如我们使用无监督学习算法会将这组数据分成两个不同的簇,，这样的算法就叫聚类算法。</p><p><img src="https://img-blog.csdnimg.cn/20200204110745907.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzA5Mjg2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p><p><img src="https://img-blog.csdnimg.cn/20200204113837959.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzA5Mjg2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p><p><strong>Answer</strong> :   B、C</p>]]></content>
+    <content type="html"><![CDATA[{{ post.content | noControlChars | safe }}]]></content>
     
     <summary type="html">
     
       
       
-        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
+        {{ short_content }}
       
     
     </summary>
     
     
-      <category term="test" scheme="http://uscair.club/categories/test/"/>
-    
-    
-      <category term="test" scheme="http://uscair.club/tags/test/"/>
     
   </entry>
   
   <entry>
-    <title>Hello World</title>
-    <link href="http://uscair.club/2020/01/13/hello-world/"/>
-    <id>http://uscair.club/2020/01/13/hello-world/</id>
-    <published>2020-01-13T08:55:07.598Z</published>
-    <updated>2020-01-13T08:55:07.598Z</updated>
+    <title>{{ post.title }}</title>
+    <link href="{{ post.permalink | uriencode }}"/>
+    <id>{{ post.permalink | uriencode }}</id>
+    <published>{{ post.date.toISOString() }}</published>
+    <updated>{{ post.updated.toISOString() }}</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><img src="http://5b0988e595225.cdn.sohucs.com/images/20171230/9149161752684d0f8dc37247aab6d605.gif" alt="alt"></p>  <a id="more"></a><p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    <content type="html"><![CDATA[{{ post.content | noControlChars | safe }}]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;http://5b0988e595225.cdn.sohucs.com/images/20171230/9149161752684d0f8dc37247aab6d605.gif&quot; alt=&quot;alt&quot;&gt;&lt;/p&gt;
+      
+      
+        {{ short_content }}
+      
     
     </summary>
     
     
-      <category term="test" scheme="http://uscair.club/categories/test/"/>
+      <category term="{{ category.name }}" scheme="{{ url + category.path | uriencode }}"/>
     
     
-      <category term="test" scheme="http://uscair.club/tags/test/"/>
+      <category term="{{ tag.name }}" scheme="{{ url + tag.path | uriencode }}"/>
     
   </entry>
   
   <entry>
-    <title>OpenCV—Python:（一）图片的读取、显示、保存</title>
-    <link href="http://uscair.club/2019/08/18/opencv-read/"/>
-    <id>http://uscair.club/2019/08/18/opencv-read/</id>
-    <published>2019-08-18T09:34:16.000Z</published>
-    <updated>2019-08-18T09:34:16.000Z</updated>
+    <title>{{ post.title }}</title>
+    <link href="{{ post.permalink | uriencode }}"/>
+    <id>{{ post.permalink | uriencode }}</id>
+    <published>{{ post.date.toISOString() }}</published>
+    <updated>{{ post.updated.toISOString() }}</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>  这篇文章描述了使用OpenCV进行图片的读取、显示、保存的方法。</p>  <a id="more"></a><h2 id="图片的阅读、显示、保存："><a href="#图片的阅读、显示、保存：" class="headerlink" title="图片的阅读、显示、保存："></a><font color=#FF800 size=4>图片的阅读、显示、保存：</font></h2><h3 id="阅读："><a href="#阅读：" class="headerlink" title="阅读："></a><font color=#FF69>阅读：</font></h3><p>cv2.imread(“图片的路径”, 打开方式)<br> 图片路径：    </p><ul><li><p>绝对路径：与代码不在同一目录里，写出详细地址，如“E:\Photos\aobing.jpg”</p></li><li><p>相对路径:代码相同目录中，只需写出图片名即可，如：“ao_bing.jpg”</p></li><li><p><font color=#FF0000>注：</font>不知道图片路径时，pycharm支持查看：点击图片文件名，单机单击鼠标右键，<br>   “Copy Path” 是绝对路径，”Copy Relative Path” 是相对路径!</p><p>打开方式：</p></li><li><p>“ 1 “， 默认打开方式，加载彩色图像，任何图像的透明度都将忽略</p></li><li><p>“ 0 “， 加载灰度图像</p></li><li><p>“ -1 “，加载图像，包括alpha通道</p></li></ul><h3 id="显示："><a href="#显示：" class="headerlink" title="显示："></a><font color=#FF69>显示：</font></h3><p>cv2.imshow(“窗口名称”，图片)</p><ul><li>窗口名称：自己命名（不同的窗口使用不同的名称，但可以是同一张图片）</li><li>图片：打开图片时自己命名的变量,如</li></ul><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#img即图片</span></span><br><span class="line">img=cv2.imread(<span class="string">"ao_bing.jpg"</span>)</span><br></pre></td></tr></table></figure><h3 id="保存："><a href="#保存：" class="headerlink" title="保存："></a><font color=#FF69>保存：</font></h3><p>cv2.imwrite(“文件名”,要保存的图像)</p><h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a><font color=FF000 size=5>总结：</font></h3><p>完整代码如下：</p><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#-*- coding:utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#也可以 import cv2 as cv ,使用时用cv代替cv2</span></span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"></span><br><span class="line"><span class="comment">#宏定义文件名，便于修改</span></span><br><span class="line">filename=<span class="string">"ao_bing.jpg"</span><span class="comment">#这里取的是相对路径</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#读入图片</span></span><br><span class="line">img=cv2.imread(filename)<span class="comment">#默认打开，彩色图像</span></span><br><span class="line">img_gray=cv2.imread(filename,<span class="number">0</span>)<span class="comment">#灰度图打开，黑白图像</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#显示图片</span></span><br><span class="line">cv2.imshow(<span class="string">"Img"</span>,img)</span><br><span class="line">cv2.imshow(<span class="string">"Img_gray"</span>,img_gray)</span><br><span class="line"></span><br><span class="line"><span class="comment">#使图片长时间停留，不闪退</span></span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#保存图片</span></span><br><span class="line">cv2.imwrite(<span class="string">"ao_bing_gray.jpg"</span>,img_gray)</span><br><span class="line"></span><br><span class="line"><span class="comment">#摧毁所有窗口</span></span><br><span class="line">cv2.destroyAllWindows()</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[{{ post.content | noControlChars | safe }}]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;  这篇文章描述了使用OpenCV进行图片的读取、显示、保存的方法。&lt;/p&gt;
+      {{ post.excerpt }}
     
     </summary>
     
     
-      <category term="数字图像处理" scheme="http://uscair.club/categories/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
+      <category term="{{ category.name }}" scheme="{{ url + category.path | uriencode }}"/>
     
     
-      <category term="OpenCV" scheme="http://uscair.club/tags/OpenCV/"/>
+      <category term="{{ tag.name }}" scheme="{{ url + tag.path | uriencode }}"/>
+    
+  </entry>
+  
+  <entry>
+    <title>{{ post.title }}</title>
+    <link href="{{ post.permalink | uriencode }}"/>
+    <id>{{ post.permalink | uriencode }}</id>
+    <published>{{ post.date.toISOString() }}</published>
+    <updated>{{ post.updated.toISOString() }}</updated>
+    
+    <content type="html"><![CDATA[{{ post.content | noControlChars | safe }}]]></content>
+    
+    <summary type="html">
+    
+      {{ post.excerpt }}
+    
+    </summary>
+    
+    
+      <category term="{{ category.name }}" scheme="{{ url + category.path | uriencode }}"/>
+    
+    
+      <category term="{{ tag.name }}" scheme="{{ url + tag.path | uriencode }}"/>
+    
+  </entry>
+  
+  <entry>
+    <title>{{ post.title }}</title>
+    <link href="{{ post.permalink | uriencode }}"/>
+    <id>{{ post.permalink | uriencode }}</id>
+    <published>{{ post.date.toISOString() }}</published>
+    <updated>{{ post.updated.toISOString() }}</updated>
+    
+    <content type="html"><![CDATA[{{ post.content | noControlChars | safe }}]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        {{ short_content }}
+      
+    
+    </summary>
+    
+    
+      <category term="{{ category.name }}" scheme="{{ url + category.path | uriencode }}"/>
+    
+    
+      <category term="{{ tag.name }}" scheme="{{ url + tag.path | uriencode }}"/>
     
   </entry>
   

@@ -261,6 +261,20 @@
 	          </div>
 	      
 	          <div class="archive-item archive-post mark">
+	            <a href="/2020/02/06/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%AC%E4%B8%89%E7%AB%A0%E3%80%90Linear%20Algebra%20Revie%E3%80%91/">
+	              <time>02-06</time>
+	              <span class="title">
+	                
+	                  吴恩达机器学习第三章【Linear Algebra Revie】
+	                
+	                
+									
+									
+	              </span>
+	            </a>
+	          </div>
+	      
+	          <div class="archive-item archive-post mark">
 	            <a href="/2020/02/06/Introduction/">
 	              <time>02-06</time>
 	              <span class="title">
@@ -300,6 +314,22 @@
 	              <span class="title">
 	                
 	                  OpenCV—Python:（一）图片的读取、显示、保存
+	                
+	                
+	                  &nbsp;<i class="fas fa-headphones-alt music" aria-hidden="true"></i>
+	                
+									
+									
+	              </span>
+	            </a>
+	          </div>
+	      
+	          <div class="archive-item archive-post mark">
+	            <a href="/2019/08/18/Linear%20Regression%20with%20One%20Variable/">
+	              <time>08-18</time>
+	              <span class="title">
+	                
+	                  吴恩达机器学习第二章【Linear Regression with One Variable】（单变量线性回归）
 	                
 	                
 	                  &nbsp;<i class="fas fa-headphones-alt music" aria-hidden="true"></i>
@@ -556,6 +586,8 @@
         
           <li><a class="flat-box" title="/categories/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" href="/categories/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"><div class='name'>数字图像处理</div><div class='badge'>(1)</div></a></li>
         
+          <li><a class="flat-box" title="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"><div class='name'>机器学习</div><div class='badge'>(1)</div></a></li>
+        
       </ul>
     </div>
   </section>
@@ -696,6 +728,44 @@ setInterval("createtime()",250);
 
 	<!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
 	
+
+	
+	    <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX","TeX"],
+      linebreaks: { automatic:true },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: { autoNumber: "AMS" },
+      noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+      Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+  });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += (all[i].SourceElement().parentNode.className ? ' ' : '') + 'has-jax';
+    }
+  });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
 
 	
 
