@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://uscair.club/"/>
-  <updated>2020-01-13T08:55:07.598Z</updated>
+  <updated>2020-02-06T04:58:21.048Z</updated>
   <id>http://uscair.club/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>吴恩达机器学习第一章【Introduction】</title>
+    <link href="http://uscair.club/2020/02/06/Introduction/"/>
+    <id>http://uscair.club/2020/02/06/Introduction/</id>
+    <published>2020-02-06T04:58:21.048Z</published>
+    <updated>2020-02-06T04:58:21.048Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="吴恩达机器学习第一章【Introduction】"><a href="#吴恩达机器学习第一章【Introduction】" class="headerlink" title="吴恩达机器学习第一章【Introduction】"></a>吴恩达机器学习第一章【Introduction】</h1><p>[toc]</p><h2 id="Machine-Learning"><a href="#Machine-Learning" class="headerlink" title="Machine Learning"></a>Machine Learning</h2><p>机器学习所研究的主要内容，是关于计算机上从数据中产生“模型”（model）的算法，即“学习算法”（learning algorithm），有了学习算法，我们把经验数据提供给它，它就能基于这些数据产生模型；面对新的情况时，模型会给我们提供相应的判断。其中从数据中学得模型的过程称为称为<code>“训练”（training）或“学习”（learning）</code></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">机器学习--有标记信息--&gt;监督学习</span><br><span class="line">机器学习--无标记信息--&gt;无监督学习</span><br></pre></td></tr></table></figure><p>机器学习的目标是使学得的模型能很好的适应于“新样本”，而不是在新样本上工作的好好的，学得的模型适用于新样本的能力，称为<code>“泛化”</code>能力。</p><h2 id="Supervised-Learning【监督学习】"><a href="#Supervised-Learning【监督学习】" class="headerlink" title="Supervised Learning【监督学习】"></a>Supervised Learning【监督学习】</h2><p><strong>定义</strong>：根据已有的数据集，知道输入和输出结果之间的关系。根据这种已知的关系，训练得到一个最优的模型。也就是说，在监督学习中训练数据==既有特征(feature)又有标签(label)==，通过训练，让机器可以自己找到特征和标签之间的联系，在面对只有特征没有标签的数据时，可以判断出标签。</p><p><strong>监督学习的分类：</strong>回归(Regression）、分类（Classification)</p><p><strong>回归问题</strong>：针对连续型问题</p><p>回归通俗一点就是，对已经存在的点（训练数据）进行分析，拟合出适当的函数模型y=f(x)，这里y就是数据的标签，而对于一个新的自变量x，通过这个函数模型得到标签y。</p><p><strong>分类问题</strong>：针对离散型问题</p><h2 id="Unsupervised-Learning【无监督学习】"><a href="#Unsupervised-Learning【无监督学习】" class="headerlink" title="Unsupervised Learning【无监督学习】"></a>Unsupervised Learning【无监督学习】</h2><p>定义：我们不知道数据集中数据、特征之间的关系，而是要根据聚类或一定的模型得到数据之间的关系。</p><p>可以这么说，比起监督学习，无监督学习更像是自学，让机器学会自己做事情，是没有标签（label）的。我们只是给定了一组数据，我们的目标是发现这组数据中的特殊结构。例如我们使用无监督学习算法会将这组数据分成两个不同的簇,，这样的算法就叫聚类算法。</p><p><img src="https://img-blog.csdnimg.cn/20200204110745907.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzA5Mjg2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p><p><img src="https://img-blog.csdnimg.cn/20200204113837959.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzA5Mjg2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p><p><strong>Answer</strong> :   B、C</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
+      
+    
+    </summary>
+    
+    
+      <category term="test" scheme="http://uscair.club/categories/test/"/>
+    
+    
+      <category term="test" scheme="http://uscair.club/tags/test/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
