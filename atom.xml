@@ -191,27 +191,4 @@
     
   </entry>
   
-  <entry>
-    <title>{{ post.title }}</title>
-    <link href="{{ post.permalink | uriencode }}"/>
-    <id>{{ post.permalink | uriencode }}</id>
-    <published>{{ post.date.toISOString() }}</published>
-    <updated>{{ post.updated.toISOString() }}</updated>
-    
-    <content type="html"><![CDATA[{{ post.content | noControlChars | safe }}]]></content>
-    
-    <summary type="html">
-    
-      {{ post.excerpt }}
-    
-    </summary>
-    
-    
-      <category term="{{ category.name }}" scheme="{{ url + category.path | uriencode }}"/>
-    
-    
-      <category term="{{ tag.name }}" scheme="{{ url + tag.path | uriencode }}"/>
-    
-  </entry>
-  
 </feed>
