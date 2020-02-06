@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>吴恩达机器学习第三章【Linear Algebra Revie】 | AIR</title>
+  <title>吴恩达机器学习第三章【Linear Algebra Revie】（线性代数回顾） | AIR</title>
   
   <meta name="keywords" content="AI ,NAO ,Scientific Research">
   
@@ -64,9 +64,18 @@
 		  z-index: -1;
 		}
 	</style>
+	
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
 
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
 <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="AIR" type="application/atom+xml">
 </head>
+
 
 <body>
   
@@ -260,6 +269,23 @@
 
   <section class='meta'>
     
+      
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.css">
+  <div class="aplayer"
+    data-theme=""
+    data-mini=true 
+    
+    data-mode="circulation"
+    data-server="netease"
+    data-type="song"
+    data-id="1321385758"
+    data-volume="0.7">
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
+
+
+    
     
     <div class="meta" id="header-meta">
       
@@ -267,7 +293,7 @@
   
     <h1 class="title">
       <a href="/2020/02/06/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%AC%E4%B8%89%E7%AB%A0%E3%80%90Linear%20Algebra%20Revie%E3%80%91/">
-        吴恩达机器学习第三章【Linear Algebra Revie】
+        吴恩达机器学习第三章【Linear Algebra Revie】（线性代数回顾）
       </a>
     </h1>
   
@@ -282,11 +308,11 @@
             
   <div class='new-meta-item author'>
     
-      <a href="http://uscair.club" rel="nofollow">
+      <a href="/" rel="nofollow">
         
           <i class="fas fa-user" aria-hidden="true"></i>
         
-        <p>AIR@USC</p>
+        <p>www</p>
       </a>
     
   </div>
@@ -306,6 +332,14 @@
         
           
             
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>机器学习</p>
+    </a>
+  </div>
+
 
           
         
@@ -334,14 +368,14 @@
       <a class='notlink'>
         <i class="fas fa-keyboard" aria-hidden="true"></i>
         <p>字数统计:</p>
-        <p>654字</p>
+        <p>634字</p>
       </a>
     </div>
     <div class="new-meta-item readtime">
       <a class='notlink'>
         <i class="fas fa-hourglass-half" aria-hidden="true"></i>
         <p>阅读时长≈</p>
-        <p>3分</p>
+        <p>2分</p>
       </a>
     </div>
   
@@ -363,13 +397,12 @@
 
     <section class="article typo">
       <div class="article-entry" itemprop="articleBody">
-        <h1 id="吴恩达机器学习第三章【Linear-Algebra-Revie】（线性代数回顾）"><a href="#吴恩达机器学习第三章【Linear-Algebra-Revie】（线性代数回顾）" class="headerlink" title="吴恩达机器学习第三章【Linear Algebra Revie】（线性代数回顾）"></a>吴恩达机器学习第三章【Linear Algebra Revie】（线性代数回顾）</h1><p>[toc]</p>
-<h2 id="Matrices-and-Vectors【矩阵和向量】"><a href="#Matrices-and-Vectors【矩阵和向量】" class="headerlink" title="Matrices and Vectors【矩阵和向量】"></a>Matrices and Vectors【矩阵和向量】</h2><p>在$\begin{bmatrix}{1402}&amp;{191}\{1371}&amp;{821}\{949}&amp;{1437}\{147}&amp;{1448}\end{bmatrix}$中，这是一个这个是4×2矩阵，即4行2列，如$m$为行，$n$为列，那么$m×n$即4×2，其中$A_{ij}$指第$i$行，第$j$列的元素。</p>
-<p>向量是一种特殊的矩阵，向量一般都是列向量，如：$y=\left[ \begin{matrix}   {460}  \   {232}  \   {315}  \   {178}  \\end{matrix} \right]$为四维列向量（4×1）。</p>
+        <h2 id="Matrices-and-Vectors【矩阵和向量】"><a href="#Matrices-and-Vectors【矩阵和向量】" class="headerlink" title="Matrices and Vectors【矩阵和向量】"></a>Matrices and Vectors【矩阵和向量】</h2><p>在$\begin{bmatrix}{1402}&amp;{191}\\{1371}&amp;{821}\\{949}&amp;{1437}\\{147}&amp;{1448}\end{bmatrix}$中，这是一个这个是4×2矩阵，即4行2列，如$m$为行，$n$为列，那么$m×n$即4×2，其中$A_{ij}$指第$i$行，第$j$列的元素。</p>
+<p>向量是一种特殊的矩阵，向量一般都是列向量，如：$y=\left[ \begin{matrix}   {460}  \\   {232}  \\   {315}  \\   {178}  \\\end{matrix} \right]$为四维列向量（4×1）。</p>
 <h2 id="Addition-and-Scalar-Multiplication【加法和标量乘法】"><a href="#Addition-and-Scalar-Multiplication【加法和标量乘法】" class="headerlink" title="Addition and Scalar Multiplication【加法和标量乘法】"></a>Addition and Scalar Multiplication【加法和标量乘法】</h2><p>矩阵的加法：行列数相等的各元素相加。</p>
-<p>$\begin{bmatrix}{1}&amp;{0}\{2}&amp;{5}\{3}&amp;{1}\end{bmatrix}+\begin{bmatrix}{4}&amp;{0.5}\{2}&amp;{5}\{0}&amp;{1}\end{bmatrix}=\begin{bmatrix}{5}&amp;{0.5}\{4}&amp;{10}\{3}&amp;{2}\end{bmatrix}$</p>
+<p>$\begin{bmatrix}{1}&amp;{0}\\{2}&amp;{5}\\{3}&amp;{1}\end{bmatrix}+\begin{bmatrix}{4}&amp;{0.5}\\{2}&amp;{5}\\{0}&amp;{1}\end{bmatrix}=\begin{bmatrix}{5}&amp;{0.5}\\{4}&amp;{10}\\{3}&amp;{2}\end{bmatrix}$</p>
 <p>矩阵的数乘：每个元素都要乘。</p>
-<p>$3<em>\begin{bmatrix}{1}&amp;{0}\{2}&amp;{5}\{3}&amp;{1}\end{bmatrix}=\begin{bmatrix}{3}&amp;{0}\{6}&amp;{15}\{9}&amp;{3}\end{bmatrix}=\begin{bmatrix}{1}&amp;{0}\{2}&amp;{5}\{3}&amp;{1}\end{bmatrix}</em>3$</p>
+<p>$3<em>\begin{bmatrix}{1}&amp;{0}\\{2}&amp;{5}\\{3}&amp;{1}\end{bmatrix}=\begin{bmatrix}{3}&amp;{0}\\{6}&amp;{15}\\{9}&amp;{3}\end{bmatrix}=\begin{bmatrix}{1}&amp;{0}\\{2}&amp;{5}\\{3}&amp;{1}\end{bmatrix}</em>3$</p>
 <h2 id="Matrix-Vector-Multiplication【矩阵向量乘法】"><a href="#Matrix-Vector-Multiplication【矩阵向量乘法】" class="headerlink" title="Matrix Vector Multiplication【矩阵向量乘法】"></a>Matrix Vector Multiplication【矩阵向量乘法】</h2><p><img src="https://img-blog.csdnimg.cn/20200205133854666.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzA5Mjg2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <p><img src="https://img-blog.csdnimg.cn/20200205134313641.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzA5Mjg2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <h2 id="Matrix-Matrix-Multiplication【矩阵乘法】"><a href="#Matrix-Matrix-Multiplication【矩阵乘法】" class="headerlink" title="Matrix Matrix Multiplication【矩阵乘法】"></a>Matrix Matrix Multiplication【矩阵乘法】</h2><p>矩阵乘法：</p>
@@ -388,7 +421,7 @@
 <h2 id="Inverse-and-Transpose【逆、转置】"><a href="#Inverse-and-Transpose【逆、转置】" class="headerlink" title="Inverse and Transpose【逆、转置】"></a>Inverse and Transpose【逆、转置】</h2><p>矩阵的逆：如矩阵$A$是一个$m×m$矩阵（方阵），如果有逆矩阵，则：$A{{A}^{-1}}={{A}^{-1}}A=I$</p>
 <p>矩阵的转置：设$A$为$m×n$阶矩阵（即$m$行$n$列），第$i $行$j $列的元素是$a(i,j)$，即：$A=a(i,j)$</p>
 <p>定义$A$的转置为这样一个$n×m$阶矩阵$B$，满足$B=a(j,i)$，即 $b (i,j)=a(j,i)$（$B$的第$i$行第$j$列元素是$A$的第$j$行第$i$列元素），记${{A}^{T}}=B$。(有些书记为A’=B）</p>
-<p>${{\begin{bmatrix}   a& b  \\   c& d  \\   e& f  \\\end{bmatrix} }^{T}}=\begin{bmatrix}   a&amp; c &amp; e  \   b&amp; d &amp; f  \\end{bmatrix}$</p>
+<p>${{\begin{bmatrix}   a& b  \\   c& d  \\   e& f  \\\end{bmatrix} }^{T}}=\begin{bmatrix}   a&amp; c &amp; e  \\   b&amp; d &amp; f  \\\end{bmatrix}$</p>
 <p>矩阵的转置基本性质:</p>
 <p>$ {{\left( A\pm B \right)}^{T}}={{A}^{T}}\pm {{B}^{T}} $<br>${{\left( A\times B \right)}^{T}}={{B}^{T}}\times {{A}^{T}}$<br>${{\left( {{A}^{T}} \right)}^{T}}=A $<br>${{\left( KA \right)}^{T}}=K{{A}^{T}} $</p>
 
@@ -398,9 +431,9 @@
 <div class="article-footer-copyright">
 <center>本文由<b><a href="/index.html" target="_blank" title="AIR@USC">AIR@USC</a></b>创作和发表,采用<b>BY</b>-<b>NC</b>-<b>SA</b>国际许可协议进行许可</center>
  
-<center>转载请注明作者及出处,本文作者为<b><a href="/index.html" target="_blank" title="AIR@USC">AIR@USC</a></b>,本文标题为<b><a href="/2020/02/06/吴恩达机器学习第三章【Linear Algebra Revie】/" target="_blank" title="吴恩达机器学习第三章【Linear Algebra Revie】">吴恩达机器学习第三章【Linear Algebra Revie】</a></b></center>
+<center>转载请注明作者及出处,本文作者为<b><a href="/index.html" target="_blank" title="AIR@USC">AIR@USC</a></b>,本文标题为<b><a href="/2020/02/06/吴恩达机器学习第三章【Linear Algebra Revie】/" target="_blank" title="吴恩达机器学习第三章【Linear Algebra Revie】（线性代数回顾）">吴恩达机器学习第三章【Linear Algebra Revie】（线性代数回顾）</a></b></center>
  
-<center>本文链接为<b><a href="/2020/02/06/吴恩达机器学习第三章【Linear Algebra Revie】/" target="_blank" title="吴恩达机器学习第三章【Linear Algebra Revie】">http://uscair.club/2020/02/06/吴恩达机器学习第三章【Linear Algebra Revie】/</a></b>.</center>
+<center>本文链接为<b><a href="/2020/02/06/吴恩达机器学习第三章【Linear Algebra Revie】/" target="_blank" title="吴恩达机器学习第三章【Linear Algebra Revie】（线性代数回顾）">http://uscair.club/2020/02/06/吴恩达机器学习第三章【Linear Algebra Revie】/</a></b>.</center>
 </div>
 <! -- 添加版权信息 -->
         
@@ -425,6 +458,9 @@
       
         
           
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/test/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>test</p></a></div>
+
 
         
       
@@ -436,7 +472,7 @@
       
         <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=http://uscair.club/2020/02/06/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%AC%E4%B8%89%E7%AB%A0%E3%80%90Linear%20Algebra%20Revie%E3%80%91/&title=吴恩达机器学习第三章【Linear Algebra Revie】 | AIR&summary="
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://uscair.club/2020/02/06/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%AC%E4%B8%89%E7%AB%A0%E3%80%90Linear%20Algebra%20Revie%E3%80%91/&title=吴恩达机器学习第三章【Linear Algebra Revie】（线性代数回顾） | AIR&summary="
           
           >
           
@@ -448,7 +484,7 @@
       
         <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://uscair.club/2020/02/06/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%AC%E4%B8%89%E7%AB%A0%E3%80%90Linear%20Algebra%20Revie%E3%80%91/&title=吴恩达机器学习第三章【Linear Algebra Revie】 | AIR&summary="
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://uscair.club/2020/02/06/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%AC%E4%B8%89%E7%AB%A0%E3%80%90Linear%20Algebra%20Revie%E3%80%91/&title=吴恩达机器学习第三章【Linear Algebra Revie】（线性代数回顾） | AIR&summary="
           
           >
           
@@ -460,7 +496,7 @@
       
         <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=http://uscair.club/2020/02/06/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%AC%E4%B8%89%E7%AB%A0%E3%80%90Linear%20Algebra%20Revie%E3%80%91/&title=吴恩达机器学习第三章【Linear Algebra Revie】 | AIR&summary="
+          href="http://service.weibo.com/share/share.php?url=http://uscair.club/2020/02/06/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%AC%E4%B8%89%E7%AB%A0%E3%80%90Linear%20Algebra%20Revie%E3%80%91/&title=吴恩达机器学习第三章【Linear Algebra Revie】（线性代数回顾） | AIR&summary="
           
           >
           
@@ -538,11 +574,49 @@
 
 <!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
 
+  <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX","TeX"],
+      linebreaks: { automatic:true },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: { autoNumber: "AMS" },
+      noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+      Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+  });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += (all[i].SourceElement().parentNode.className ? ' ' : '') + 'has-jax';
+    }
+  });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
 
 
   <script>
     window.subData = {
-      title: '吴恩达机器学习第三章【Linear Algebra Revie】',
+      title: '吴恩达机器学习第三章【Linear Algebra Revie】（线性代数回顾）',
       tools: true
     }
   </script>
@@ -669,7 +743,7 @@
 </header>
 
     <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#吴恩达机器学习第三章【Linear-Algebra-Revie】（线性代数回顾）"><span class="toc-text">吴恩达机器学习第三章【Linear Algebra Revie】（线性代数回顾）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Matrices-and-Vectors【矩阵和向量】"><span class="toc-text">Matrices and Vectors【矩阵和向量】</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Addition-and-Scalar-Multiplication【加法和标量乘法】"><span class="toc-text">Addition and Scalar Multiplication【加法和标量乘法】</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Matrix-Vector-Multiplication【矩阵向量乘法】"><span class="toc-text">Matrix Vector Multiplication【矩阵向量乘法】</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Matrix-Matrix-Multiplication【矩阵乘法】"><span class="toc-text">Matrix Matrix Multiplication【矩阵乘法】</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Matrix-Multiplication-Properties【矩阵乘法的性质】"><span class="toc-text">Matrix Multiplication Properties【矩阵乘法的性质】</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Inverse-and-Transpose【逆、转置】"><span class="toc-text">Inverse and Transpose【逆、转置】</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Matrices-and-Vectors【矩阵和向量】"><span class="toc-text">Matrices and Vectors【矩阵和向量】</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Addition-and-Scalar-Multiplication【加法和标量乘法】"><span class="toc-text">Addition and Scalar Multiplication【加法和标量乘法】</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Matrix-Vector-Multiplication【矩阵向量乘法】"><span class="toc-text">Matrix Vector Multiplication【矩阵向量乘法】</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Matrix-Matrix-Multiplication【矩阵乘法】"><span class="toc-text">Matrix Matrix Multiplication【矩阵乘法】</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Matrix-Multiplication-Properties【矩阵乘法的性质】"><span class="toc-text">Matrix Multiplication Properties【矩阵乘法的性质】</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Inverse-and-Transpose【逆、转置】"><span class="toc-text">Inverse and Transpose【逆、转置】</span></a></li></ol>
     </div>
   </section>
 
