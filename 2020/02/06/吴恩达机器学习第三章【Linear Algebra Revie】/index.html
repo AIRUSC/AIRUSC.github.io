@@ -64,8 +64,9 @@
 		  z-index: -1;
 		}
 	</style>
-	
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="AIR" type="application/atom+xml">
+</head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
 
     <!-- The loading of KaTeX is deferred to speed up page rendering -->
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
@@ -73,9 +74,6 @@
     <!-- To automatically render math in text elements, include the auto-render extension: -->
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
         onload="renderMathInElement(document.body);"></script>
-<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="AIR" type="application/atom+xml">
-</head>
-
 
 <body>
   
@@ -398,7 +396,7 @@
     <section class="article typo">
       <div class="article-entry" itemprop="articleBody">
         <h2 id="Matrices-and-Vectors【矩阵和向量】"><a href="#Matrices-and-Vectors【矩阵和向量】" class="headerlink" title="Matrices and Vectors【矩阵和向量】"></a>Matrices and Vectors【矩阵和向量】</h2><p>在$\begin{bmatrix}{1402}&amp;{191}\\{1371}&amp;{821}\\{949}&amp;{1437}\\{147}&amp;{1448}\end{bmatrix}$中，这是一个这个是4×2矩阵，即4行2列，如$m$为行，$n$为列，那么$m×n$即4×2，其中$A_{ij}$指第$i$行，第$j$列的元素。</p>
-<p>向量是一种特殊的矩阵，向量一般都是列向量，如：$y=\left[ \begin{matrix}   {460}  \\   {232}  \\   {315}  \\   {178}  \\\end{matrix} \right]$为四维列向量（4×1）。</p>
+<p>向量是一种特殊的矩阵，向量一般都是列向量，如：$y=\left[ \begin{matrix}   {460}  \   {232}  \   {315}  \   {178}  \\\end{matrix} \right]$为四维列向量（4×1）。</p>
 <h2 id="Addition-and-Scalar-Multiplication【加法和标量乘法】"><a href="#Addition-and-Scalar-Multiplication【加法和标量乘法】" class="headerlink" title="Addition and Scalar Multiplication【加法和标量乘法】"></a>Addition and Scalar Multiplication【加法和标量乘法】</h2><p>矩阵的加法：行列数相等的各元素相加。</p>
 <p>$\begin{bmatrix}{1}&amp;{0}\\{2}&amp;{5}\\{3}&amp;{1}\end{bmatrix}+\begin{bmatrix}{4}&amp;{0.5}\\{2}&amp;{5}\\{0}&amp;{1}\end{bmatrix}=\begin{bmatrix}{5}&amp;{0.5}\\{4}&amp;{10}\\{3}&amp;{2}\end{bmatrix}$</p>
 <p>矩阵的数乘：每个元素都要乘。</p>
@@ -421,7 +419,7 @@
 <h2 id="Inverse-and-Transpose【逆、转置】"><a href="#Inverse-and-Transpose【逆、转置】" class="headerlink" title="Inverse and Transpose【逆、转置】"></a>Inverse and Transpose【逆、转置】</h2><p>矩阵的逆：如矩阵$A$是一个$m×m$矩阵（方阵），如果有逆矩阵，则：$A{{A}^{-1}}={{A}^{-1}}A=I$</p>
 <p>矩阵的转置：设$A$为$m×n$阶矩阵（即$m$行$n$列），第$i $行$j $列的元素是$a(i,j)$，即：$A=a(i,j)$</p>
 <p>定义$A$的转置为这样一个$n×m$阶矩阵$B$，满足$B=a(j,i)$，即 $b (i,j)=a(j,i)$（$B$的第$i$行第$j$列元素是$A$的第$j$行第$i$列元素），记${{A}^{T}}=B$。(有些书记为A’=B）</p>
-<p>${{\begin{bmatrix}   a& b  \\   c& d  \\   e& f  \\\end{bmatrix} }^{T}}=\begin{bmatrix}   a&amp; c &amp; e  \\   b&amp; d &amp; f  \\\end{bmatrix}$</p>
+<p>${{\begin{bmatrix}   a& b  \\   c& d  \\   e& f  \\\end{bmatrix} }^{T}}=\begin{bmatrix}   a&amp; c &amp; e  \   b&amp; d &amp; f  \\\end{bmatrix}$</p>
 <p>矩阵的转置基本性质:</p>
 <p>$ {{\left( A\pm B \right)}^{T}}={{A}^{T}}\pm {{B}^{T}} $<br>${{\left( A\times B \right)}^{T}}={{B}^{T}}\times {{A}^{T}}$<br>${{\left( {{A}^{T}} \right)}^{T}}=A $<br>${{\left( KA \right)}^{T}}=K{{A}^{T}} $</p>
 
