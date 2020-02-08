@@ -1,0 +1,1497 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  <title>NAO机器人的小记 | AIR</title>
+  
+  <meta name="keywords" content="AI ,NAO ,Scientific Research">
+  
+  
+  <meta name="description" content="AIR">
+  
+
+  
+  <link rel="alternate" href="/atom.xml" title="AIR">
+  
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.10.1/css/all.min.css">
+  
+
+  
+
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.11.26/css/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+  <script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/e92a8350.js","daovoice")</script>
+
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Document</title>
+	<style type="text/css">
+		canvas {
+		  position: fixed;
+		  right: 0px;
+		  bottom: 0px;
+		  min-width: 100%;
+		  min-height: 100%;
+		  height: auto;
+		  width: auto;
+		  z-index: -1;
+		}
+	</style>
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="AIR" type="application/atom+xml">
+</head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+
+<body>
+  
+  
+  <div class="cover-wrapper">
+    <cover class='cover post half'>
+      
+        
+  <h1 class='title'>AIR</h1>
+
+
+  <div class="m_search">
+    <form name="searchform" class="form u-search-form">
+      <input type="text" class="input u-search-input" placeholder="" />
+      <i class="icon fas fa-search fa-fw"></i>
+    </form>
+  </div>
+
+<div class='menu navgation'>
+  <ul class='h-list'>
+    
+      
+        <li>
+          <a class="nav home" href="/"
+            
+            
+            id="home">
+            <i class='fas fa-rss fa-fw'></i>&nbsp;博文
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/projects/"
+            
+            
+            id="projects">
+            <i class='fas fa-code-branch fa-fw'></i>&nbsp;项目
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/about/"
+            
+              rel="nofollow"
+            
+            
+            id="about">
+            <i class='fas fa-info-circle fa-fw'></i>&nbsp;关于
+          </a>
+        </li>
+      
+    
+  </ul>
+</div>
+
+      
+    </cover>
+    <header class="l_header pure">
+  <div id="loading-bar-wrapper">
+    <div id="loading-bar" class="pure"></div>
+  </div>
+
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+      <a class="logo flat-box" href='/' >
+        
+          AIR
+        
+      </a>
+			<div class='menu navgation'>
+				<ul class='h-list'>
+          
+  					
+  						<li>
+								<a class="nav flat-box" href="/"
+                  
+                  
+                  id="home">
+									<i class='fas fa-grin fa-fw'></i>&nbsp;示例
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/archives/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="archives">
+									<i class='fas fa-archive fa-fw'></i>&nbsp;归档
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="Search" />
+						<i class="icon fas fa-search fa-fw"></i>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
+				
+				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
+        
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
+        
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu navgation">
+      <ul>
+        
+          
+            <li>
+							<a class="nav flat-box" href="/"
+                
+                
+                id="home">
+								<i class='fas fa-clock fa-fw'></i>&nbsp;回到主页
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/archives/"
+                
+                  rel="nofollow"
+                
+                
+                id="archives">
+								<i class='fas fa-archive fa-fw'></i>&nbsp;文章归档
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="https://xaoxuu.com/wiki/material-x/"
+                
+                  rel="nofollow"
+                
+                
+                id="https:xaoxuu.comwikimaterial-x">
+								<i class='fas fa-book fa-fw'></i>&nbsp;主题文档
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/about/"
+                
+                  rel="nofollow"
+                
+                
+                id="about">
+								<i class='fas fa-info-circle fa-fw'></i>&nbsp;关于小站
+							</a>
+            </li>
+          
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+<script>setLoadingBarProgress(40);</script>
+
+  </div>
+
+
+  <div class="l_body">
+    <div class='body-wrapper'>
+      <div class='l_main'>
+  
+
+  <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+    
+
+
+  <section class='meta'>
+    
+      
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.css">
+  <div class="aplayer"
+    data-theme=""
+    data-mini=true 
+    
+    data-mode="circulation"
+    data-server="tencent"
+    data-type="song"
+    data-id="107309897"
+    data-volume="0.7">
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
+
+
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/2019/11/10/NAO%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9A%84%E5%B0%8F%E8%AE%B0/">
+        NAO机器人的小记
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    
+      <a href="/" rel="nofollow">
+        
+          <i class="fas fa-user" aria-hidden="true"></i>
+        
+        <p>Gowi</p>
+      </a>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2019-11-10</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/NAO/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>NAO</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+    <div class="new-meta-item browse busuanzi">
+      <a class='notlink'>
+        <i class="fas fa-eye" aria-hidden="true"></i>
+        <p>
+          <span id="busuanzi_value_page_pv">
+            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
+          </span>
+        </p>
+      </a>
+    </div>
+  
+
+
+          
+        
+          
+            
+  
+    <div class="new-meta-item wordcount">
+      <a class='notlink'>
+        <i class="fas fa-keyboard" aria-hidden="true"></i>
+        <p>字数统计:</p>
+        <p>3k字</p>
+      </a>
+    </div>
+    <div class="new-meta-item readtime">
+      <a class='notlink'>
+        <i class="fas fa-hourglass-half" aria-hidden="true"></i>
+        <p>阅读时长≈</p>
+        <p>11分</p>
+      </a>
+    </div>
+  
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+    <section class="article typo">
+      <div class="article-entry" itemprop="articleBody">
+        <p>[toc]</p>
+<h2 id="joint"><a href="#joint" class="headerlink" title="joint"></a>joint</h2><p><img src="https://img-blog.csdnimg.cn/20191104225451107.jpeg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzA5Mjg2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20191105192903595.png" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/2019110519293516.png" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20191105193010407.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzA5Mjg2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20191105193049921.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzA5Mjg2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20191105193118457.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzA5Mjg2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/201911051931531.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzA5Mjg2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/201911051932129.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzA5Mjg2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20191104225505801.jpeg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzA5Mjg2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20191104225518804.jpeg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzA5Mjg2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20191104225526624.jpeg" alt="在这里插入图片描述"></p>
+<h2 id="摄像机相关参数"><a href="#摄像机相关参数" class="headerlink" title="摄像机相关参数"></a>摄像机相关参数</h2><p><img src="https://img-blog.csdnimg.cn/20191105103134521.png" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20191105103152174.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzA5Mjg2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20191105103213812.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzA5Mjg2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><h3 id="ALAutonomousLife"><a href="#ALAutonomousLife" class="headerlink" title="ALAutonomousLife"></a>ALAutonomousLife</h3><h4 id="孤立状态solitary"><a href="#孤立状态solitary" class="headerlink" title="孤立状态solitary"></a>孤立状态solitary</h4><p>任何活动都可以通过ALAutonomousLifeProxy :: switchFocus（）启动。<br>启动交互式Activity将切换到交互状态。<br>在保障和禁用状态可以进入。<br>无法停止自动启动板，其建议的活动将自动聚焦，可能会中断正在运行的活动。</p>
+<h4 id="交互状态interactive"><a href="#交互状态interactive" class="headerlink" title="交互状态interactive"></a>交互状态interactive</h4><p>可以通过ALAutonomousLifeProxy :: switchFocus（）启动交互式活动<br>聚焦新的交互式Activity将重新进入交互状态。<br>孤立活动可能无法启动，这将导致孤立状态强制执行其规则并与用户创建不良生命周期。（这可能在未来发生变化）<br>在保障和禁用状态可入以被输。<br>自动启动板可以启动，它不会强制关注其建议。它不会中断正在运行的Activity。<br>当整个交互活动堆栈退出时，将进入单独状态。<br>当所有人都失去时，互动活动将被强行退出。（这尚未实施）</p>
+<h4 id="禁用状态disabled"><a href="#禁用状态disabled" class="headerlink" title="禁用状态disabled"></a>禁用状态disabled</h4><p>没有Activity可以通过ALAutonomousLifeProxy :: switchFocus（）启动<br>无法启动自动启动板。<br>该保障或交互状态可能无法进入。<br>（可调用ALAutonomousLifeProxy :: setState（）退出此状态）</p>
+<h4 id="保护状态safeguard"><a href="#保护状态safeguard" class="headerlink" title="保护状态safeguard"></a>保护状态safeguard</h4><p>没有Activity可以通过ALAutonomousLifeProxy :: switchFocus（）启动</p>
+<p>停止聚焦活动并清除堆栈。<br>基本意识和呼吸服务如果正在运行则会停止。<br>自动启动板已停止。<br>然后处理反射。<br>根据反射的结果，可以重新进入孤立状态。<br>（对于损坏的硬件，机器人不会退出保护状态。<br>对于过热，机器人在充分冷却后退出保护状态。）</p>
+<h3 id="ALRobotPosture"><a href="#ALRobotPosture" class="headerlink" title="ALRobotPosture"></a>ALRobotPosture</h3><h4 id="ALRobotPostureProxy-getPostureList"><a href="#ALRobotPostureProxy-getPostureList" class="headerlink" title="ALRobotPostureProxy :: getPostureList"></a>ALRobotPostureProxy :: getPostureList</h4><p><img src="https://img-blog.csdnimg.cn/20191104230057138.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20191104230114105.png" alt="在这里插入图片描述"></p>
+<blockquote>
+<p>std :: vector <std :: string> ALRobotPostureProxy :: getPostureList （）<br> 返回：所有预定义姿势的矢量（名称）</p>
+</blockquote>
+<h4 id="ALRobotPostureProxy-getPosture"><a href="#ALRobotPostureProxy-getPosture" class="headerlink" title="ALRobotPostureProxy :: getPosture"></a>ALRobotPostureProxy :: getPosture</h4><p><img src="https://img-blog.csdnimg.cn/20191104230239651.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20191104230134678.png" alt="在这里插入图片描述"></p>
+<blockquote>
+<p>std :: string ALRobotPostureProxy :: getPosture （）<br> 返回当前预定义姿势的名称。如果当前姿势不在预定义姿势中，则返回“未知”。</p>
+</blockquote>
+<h4 id="ALRobotPostureProxy-goToPosture"><a href="#ALRobotPostureProxy-goToPosture" class="headerlink" title="ALRobotPostureProxy :: goToPosture"></a>ALRobotPostureProxy :: goToPosture</h4><p><img src="https://img-blog.csdnimg.cn/20191104230317205.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzA5Mjg2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/2019110423015094.png" alt="在这里插入图片描述"></p>
+<blockquote>
+<p>bool ALRobotPostureProxy :: goToPosture （const std :: string postureName，const float speed ）<br> 使机器人进入参数中要求的预定义姿势。可以修改移动的速度。移动是“智能的”：它将从机器人的开始姿势开始，并选择所有步骤以达到要求的姿势。<br>这是一个阻塞调用。</p>
+</blockquote>
+<h3 id="ALMotion"><a href="#ALMotion" class="headerlink" title="ALMotion"></a>ALMotion</h3><h4 id="ALMotionProxy-setStiffnesses"><a href="#ALMotionProxy-setStiffnesses" class="headerlink" title="ALMotionProxy :: setStiffnesses"></a>ALMotionProxy :: setStiffnesses</h4><p><img src="https://img-blog.csdnimg.cn/20191104131335978.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20191104131356447.png" alt="在这里插入图片描述"></p>
+<blockquote>
+<p>void ALMotionProxy :: setStiffnesses （const AL :: ALValue＆ names，const AL :: ALValue＆ stiffnesses ）<br>设置一个或多个关节的刚度。这是一个非阻塞调用。<br>names - 关节，链条，“主体”，“JointActuators”，“接头”或“执行器”的名称。<br>stiffnesses - 零和一之间的一个或多个刚度。</p>
+</blockquote>
+<p>示例：<br>＃显示如何将刚度设置为1.0 。<br>    ＃注意，这样做可能很危险，使用<br>    ＃stiffnessInterpolation方法更安全，该方法需要持续时间参数。<br>    names =’Body’<br>    ＃如果只接收到一个参数，这将应用于所有关节<br>    stiffnesses  = 1.0<br>    motionProxy.setStiffnesses(names, stiffnesses)</p>
+<h4 id="ALMotionProxy-getStiffnesses"><a href="#ALMotionProxy-getStiffnesses" class="headerlink" title="ALMotionProxy :: getStiffnesses"></a>ALMotionProxy :: getStiffnesses</h4><p><img src="https://img-blog.csdnimg.cn/20191104132344624.png" alt="在这里插入图片描述">)<img src="https://img-blog.csdnimg.cn/20191104132206648.png" alt="在这里插入图片描述"></p>
+<blockquote>
+<p>std::vector<float>ALMotionProxy::getStiffnesses(const AL::ALValue&amp; jointName)<br>获取关节或关节组的刚度<br>jointName - 关节，链，“Body”，“JointActuators”，“Joints”或“Actuators”的名称。<br>返回：一个或多个刚度。1.0表示最大刚度。0.0表示最小刚度</p>
+</blockquote>
+<h4 id="ALMotionProxy-angleInterpolation"><a href="#ALMotionProxy-angleInterpolation" class="headerlink" title="ALMotionProxy :: angleInterpolation"></a>ALMotionProxy :: angleInterpolation</h4><p><img src="https://img-blog.csdnimg.cn/20191105125616364.png" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20191105125644456.png" alt="在这里插入图片描述"></p>
+<blockquote>
+<p>void ALMotionProxy :: angleInterpolation （const AL :: ALValue＆ names，const AL :: ALValue＆ angleLists，const AL :: ALValue＆ timeLists，const bool＆isAbsolute ）<br>将一个或多个关节插值到目标角度或沿着定时轨迹。这是一个阻塞调用。<br>names– 关节，链条，“主体”，“JointActuators”，“接头”或“执行器”的名称或名称。<br>angleLists - 以弧度表示的角度，角度列表或角度列表列表<br>timeLists - 时间，时间列表或时间列表列表，以秒为单位<br>isAbsolute - 如果为true，则以绝对角度描述运动，否则角度相对于当前角度。</p>
+</blockquote>
+<p>示例：<br>＃显示一个关节的单个目标角度的示例<br>    ＃在1.0秒内将头部偏航插入1.0弧度<br>    names =“HeadYaw”<br>    angleLists = 50.0 * almath.TO_RAD<br>    timeLists = 1.0<br>    isAbsolute = True<br>    motionProxy.angleInterpolation（names，angleLists，timeLists，isAbsolute）</p>
+<p>＃显示一个关节的单个轨迹的示例<br>    ＃将头部偏航插入1.0弧度，并在2.0秒内回零<br>    names =“HeadYaw”<br>    ＃2角度<br>    angleLists = [30.0 * almath.TO_RAD，0.0]<br>    ＃ 2次<br>    timeLists = [1.0,2.0]  #后面的时间一定要比原来的大（timeLists = [1.0,1.0]  报错：times must be increasing 所以应该表示的是总的时间 在1s内转30度 在2s内转30度再转回来 即转回的时间也是1s）<br>    isAbsolute = True<br>    motionProxy.angleInterpolation（names，angleLists，timeLists，isAbsolute）</p>
+<p> ＃显示多个轨迹的示例<br>    names = [“HeadYaw”，“HeadPitch”]<br>    angleLists = [30.0 <em> almath.TO_RAD，30.0 </em> almath.TO_RAD] #左下方<br>    timeLists = [1.0,1.2] #（可以为timeLists = [1.0,1.0]）<br>    isAbsolute = True<br>    motionProxy.angleInterpolation（names，angleLists，timeLists，isAbsolute）</p>
+<p>＃显示多个轨迹的示例<br>    ＃将头部偏航插入1.0弧度，并在2.0秒内回零<br>    ＃在长时间内上下插入HeadPitch。<br>    names = [“HeadYaw”，“HeadPitch”]<br>    ＃每个关节可以有不同长度的列表，但数量<br>    ＃角度和每个关节的次数必须相同。<br>    ＃这里，第二个关节（“HeadPitch”）有三个角度，和<br>    ＃三个相应的时间。<br>    angleLists = [[50.0 <em> almath.TO_RAD，0.0]，<br>                   [-30.0 </em> almath.TO_RAD，30.0 * almath.TO_RAD，0.0]]<br>    timeLists = [[1.0,2.0]，[1.0,2.0,3.0]]<br>    isAbsolute = True<br>    motionProxy.angleInterpolation（names，angleLists，timeLists，isAbsolute）</p>
+<h4 id="ALMotionProxy-angleInterpolationWithSpeed"><a href="#ALMotionProxy-angleInterpolationWithSpeed" class="headerlink" title="ALMotionProxy :: angleInterpolationWithSpeed"></a>ALMotionProxy :: angleInterpolationWithSpeed</h4><p><img src="https://img-blog.csdnimg.cn/20191104132719458.png" alt="在这里插入图片描述">)<img src="https://img-blog.csdnimg.cn/20191104132757564.png" alt="在这里插入图片描述"></p>
+<blockquote>
+<p>void ALMotionProxy :: angleInterpolationWithSpeed （const AL :: ALValue＆ names，const AL :: ALValue＆targetAngles，const float＆maxSpeedFraction ）<br>使用最大速度的一小部分将一个或多个关节插值到目标角度。每个关节只允许一个目标角度。这是一个阻塞调用。<br>names - 关节，链条，“主体”，“JointActuators”，“接头”或“执行器”的名称或名称。<br>targetAngles - 以弧度表示的角度或角度列表<br>maxSpeedFraction - 一个分数</p>
+</blockquote>
+<p>示例：<br>＃显示一个关节的单个目标的示例<br>    names =“HeadYaw”<br>    targetAngles = 1.0<br>    maxSpeedFraction = 0.2＃使用最大关节速度的20％<br>    motionProxy.angleInterpolationWithSpeed（names，targetAngles，maxSpeedFraction）</p>
+<p>＃显示多个关节的示例<br>    ＃而不是列出每个关节，您可以使用链名称<br>    #bein扩展为包含链中的所有关节。在这种情况下，<br>    ＃“Head”将被解释为[“HeadYaw”，“HeadPitch”]<br>    names =“Head”<br>    ＃我们仍然需要指定正确的目标角度数<br>    targetAngles = [0.5,0.25]<br>    maxSpeedFraction = 0.2＃使用最大关节速度的20％<br>    motionProxy.angleInterpolationWithSpeed（names，targetAngles，maxSpeedFraction）</p>
+<p>＃显示体零位置的示例<br>    ＃而不是列出每个关节，您可以使用名称“Body”<br>    names =’Body’<br>    ＃我们仍然需要指定正确的目标角度数，所以<br>    ＃我们需要找到这个Nao的关节数量。<br>    ＃这里我们使用getBodyNames方法，它告诉我们所有人<br>    ＃别名“Body”中关节的名称。<br>    ＃我们可以将此列表用于“names”参数。<br>     numJoints = len(motionProxy.getBodyNames(“Body”))<br>    ＃列出正确的长度。所有角度都为零。<br>    targetAngles = [0.0] * numJoints<br>    ＃使用最大关节速度的10％<br>    maxSpeedFraction = 0.1<br>    motionProxy.angleInterpolationWithSpeed(names, targetAngles, maxSpeedFraction)</p>
+<h4 id="ALMotionProxy-move"><a href="#ALMotionProxy-move" class="headerlink" title="ALMotionProxy :: move"></a>ALMotionProxy :: move</h4><p><img src="https://img-blog.csdnimg.cn/20191104133003615.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzA5Mjg2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">)<img src="https://img-blog.csdnimg.cn/2019110413302921.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzA5Mjg2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<blockquote>
+<p>void ALMotionProxy :: move （const float＆ x，const float＆ y，const float＆theta，const AL :: ALValue moveConfig ）<br>1方法的重载<br>使机器人以给定的速度移动，以FRAME_ROBOT表示，具有移动配置。这是一个非阻塞调用。<br>x - 沿X轴的速度，以米/秒为单位。向后运动使用负值<br>y - 沿Y轴的速度，以米/秒为单位。使用正值向左移动<br>theta - 绕Z轴的速度，以弧度/秒为单位。使用负值顺时针旋转<br>moveConfig - 具有自定义移动配置的ALValue。</p>
+</blockquote>
+<h4 id="ALMotionProxy-moveToward"><a href="#ALMotionProxy-moveToward" class="headerlink" title="ALMotionProxy :: moveToward"></a>ALMotionProxy :: moveToward</h4><p>void ALMotionProxy :: moveToward （const float＆ x，const float＆ y，const float＆theta，const AL :: ALValue moveConfig ）<br>使机器人以给定的标准化速度移动，以FRAME_ROBOT表示，具有移动配置。这是一个非阻塞调用。</p>
+<p>x - 沿X轴标准化，无单位，速度。+1和-1分别对应于前向和后向的最大速度。<br>y - 沿Y轴标准化，无单位，速度。+1和-1分别对应于左右方向上的最大速度。<br>theta-标准化，无单位，绕Z轴的速度。+1和-1分别对应于逆时针和顺时针方向的最大速度<br>moveConfig - 具有自定义移动配置的ALValue。</p>
+<blockquote>
+<p>＃示例显示moveToward的使用<br>    ＃参数是最大值的分数<br>    ＃这里我们要求全速前进<br>    x     = 1.0<br>    y     = 0.0<br>    theta = 0.0<br>    frequency = 1.0<br>    motionProxy.moveToward(x, y, theta, [[“Frequency”, frequency]])<br>＃如果我们不发送另一个命令，他将永远移动<br>    ＃让我们让他慢下来（步长），并打开后3秒<br>time.sleep(3)<br>    x     = 0.5<br>    theta = 0.6<br>motionProxy.moveToward(x, y, theta, [[“Frequency”, frequency]])</p>
+</blockquote>
+<h4 id="ALMotionProxy-setFootStepsWithSpeed"><a href="#ALMotionProxy-setFootStepsWithSpeed" class="headerlink" title="ALMotionProxy :: setFootStepsWithSpeed"></a>ALMotionProxy :: setFootStepsWithSpeed</h4><p><img src="https://img-blog.csdnimg.cn/20191104221101530.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzA5Mjg2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">)<img src="https://img-blog.csdnimg.cn/20191104220950289.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzA5Mjg2,size_16,color_FFFFFF,t_70" alt=""></p>
+<blockquote>
+<p>void ALMotionProxy :: setFootStepsWithSpeed （const std :: vector <std :: string>＆ legName，const AL :: ALValue＆ footSteps，const std :: vector <float>＆ fractionMaxSpeed，const bool＆ clearExisting ）<br>仅限NAO<br>使机器人快速地做足步计划器。这是一个阻塞调用。<br>legName - 要移动的腿的名称（’LLeg’or’RLeg’）<br>footSteps - [x，y，theta]，[沿X / Y的位置，Z轴的方向]，相对于另一个腿，以[米，米，弧度]为单位。必须小于[MaxStepX，MaxStepY，MaxStepTheta]<br>fractionMaxSpeed - 每步脚的速度。必须介于0和1之间<br>clearExisting - 清除现有的脚步</p>
+</blockquote>
+<p>＃小步前进和逆时针用左脚<br>    legName = [“LLeg”]<br>    X       = 0.04<br>    Y       = 0.1<br>    Theta   = 0.3<br>    footSteps = [[X, Y, Theta]]<br>    fractionMaxSpeed = [1.0]<br>    clearExisting = False<br>    motionProxy.setFootStepsWithSpeed(legName, footSteps, fractionMaxSpeed, clearExisting)</p>
+<p>  ＃小步前进和逆时针用左脚<br>    legName = [“LLeg”, “RLeg”]<br>    X       = 0.04<br>    Y       = 0.1<br>    Theta   = 0.3<br>    footSteps = [[X, Y, Theta], [X, -Y, Theta]]<br>    fractionMaxSpeed = [1.0, 1.0]<br>    clearExisting = False<br>motionProxy.setFootStepsWithSpeed(legName, footSteps, fractionMaxSpeed, clearExisting)</p>
+<h4 id="ALMotionProxy-waitUntilMoveIsFinished"><a href="#ALMotionProxy-waitUntilMoveIsFinished" class="headerlink" title="ALMotionProxy :: waitUntilMoveIsFinished"></a>ALMotionProxy :: waitUntilMoveIsFinished</h4><blockquote>
+<p>void ALMotionProxy :: waitUntilMoveIsFinished （）</p>
+</blockquote>
+<p>等待MoveTask结束：此方法可用于阻止脚本/代码执行，直到完成移动任务。</p>
+<h3 id="ALMemory"><a href="#ALMemory" class="headerlink" title="ALMemory"></a>ALMemory</h3><h4 id="ALMemoryProxy-getData"><a href="#ALMemoryProxy-getData" class="headerlink" title="ALMemoryProxy :: getData"></a>ALMemoryProxy :: getData</h4><p><img src="https://img-blog.csdnimg.cn/20191104230635688.png" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20191104230703245.png" alt="在这里插入图片描述"></p>
+<h4 id="ALMemoryProxy-getDataList"><a href="#ALMemoryProxy-getDataList" class="headerlink" title="ALMemoryProxy :: getDataList"></a>ALMemoryProxy :: getDataList</h4><p><img src="https://img-blog.csdnimg.cn/20191104231023623.png" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20191104231006634.png" alt="在这里插入图片描述"></p>
+<h4 id="ALMemoryProxy-declareEvent"><a href="#ALMemoryProxy-declareEvent" class="headerlink" title="ALMemoryProxy :: declareEvent"></a>ALMemoryProxy :: declareEvent</h4><p><img src="https://img-blog.csdnimg.cn/20191104231400569.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20191104231456979.png" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20191104231536830.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzA5Mjg2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h4 id="ALMemoryProxy-insertData"><a href="#ALMemoryProxy-insertData" class="headerlink" title="ALMemoryProxy :: insertData"></a>ALMemoryProxy :: insertData</h4><p><img src="https://img-blog.csdnimg.cn/20191104231640314.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzA5Mjg2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20191104231711189.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzA5Mjg2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h3 id="ALTracker"><a href="#ALTracker" class="headerlink" title="ALTracker"></a>ALTracker</h3><h4 id="ALTrackerProxy-getActiveTarget"><a href="#ALTrackerProxy-getActiveTarget" class="headerlink" title="ALTrackerProxy :: getActiveTarget"></a>ALTrackerProxy :: getActiveTarget</h4><p><img src="https://img-blog.csdnimg.cn/20191105092719864.png" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20191105092748702.png" alt="在这里插入图片描述"></p>
+<h4 id="ALTrackerProxy-getMaximumDistanceDetection"><a href="#ALTrackerProxy-getMaximumDistanceDetection" class="headerlink" title="ALTrackerProxy :: getMaximumDistanceDetection"></a>ALTrackerProxy :: getMaximumDistanceDetection</h4><p><img src="https://img-blog.csdnimg.cn/20191105092902982.png" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20191105092842717.png" alt="在这里插入图片描述"></p>
+<h4 id="ALTrackerProxy-getMode"><a href="#ALTrackerProxy-getMode" class="headerlink" title="ALTrackerProxy::getMode"></a>ALTrackerProxy::getMode</h4><p><img src="https://img-blog.csdnimg.cn/20191105092957504.png" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20191105093025988.png" alt="在这里插入图片描述"></p>
+<h4 id="ALTrackerProxy-getRelativePosition"><a href="#ALTrackerProxy-getRelativePosition" class="headerlink" title="ALTrackerProxy :: getRelativePosition"></a>ALTrackerProxy :: getRelativePosition</h4><p><img src="https://img-blog.csdnimg.cn/20191105093151996.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20191105093127809.png" alt="在这里插入图片描述"></p>
+<h4 id="ALTrackerProxy-isNewTargetDetected"><a href="#ALTrackerProxy-isNewTargetDetected" class="headerlink" title="ALTrackerProxy :: isNewTargetDetected"></a>ALTrackerProxy :: isNewTargetDetected</h4><p><img src="https://img-blog.csdnimg.cn/20191105093349871.png" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20191105093409307.png" alt="在这里插入图片描述"></p>
+<h4 id="ALTrackerProxy-isSearchEnabled"><a href="#ALTrackerProxy-isSearchEnabled" class="headerlink" title="ALTrackerProxy::isSearchEnabled"></a>ALTrackerProxy::isSearchEnabled</h4><p><img src="https://img-blog.csdnimg.cn/20191105093451746.png" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/201911050935585.png" alt="在这里插入图片描述"></p>
+<h4 id="ALTrackerProxy-getTargetPosition"><a href="#ALTrackerProxy-getTargetPosition" class="headerlink" title="ALTrackerProxy :: getTargetPosition"></a>ALTrackerProxy :: getTargetPosition</h4><p><img src="https://img-blog.csdnimg.cn/2019110510070682.png" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20191105100749883.png" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20191105100848642.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzA5Mjg2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h4 id="ALTrackerProxy-isTargetLost"><a href="#ALTrackerProxy-isTargetLost" class="headerlink" title="ALTrackerProxy::isTargetLost"></a>ALTrackerProxy::isTargetLost</h4><p><img src="https://img-blog.csdnimg.cn/20191105093510921.png" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20191105093527953.png" alt="在这里插入图片描述"></p>
+<h4 id="ALTrackerProxy-setTimeOut"><a href="#ALTrackerProxy-setTimeOut" class="headerlink" title="ALTrackerProxy::setTimeOut"></a>ALTrackerProxy::setTimeOut</h4><p><img src="https://img-blog.csdnimg.cn/20191105093709541.png" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20191105093731977.png" alt="在这里插入图片描述"></p>
+<h3 id="ALVideoDevice"><a href="#ALVideoDevice" class="headerlink" title="ALVideoDevice"></a>ALVideoDevice</h3><h4 id="ALVideoDeviceProxy-getImagesRemote"><a href="#ALVideoDeviceProxy-getImagesRemote" class="headerlink" title="ALVideoDeviceProxy :: getImagesRemote"></a>ALVideoDeviceProxy :: getImagesRemote</h4><p><img src="https://img-blog.csdnimg.cn/20191106070419688.png" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20191106070440820.png" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20191106070633532.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzA5Mjg2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20191106070518938.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzA5Mjg2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/2019110607061278.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzA5Mjg2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20191106070538951.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzA5Mjg2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="Events"><a href="#Events" class="headerlink" title="Events"></a>Events</h2><h3 id="ALLandMarkDetection"><a href="#ALLandMarkDetection" class="headerlink" title="ALLandMarkDetection"></a>ALLandMarkDetection</h3><p><img src="https://img-blog.csdnimg.cn/2019110422353448.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20191104223604810.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzA5Mjg2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20191104223654926.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzA5Mjg2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20191104223747163.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzA5Mjg2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20191104223811743.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzA5Mjg2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>结果变量的组织方式</p>
+<p>①如果未检测到Naomarks，则变量为空。更确切地说，它是一个零元素的数组（即在python中打印为[]）</p>
+<p>②如果检测到N个Naomarks，则变量结构由两个字段组成：<br>[[TimeStampField] [Mark_info_0，Mark_info_1 ,. 。。，Mark_info_N-1]]：<br>A：TimeStampField = [TimeStamp_seconds，Timestamp_microseconds]。该字段是用于执行检测的图像的时间戳。<br>B：Mark_info = [ShapeInfo，ExtraInfo]。对于每个检测到的标记，我们有一个Mark_info字段。<br>B\1 ShapeInfo = [1，alpha，beta，sizeX，sizeY，heading]。alpha和beta表示Naomark在摄像机角度方面的位置 - sizeX和sizeY是摄像机角度的标记大小 - 航向角描述了Naomark关于机器人头部的垂直轴方向。<br>B\2 ExtraInfo = [MarkID]。标记ID是写在Naomark上的编号，与其图案相对应。</p>
+<h3 id="ALRedBallDetection"><a href="#ALRedBallDetection" class="headerlink" title="ALRedBallDetection"></a>ALRedBallDetection</h3><p><img src="https://img-blog.csdnimg.cn/20191104224208178.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20191104224225425.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20191104224349616.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzA5Mjg2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20191104224438706.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzA5Mjg2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20191104224506246.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzA5Mjg2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>ALRedBallDetection基于摄像机给出的图像中红色像素的检测。这些像素根据它们与YUV颜色空间中的红色值的距离进行滤波，使用计算的阈值，即使在光照条件变化的情况下也可以进行检测。然后，从所有检测到的红色像素组中，仅保留定义圆形形状的红色像素。<br>当在当前图像上找到一组像素时，将更新ALMemory键redBallDetected。</p>
+<p>结果变量的组织形式</p>
+<p>TimeStamp：此字段是用于执行检测的图像的时间戳</p>
+<p>centerX和centerY是球的中心角度坐标（弧度）<br>角度的原点是图像的中间。centerX 对应于沿Z轴的直接（逆时针）旋转，centerY对应于沿Y轴的直接旋转，如下图所示：</p>
+<p>sizeX和sizeY是球在角度（弧度）的球“水平和垂直半径</p>
+<h2 id="相关名词"><a href="#相关名词" class="headerlink" title="相关名词"></a>相关名词</h2><h3 id="参考系"><a href="#参考系" class="headerlink" title="参考系"></a>参考系</h3><p><img src="https://img-blog.csdnimg.cn/20191105101227726.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzA5Mjg2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>FRAME_TORSO：这是附加到机器人的躯干参考上的，因此机器人在走路时随其移动，在他倾斜时改变方向。当您执行非常局部的任务时（在躯干框架的方向上有意义），此空间很有用。</p>
+<p>FRAME_ROBOT：这是围绕垂直Z轴投影的两只脚位置的平均值。该空间很有用，因为x轴始终向前，因此提供了一个以自我为中心的自然参考。</p>
+<p>FRAME_WORLD：这是一个固定的原点，永远不会改变。当机器人行走时，它会被留下，并且在机器人转动之后z旋转会有所不同。此空间对于需要外部绝对参考框架的计算很有用。</p>
+<p>执行任务时，空间是在任务开始时确定的，并且在其余的插值过程中始终保持不变。也就是说，插值一旦定义就不会随着腿的移动或躯干方向的变化而随着参考值的变化而变化。</p>
+<p><img src="https://img-blog.csdnimg.cn/20191105102313509.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzA5Mjg2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h3 id="刚度"><a href="#刚度" class="headerlink" title="刚度"></a>刚度</h3><p><img src="https://img-blog.csdnimg.cn/20191105101006707.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzA5Mjg2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h3 id="阻塞方法与非阻塞方法"><a href="#阻塞方法与非阻塞方法" class="headerlink" title="阻塞方法与非阻塞方法"></a>阻塞方法与非阻塞方法</h3><p><img src="https://img-blog.csdnimg.cn/20191105101503845.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzA5Mjg2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20191105101516358.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzA5Mjg2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h3 id="Position6D"><a href="#Position6D" class="headerlink" title="Position6D"></a>Position6D</h3><p>Position6D是一个6维向量，由3个平移（以米为单位）和3个旋转（以弧度为单位）组成。</p>
+<h2 id="基于NAO机器人目标识别与定位算法"><a href="#基于NAO机器人目标识别与定位算法" class="headerlink" title="基于NAO机器人目标识别与定位算法"></a>基于NAO机器人目标识别与定位算法</h2><p><img src="https://img-blog.csdnimg.cn/20191104232531612.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzA5Mjg2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20191104232638578.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzA5Mjg2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20191104232715587.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzA5Mjg2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20191104232732597.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzA5Mjg2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20191104232801589.png" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20191104232828780.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzA5Mjg2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20191104232858306.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzA5Mjg2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/2019110423292276.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzA5Mjg2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20191104232949800.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzA5Mjg2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20191104233040502.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzA5Mjg2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20191104233123262.png" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20191104233146811.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzA5Mjg2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>选自：柏雪峰,杨斌.基于NAO机器人目标识别与定位算法[J].成都信息工程学院学报,2014,29(06):625-629.</p>
+
+      </div>
+	  
+            <! -- 添加版权信息 -->
+<div class="article-footer-copyright">
+<center>本文由<b><a href="/index.html" target="_blank" title="AIR@USC">AIR@USC</a></b>创作和发表,采用<b>BY</b>-<b>NC</b>-<b>SA</b>国际许可协议进行许可</center>
+ 
+<center>转载请注明作者及出处,本文作者为<b><a href="/index.html" target="_blank" title="AIR@USC">AIR@USC</a></b>,本文标题为<b><a href="/2019/11/10/NAO机器人的小记/" target="_blank" title="NAO机器人的小记">NAO机器人的小记</a></b></center>
+ 
+<center>本文链接为<b><a href="/2019/11/10/NAO机器人的小记/" target="_blank" title="NAO机器人的小记">http://uscair.club/2019/11/10/NAO机器人的小记/</a></b>.</center>
+</div>
+<! -- 添加版权信息 -->
+        
+      
+      
+        <br>
+        
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-11-10T00:00:00+08:00">
+  <a class='notlink'>
+    <i class="fas fa-clock" aria-hidden="true"></i>
+    <p>updated at Nov 10, 2019</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/NAOqi/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>NAOqi</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://uscair.club/2019/11/10/NAO%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9A%84%E5%B0%8F%E8%AE%B0/&title=NAO机器人的小记 | AIR&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://uscair.club/2019/11/10/NAO%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9A%84%E5%B0%8F%E8%AE%B0/&title=NAO机器人的小记 | AIR&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=http://uscair.club/2019/11/10/NAO%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9A%84%E5%B0%8F%E8%AE%B0/&title=NAO机器人的小记 | AIR&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+      
+      
+          <div class="prev-next">
+              
+                  <section class="prev">
+                      <span class="art-item-left">
+                          <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;Previous</h6>
+                          <h4>
+                              <a href="/2020/01/13/hello-world/" rel="prev" title="Hello World">
+                                
+                                    Hello World
+                                
+                              </a>
+                          </h4>
+                          
+                              
+                              <h6 class="tags">
+                                  <a class="tag" href="/tags/test/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> test</a>
+                              </h6>
+                          
+                      </span>
+                  </section>
+              
+              
+                  <section class="next">
+                      <span class="art-item-right" aria-hidden="true">
+                          <h6>Next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                          <h4>
+                              <a href="/2019/08/18/opencv-read/" rel="prev" title="OpenCV—Python:（一）图片的读取、显示、保存">
+                                  
+                                      OpenCV—Python:（一）图片的读取、显示、保存
+                                  
+                              </a>
+                          </h4>
+                          
+                              
+                              <h6 class="tags">
+                                  <a class="tag" href="/tags/OpenCV/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> OpenCV</a>
+                              </h6>
+                          
+                      </span>
+                  </section>
+              
+          </div>
+      
+    </section>
+  </article>
+
+
+
+  <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box comments">
+    <section class="article typo">
+      <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;Comments</h4>
+      
+      
+        <section id="comments">
+          <div id="lv-container" data-id="city" data-uid="MTAyMC80ODI4NC8yNDc3OA==">
+            <noscript><div><i class='fas fa-exclamation-triangle'>&nbsp;Unable to load Livere, please make sure your network can access.</div></noscript>
+          </div>
+        </section>
+      
+      
+      
+    </section>
+  </article>
+
+
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+  <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX","TeX"],
+      linebreaks: { automatic:true },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: { autoNumber: "AMS" },
+      noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+      Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+  });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += (all[i].SourceElement().parentNode.className ? ' ' : '') + 'has-jax';
+    }
+  });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+
+
+  <script>
+    window.subData = {
+      title: 'NAO机器人的小记',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+    
+    
+      
+      
+        
+          
+          
+            
+              <section class='widget author'>
+  <div class='content pure'>
+    
+	<a href="https://github.com/AIRUSC" target="_blank" rel="noopener" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+      <div class='avatar'>
+        <img class='avatar' src='https://img.vim-cn.com/b5/c85ca5730c5889d433b1d0958d0d1d0b478687.png'/>
+      </div>
+    
+    
+      <div class='text'>
+        
+        
+        
+          <p><span id="jinrishici-sentence">AIR</span></p>
+          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+        
+      </div>
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/atom.xml"
+              class="social fas fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="mailto:airusc@foxmail.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://github.com/AIRUSC"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
+    
+	<hr/>
+	<font color="#2EF0FF" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;访客地图 </font>
+  </div>
+  <script type="text/javascript" src="//rf.revolvermaps.com/0/0/6.js?i=597ckzulxto&amp;m=7&amp;c=e63100&amp;cr1=ffffff&amp;f=arial&amp;l=0&amp;bv=90&amp;lx=-420&amp;ly=420&amp;hi=20&amp;he=7&amp;hc=a8ddff&amp;rs=80" async="async"></script>
+</section>
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget toc-wrapper'>
+    
+<header class='pure'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;TOC</div>
+  
+    <!-- <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div> -->
+  
+</header>
+
+    <div class='content pure'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#joint"><span class="toc-text">joint</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#摄像机相关参数"><span class="toc-text">摄像机相关参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#API"><span class="toc-text">API</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ALAutonomousLife"><span class="toc-text">ALAutonomousLife</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#孤立状态solitary"><span class="toc-text">孤立状态solitary</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#交互状态interactive"><span class="toc-text">交互状态interactive</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#禁用状态disabled"><span class="toc-text">禁用状态disabled</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#保护状态safeguard"><span class="toc-text">保护状态safeguard</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ALRobotPosture"><span class="toc-text">ALRobotPosture</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ALRobotPostureProxy-getPostureList"><span class="toc-text">ALRobotPostureProxy :: getPostureList</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ALRobotPostureProxy-getPosture"><span class="toc-text">ALRobotPostureProxy :: getPosture</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ALRobotPostureProxy-goToPosture"><span class="toc-text">ALRobotPostureProxy :: goToPosture</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ALMotion"><span class="toc-text">ALMotion</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ALMotionProxy-setStiffnesses"><span class="toc-text">ALMotionProxy :: setStiffnesses</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ALMotionProxy-getStiffnesses"><span class="toc-text">ALMotionProxy :: getStiffnesses</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ALMotionProxy-angleInterpolation"><span class="toc-text">ALMotionProxy :: angleInterpolation</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ALMotionProxy-angleInterpolationWithSpeed"><span class="toc-text">ALMotionProxy :: angleInterpolationWithSpeed</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ALMotionProxy-move"><span class="toc-text">ALMotionProxy :: move</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ALMotionProxy-moveToward"><span class="toc-text">ALMotionProxy :: moveToward</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ALMotionProxy-setFootStepsWithSpeed"><span class="toc-text">ALMotionProxy :: setFootStepsWithSpeed</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ALMotionProxy-waitUntilMoveIsFinished"><span class="toc-text">ALMotionProxy :: waitUntilMoveIsFinished</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ALMemory"><span class="toc-text">ALMemory</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ALMemoryProxy-getData"><span class="toc-text">ALMemoryProxy :: getData</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ALMemoryProxy-getDataList"><span class="toc-text">ALMemoryProxy :: getDataList</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ALMemoryProxy-declareEvent"><span class="toc-text">ALMemoryProxy :: declareEvent</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ALMemoryProxy-insertData"><span class="toc-text">ALMemoryProxy :: insertData</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ALTracker"><span class="toc-text">ALTracker</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ALTrackerProxy-getActiveTarget"><span class="toc-text">ALTrackerProxy :: getActiveTarget</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ALTrackerProxy-getMaximumDistanceDetection"><span class="toc-text">ALTrackerProxy :: getMaximumDistanceDetection</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ALTrackerProxy-getMode"><span class="toc-text">ALTrackerProxy::getMode</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ALTrackerProxy-getRelativePosition"><span class="toc-text">ALTrackerProxy :: getRelativePosition</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ALTrackerProxy-isNewTargetDetected"><span class="toc-text">ALTrackerProxy :: isNewTargetDetected</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ALTrackerProxy-isSearchEnabled"><span class="toc-text">ALTrackerProxy::isSearchEnabled</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ALTrackerProxy-getTargetPosition"><span class="toc-text">ALTrackerProxy :: getTargetPosition</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ALTrackerProxy-isTargetLost"><span class="toc-text">ALTrackerProxy::isTargetLost</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ALTrackerProxy-setTimeOut"><span class="toc-text">ALTrackerProxy::setTimeOut</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ALVideoDevice"><span class="toc-text">ALVideoDevice</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ALVideoDeviceProxy-getImagesRemote"><span class="toc-text">ALVideoDeviceProxy :: getImagesRemote</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Events"><span class="toc-text">Events</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ALLandMarkDetection"><span class="toc-text">ALLandMarkDetection</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ALRedBallDetection"><span class="toc-text">ALRedBallDetection</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#相关名词"><span class="toc-text">相关名词</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#参考系"><span class="toc-text">参考系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#刚度"><span class="toc-text">刚度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#阻塞方法与非阻塞方法"><span class="toc-text">阻塞方法与非阻塞方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Position6D"><span class="toc-text">Position6D</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基于NAO机器人目标识别与定位算法"><span class="toc-text">基于NAO机器人目标识别与定位算法</span></a></li></ol>
+    </div>
+  </section>
+
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              <section class='widget grid'>
+  
+<header class='pure'>
+  <div><i class="fas fa-map-signs fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;站内导航</div>
+  
+</header>
+
+  <div class='content pure'>
+    <ul class="grid navgation">
+      
+        <li><a class="flat-box" title="/" href="/"
+          
+          
+          id="home">
+          
+            <i class="fas fa-clock fa-fw" aria-hidden="true"></i>
+          
+          近期文章
+        </a></li>
+      
+        <li><a class="flat-box" title="/archives/" href="/archives/"
+          
+            rel="nofollow"
+          
+          
+          id="archives">
+          
+            <i class="fas fa-archive fa-fw" aria-hidden="true"></i>
+          
+          文章归档
+        </a></li>
+      
+        <li><a class="flat-box" title="https://xaoxuu.com/wiki/material-x/" href="https://xaoxuu.com/wiki/material-x/"
+          
+            rel="nofollow"
+          
+          
+          id="https:xaoxuu.comwikimaterial-x">
+          
+            <i class="fas fa-book fa-fw" aria-hidden="true"></i>
+          
+          主题文档
+        </a></li>
+      
+        <li><a class="flat-box" title="/about/" href="/about/"
+          
+            rel="nofollow"
+          
+          
+          id="about">
+          
+            <i class="fas fa-info-circle fa-fw" aria-hidden="true"></i>
+          
+          关于小站
+        </a></li>
+      
+    </ul>
+  </div>
+</section>
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget category'>
+    
+<header class='pure'>
+  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Categories</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/blog/categories/"
+    title="blog/categories/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <ul class="entry">
+        
+          <li><a class="flat-box" title="/categories/Hexo/" href="/categories/Hexo/"><div class='name'>Hexo</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/NAO/" href="/categories/NAO/"><div class='name'>NAO</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/test/" href="/categories/test/"><div class='name'>test</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" href="/categories/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"><div class='name'>数字图像处理</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"><div class='name'>机器学习</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%93%E6%A0%8F/" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%93%E6%A0%8F/"><div class='name'>机器学习专栏</div><div class='badge'>(1)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget tagcloud'>
+    
+<header class='pure'>
+  <div><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Hot Tags</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/blog/tags/"
+    title="blog/tags/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <a href="/tags/AI%E5%A4%A7%E6%95%B0%E6%8D%AE/" style="font-size: 14px; color: #999">AI大数据</a> <a href="/tags/NAOqi/" style="font-size: 14px; color: #999">NAOqi</a> <a href="/tags/OpenCV/" style="font-size: 14px; color: #999">OpenCV</a> <a href="/tags/test/" style="font-size: 14px; color: #999">test</a> <a href="/tags/%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF/" style="font-size: 14px; color: #999">拉普拉斯</a> <a href="/tags/%E6%95%B0%E7%90%86%E5%9F%BA%E7%A1%80/" style="font-size: 14px; color: #999">数理基础</a> <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/" style="font-size: 24px; color: #555">机器学习基础</a> <a href="/tags/%E6%A8%A1%E6%9D%BF/" style="font-size: 14px; color: #999">模板</a>
+    </div>
+  </section>
+
+
+            
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+    
+
+  
+</aside>
+
+<footer id="footer" class="clearfix">
+  
+  
+    <div class="social-wrapper">
+      
+        
+          <a href="/atom.xml"
+            class="social fas fa-rss flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="mailto:airusc@foxmail.com"
+            class="social fas fa-envelope flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="https://github.com/AIRUSC"
+            class="social fab fa-github flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+    </div>
+  
+  <br>
+  <div><p>Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
+</div>
+  <div>
+    Use
+    <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a>
+    as theme
+    
+      , 
+      total visits
+      <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+      times
+    
+    . 
+  </div>
+  
+  <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date(); 
+    function createtime() { 
+        var grt= new Date("01/13/2020 16:36:00");//在此处修改你的建站时间，格式：月/日/年 时:分:秒
+        now.setTime(now.getTime()+250); 
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+    } 
+setInterval("createtime()",250);
+</script>
+  
+</footer>
+<script>setLoadingBarProgress(80);</script>
+
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+
+  <script>
+    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+    var ALGOLIA_API_KEY = "";
+    var ALGOLIA_APP_ID = "";
+    var ALGOLIA_INDEX_NAME = "";
+    var AZURE_SERVICE_NAME = "";
+    var AZURE_INDEX_NAME = "";
+    var AZURE_QUERY_KEY = "";
+    var BAIDU_API_ID = "";
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/"||"/";
+    if(!ROOT.endsWith('/'))ROOT += '/';
+  </script>
+
+<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
+
+
+  <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      const $reveal = $('.reveal');
+      if ($reveal.length === 0) return;
+      const sr = ScrollReveal({ distance: 0 });
+      sr.reveal('.reveal');
+    });
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+  
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        if ('.cover') {
+          $('.cover').backstretch(
+          ["http://gss0.baidu.com/-fo3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/00e93901213fb80e3db9657d31d12f2eb938942b.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        } else {
+          $.backstretch(
+          ["http://gss0.baidu.com/-fo3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/00e93901213fb80e3db9657d31d12f2eb938942b.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+      if (typeof LivereTower === 'function') { return; }
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+      e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  </script>
+
+
+
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.11/js/app.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.11/js/search.js"></script>
+
+
+
+
+
+<!-- 复制 -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  let COPY_SUCCESS = "Copied";
+  let COPY_FAILURE = "Copy failed";
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '  <i class="fa fa-copy"></i><span>Copy</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+
+      clipboard.on('success', function(e) {
+        //您可以加入成功提示
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+        success_prompt(COPY_SUCCESS);
+        e.clearSelection();
+      });
+      clipboard.on('error', function(e) {
+        //您可以加入失败提示
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+        fail_prompt(COPY_FAILURE);
+      });
+    }
+    initCopyCode();
+
+  }(window, document);
+
+  /**
+   * 弹出式提示框，默认1.5秒自动消失
+   * @param message 提示信息
+   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
+   * @param time 消失时间
+   */
+  var prompt = function (message, style, time)
+  {
+      style = (style === undefined) ? 'alert-success' : style;
+      time = (time === undefined) ? 1500 : time*1000;
+      $('<div>')
+          .appendTo('body')
+          .addClass('alert ' + style)
+          .html(message)
+          .show()
+          .delay(time)
+          .fadeOut();
+  };
+
+  // 成功提示
+  var success_prompt = function(message, time)
+  {
+      prompt(message, 'alert-success', time);
+  };
+
+  // 失败提示
+  var fail_prompt = function(message, time)
+  {
+      prompt(message, 'alert-danger', time);
+  };
+
+  // 提醒
+  var warning_prompt = function(message, time)
+  {
+      prompt(message, 'alert-warning', time);
+  };
+
+  // 信息提示
+  var info_prompt = function(message, time)
+  {
+      prompt(message, 'alert-info', time);
+  };
+
+</script>
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+  
+  <canvas id="canvas" width="1440" height="900" ></canvas>
+<script>
+	window.onload = function(){
+    //获取画布对象
+    var canvas = document.getElementById("canvas");
+    //获取画布的上下文
+    var context =canvas.getContext("2d");
+    var s = window.screen;
+    var W = canvas.width = s.width;
+    var H = canvas.height;
+    //获取浏览器屏幕的宽度和高度
+    //var W = window.innerWidth;
+    //var H = window.innerHeight;
+    //设置canvas的宽度和高度
+    canvas.width = W;
+    canvas.height = H;
+    //每个文字的字体大小
+    var fontSize = 12;
+    //计算列
+    var colunms = Math.floor(W /fontSize);	
+    //记录每列文字的y轴坐标
+    var drops = [];
+    //给每一个文字初始化一个起始点的位置
+    for(var i=0;i<colunms;i++){
+        drops.push(0);
+    }
+    //运动的文字
+    var str ="WELCOME TO SH.ITRHX.COM";
+    //4:fillText(str,x,y);原理就是去更改y的坐标位置
+    //绘画的函数
+    function draw(){
+        context.fillStyle = "rgba(238,238,238,.08)";//遮盖层
+        context.fillRect(0,0,W,H);
+        //给字体设置样式
+        context.font = "600 "+fontSize+"px  Georgia";
+        //给字体添加颜色
+        context.fillStyle = ["#2EF0FF", "#2EF0FF", "#2EF0FF", "#2EF0FF", "#2EF0FF", "#2EF0FF", "#2EF0FF", "#2EF0FF", "#2EF0FF", "#2EF0FF"][parseInt(Math.random() * 10)];//randColor();可以rgb,hsl, 标准色，十六进制颜色
+        //写入画布中
+        for(var i=0;i<colunms;i++){
+            var index = Math.floor(Math.random() * str.length);
+            var x = i*fontSize;
+            var y = drops[i] *fontSize;
+            context.fillText(str[index],x,y);
+            //如果要改变时间，肯定就是改变每次他的起点
+            if(y >= canvas.height && Math.random() > 0.99){
+                drops[i] = 0;
+            }
+            drops[i]++;
+        }
+    };
+    function randColor(){//随机颜色
+        var r = Math.floor(Math.random() * 256);
+        var g = Math.floor(Math.random() * 256);
+        var b = Math.floor(Math.random() * 256);
+        return "rgb("+r+","+g+","+b+")";
+    }
+    draw();
+    setInterval(draw,35);
+};
+</script>
+  
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
+<script type='text/javascript' src='/js/DaoVoice.js'></script>
+
+<!--彩带2.自动飘动-->
+
+    <!-- <script src="https://g.joyinshare.com/hc/piao.js" type="text/javascript"></script> -->
+    <script type="text/javascript" src="/js/ribbon_flow.js"></script>
+
+
+<!--动态线条背景-->
+<!--<script type="text/javascript"-->
+<!--color="56,239,243" opacity='0.9' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">-->
+<!--</script>-->
+</html>

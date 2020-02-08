@@ -1,209 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search> 
-  
-  
-    
-    <entry>
-      <title>{{ post.title }}</title>
-      <link href="{{ (url + post.path) | uriencode }}"/>
-      <url>{{ (url + post.path) | uriencode }}</url>
-      
-        <content type="html"><![CDATA[{{ post.content | noControlChars | safe }}]]></content>
-      
-      
+<search>
+  <entry>
+    <title>{{ article.title }}</title>
+    <url>{{ article.url }}</url>
+    <content><![CDATA[{{ article.content | safe }}]]></content>
       <categories>
-          
-          <category> {{ cate.name }} </category>
-          
+        <category>{{ category }}</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> {{ tag.name }} </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>{{ post.title }}</title>
-      <link href="{{ (url + post.path) | uriencode }}"/>
-      <url>{{ (url + post.path) | uriencode }}</url>
-      
-        <content type="html"><![CDATA[{{ post.content | noControlChars | safe }}]]></content>
-      
-      
+      <tags>
+        <tag>{{ tag }}</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>{{ article.title }}</title>
+    <url>{{ article.url }}</url>
+    <content><![CDATA[{{ article.content | safe }}]]></content>
       <categories>
-          
-          <category> {{ cate.name }} </category>
-          
+        <category>{{ category }}</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> {{ tag.name }} </tag>
-            
-            <tag> {{ tag.name }} </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>{{ post.title }}</title>
-      <link href="{{ (url + post.path) | uriencode }}"/>
-      <url>{{ (url + post.path) | uriencode }}</url>
-      
-        <content type="html"><![CDATA[{{ post.content | noControlChars | safe }}]]></content>
-      
-      
+      <tags>
+        <tag>{{ tag }}</tag>
+        <tag>{{ tag }}</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>{{ article.title }}</title>
+    <url>{{ article.url }}</url>
+    <content><![CDATA[{{ article.content | safe }}]]></content>
       <categories>
-          
-          <category> {{ cate.name }} </category>
-          
+        <category>{{ category }}</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> {{ tag.name }} </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>{{ post.title }}</title>
-      <link href="{{ (url + post.path) | uriencode }}"/>
-      <url>{{ (url + post.path) | uriencode }}</url>
-      
-        <content type="html"><![CDATA[{{ post.content | noControlChars | safe }}]]></content>
-      
-      
+      <tags>
+        <tag>{{ tag }}</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>{{ article.title }}</title>
+    <url>{{ article.url }}</url>
+    <content><![CDATA[{{ article.content | safe }}]]></content>
       <categories>
-          
-          <category> {{ cate.name }} </category>
-          
+        <category>{{ category }}</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> {{ tag.name }} </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>{{ post.title }}</title>
-      <link href="{{ (url + post.path) | uriencode }}"/>
-      <url>{{ (url + post.path) | uriencode }}</url>
-      
-        <content type="html"><![CDATA[{{ post.content | noControlChars | safe }}]]></content>
-      
-      
+      <tags>
+        <tag>{{ tag }}</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>{{ article.title }}</title>
+    <url>{{ article.url }}</url>
+    <content><![CDATA[{{ article.content | safe }}]]></content>
       <categories>
-          
-          <category> {{ cate.name }} </category>
-          
+        <category>{{ category }}</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> {{ tag.name }} </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>{{ post.title }}</title>
-      <link href="{{ (url + post.path) | uriencode }}"/>
-      <url>{{ (url + post.path) | uriencode }}</url>
-      
-        <content type="html"><![CDATA[{{ post.content | noControlChars | safe }}]]></content>
-      
-      
+      <tags>
+        <tag>{{ tag }}</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>{{ article.title }}</title>
+    <url>{{ article.url }}</url>
+    <content><![CDATA[{{ article.content | safe }}]]></content>
       <categories>
-          
-          <category> {{ cate.name }} </category>
-          
+        <category>{{ category }}</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> {{ tag.name }} </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>{{ post.title }}</title>
-      <link href="{{ (url + post.path) | uriencode }}"/>
-      <url>{{ (url + post.path) | uriencode }}</url>
-      
-        <content type="html"><![CDATA[{{ post.content | noControlChars | safe }}]]></content>
-      
-      
+      <tags>
+        <tag>{{ tag }}</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>{{ article.title }}</title>
+    <url>{{ article.url }}</url>
+    <content><![CDATA[{{ article.content | safe }}]]></content>
       <categories>
-          
-          <category> {{ cate.name }} </category>
-          
+        <category>{{ category }}</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> {{ tag.name }} </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>{{ post.title }}</title>
-      <link href="{{ (url + post.path) | uriencode }}"/>
-      <url>{{ (url + post.path) | uriencode }}</url>
-      
-        <content type="html"><![CDATA[{{ post.content | noControlChars | safe }}]]></content>
-      
-      
+      <tags>
+        <tag>{{ tag }}</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>{{ article.title }}</title>
+    <url>{{ article.url }}</url>
+    <content><![CDATA[{{ article.content | safe }}]]></content>
       <categories>
-          
-          <category> {{ cate.name }} </category>
-          
+        <category>{{ category }}</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> {{ tag.name }} </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-  
-  
+      <tags>
+        <tag>{{ tag }}</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>{{ article.title }}</title>
+    <url>{{ article.url }}</url>
+    <content><![CDATA[{{ article.content | safe }}]]></content>
+      <categories>
+        <category>{{ category }}</category>
+      </categories>
+      <tags>
+        <tag>{{ tag }}</tag>
+      </tags>
+  </entry>
 </search>
