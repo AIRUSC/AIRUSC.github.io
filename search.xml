@@ -4,6 +4,11 @@
     <title>{{ article.title }}</title>
     <url>{{ article.url }}</url>
     <content><![CDATA[{{ article.content | safe }}]]></content>
+  </entry>
+  <entry>
+    <title>{{ article.title }}</title>
+    <url>{{ article.url }}</url>
+    <content><![CDATA[{{ article.content | safe }}]]></content>
       <categories>
         <category>{{ category }}</category>
       </categories>
