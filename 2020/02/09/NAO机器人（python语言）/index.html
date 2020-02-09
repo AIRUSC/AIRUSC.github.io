@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>支持向量机(SVM) | AIR</title>
+  <title>Nao  机器人入门 | AIR</title>
   
   <meta name="keywords" content="AI ,NAO ,Scientific Research">
   
@@ -267,14 +267,31 @@
 
   <section class='meta'>
     
+      
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.css">
+  <div class="aplayer"
+    data-theme=""
+    data-mini=true 
+    
+    data-mode="circulation"
+    data-server="netease"
+    data-type="playlist"
+    data-id="2615636388"
+    data-volume="0.7">
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
+
+
+    
     
     <div class="meta" id="header-meta">
       
         
   
     <h1 class="title">
-      <a href="/2020/01/23/%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA-SVM/">
-        支持向量机(SVM)
+      <a href="/2020/02/09/NAO%E6%9C%BA%E5%99%A8%E4%BA%BA%EF%BC%88python%E8%AF%AD%E8%A8%80%EF%BC%89/">
+        Nao  机器人入门
       </a>
     </h1>
   
@@ -289,11 +306,11 @@
             
   <div class='new-meta-item author'>
     
-      <a href="https://戴挽舟.fun" target="_blank" rel="nofollow noopener">
+      <a href="/" rel="nofollow">
         
           <i class="fas fa-user" aria-hidden="true"></i>
         
-        <p>戴挽舟（BbiHH）</p>
+        <p>HL</p>
       </a>
     
   </div>
@@ -305,7 +322,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2020-01-23</p>
+    <p>2020-02-09</p>
   </a>
 </div>
 
@@ -315,9 +332,9 @@
             
   
   <div class='new-meta-item category'>
-    <a href='/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/' rel="nofollow">
+    <a href='/categories/NAO/' rel="nofollow">
       <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>机器学习</p>
+      <p>NAO</p>
     </a>
   </div>
 
@@ -349,14 +366,14 @@
       <a class='notlink'>
         <i class="fas fa-keyboard" aria-hidden="true"></i>
         <p>字数统计:</p>
-        <p>1.4k字</p>
+        <p>1.7k字</p>
       </a>
     </div>
     <div class="new-meta-item readtime">
       <a class='notlink'>
         <i class="fas fa-hourglass-half" aria-hidden="true"></i>
         <p>阅读时长≈</p>
-        <p>5分</p>
+        <p>6分</p>
       </a>
     </div>
   
@@ -378,62 +395,37 @@
 
     <section class="article typo">
       <div class="article-entry" itemprop="articleBody">
-        <p>2020/01/23</p>
-<a id="more"></a>
-<h1 id="支持向量机（Support-vector-machines）"><a href="#支持向量机（Support-vector-machines）" class="headerlink" title="支持向量机（Support vector machines）"></a>支持向量机（Support vector machines）</h1><h2 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h2><p>支持向量机（support vector machines）是一种二分类模型，它的目的是寻找一个超平面来对样本进行分割，分割的原则是间隔最大化，最终转化为一个凸二次规划问题来求解。由简至繁的模型包括：</p>
-<ul>
-<li>当训练样本线性可分时，通过硬间隔最大化，学习一个线性可分支持向量机；</li>
-<li>当训练样本近似线性可分时，通过软间隔最大化，学习一个线性支持向量机；</li>
-<li>当训练样本线性不可分时，通过核技巧和软间隔最大化，学习一个非线性支持向量机；</li>
-</ul>
-<p>与逻辑回归和神经网络相比，支持向量机，或者简称SVM，在学习复杂的非线性方程时提供了一种更为清晰，更加强大的方式。</p>
-<h2 id="二、SVM-与-Logistic-regression"><a href="#二、SVM-与-Logistic-regression" class="headerlink" title="二、SVM 与 Logistic regression"></a>二、SVM 与 Logistic regression</h2><p>逻辑回归预测函数：</p>
-<p><img src="/images/pasted-64.png" alt="upload successful"></p>
-<p>现在考虑下我们想要逻辑回归做什么：<br><br>当 y=1 时， 我们需要预测函数 h(x)≈1,  需要 Z &gt;= 0<br><br>当 y=0 时， 我们需要预测函数 h(x)≈0,  需要 Z &lt;= 0<br><br>则对应的代价函数(z = theta.T * x)</p>
-<p><img src="/images/pasted-65.png" alt="upload successful"></p>
-<p>当y值不同时，J(z)函数的曲线可大致拟合成一条折线cost(z)。将逻辑回归中J(z)替换为拟合的这条折线cost(z)，我们得到一个新的最小化函数:</p>
-<p><img src="/images/pasted-66.png" alt="upload successful"></p>
-<p>加入正则项，再让其在逻辑回归代价函数上面稍加变形，则得到了SVM的函数:</p>
-<p><img src="/images/pasted-67.png" alt="upload successful"></p>
-<p>最后有别于逻辑回归输出的概率。在这里，我们的代价函数，当最小化代价函数，获得参数theta时，支持向量机所做的是它来直接预测y的值等于1，还是等于0。</p>
-<h2 id="三、SVM"><a href="#三、SVM" class="headerlink" title="三、SVM"></a>三、SVM</h2><p>人们有时将支持向量机看作是大间距分类器。在训练得到最小化的theta过程中，先忽略参数C和正则项,则theta的变化方向是使得</p>
-<pre><code>当 y=1 时, z&gt;= 1 ，当 y=0 时, z&lt;=-1  （而不是逻辑回归中的0)</code></pre><p>   <img src="/images/pasted-68.png" alt="upload successful"></p>
-<p>如果你考察这样一个数据集，其中有正样本，也有负样本，可以看到这个数据集是线性可分的。我的意思是，存在一条直线把正负样本分开。当然有多条不同的直线，可以把正样本和负样本完全分开。</p>
-<p>   <img src="/images/pasted-69.png" alt="upload successful"><br>   <img src="/images/pasted-70.png" alt="upload successful"></p>
-<p>这些决策边界看起来都不是特别好的选择，支持向量机将会选择这个黑色的决策边界，相较于之前我用粉色或者绿色画的决策界。这条黑色的看起来好得多，黑线看起来是更稳健的决策界。在分离正样本和负样本上它显得的更好。数学上来讲，这是什么意思呢？这条黑线有更大的距离，这个距离叫做<strong>间距(margin)</strong>。</p>
-<p>   <img src="/images/pasted-71.png" alt="upload successful"></p>
-<p>当画出这两条额外的蓝线，我们看到黑色的决策界和训练样本之间有更大的最短距离。然而粉线和蓝线离训练样本就非常近，在分离样本的时候就会比黑线表现差。因此，这个距离叫做支持向量机的间距，而这是支持向量机具有鲁棒性的原因，因为它努力用一个最大间距来分离样本。因此支持向量机有时被称为<strong>大间距分类器</strong>。</p>
-<h4 id="参数C对划分的影响"><a href="#参数C对划分的影响" class="headerlink" title="参数C对划分的影响:"></a>参数C对划分的影响:</h4><ul>
-<li>C较大时，可能会导致过拟合,高方差</li>
-<li>C较小时，可能会导致欠拟合,高偏差</li>
-</ul>
-<p>例如：当 C较小时会得到黑线，而增大C使得C非常大时，会得到粉色线</p>
-<p><img src="/images/pasted-72.png" alt="upload successful"></p>
-<p>关于SVM如何做到大间距分类这里先不解释。</p>
-<h2 id="四、核函数"><a href="#四、核函数" class="headerlink" title="四、核函数"></a>四、核函数</h2><p>许多时候，我们面临的分类问题并不只是线性分类，还会遇到很多无法通过直线进行分隔的分类情况：</p>
-<p><img src="/images/pasted-73.png" alt="upload successful"></p>
-<p>我们可以用一系列的新的特征f来替换模型中的每一项。将f代替x来对进行分类。而这个代替的变化函数则叫做<strong>核函数</strong>。例如：</p>
-<p><img src="/images/pasted-74.png" alt="upload successful"></p>
-<p>这是一个高斯核函数(Gaussian Kernel)。其中l为landmark，为数据中的地标，使用数据与地标的距离大小计算用来取新的特征，距离越大获得的f值则越小，当距离为0时，f达到最大为1。例如在坐标中取3个地标:</p>
-<p><img src="/images/pasted-75.png" alt="upload successful"></p>
-<p> 这样得到的新特征与地标相关系，关联到数据与地标间的欧式距离，而训练出的theta也会通过这个核函数得到复杂的拟合边界。</p>
-<p> 其中高斯核函数中的参数 sigma 为用户定义的到达率，为核函数跌至0的速率参数</p>
-<p><img src="/images/pasted-76.png" alt="upload successful"></p>
-<p>一般实现核函数SVM时使用的地标为整个数据集，即如果训练集有m个样本，则选取m个地标。</p>
-<p><img src="/images/pasted-77.png" alt="upload successful"></p>
-<h4 id="两个参数-C-和-sigma-的影响"><a href="#两个参数-C-和-sigma-的影响" class="headerlink" title="两个参数 C 和 sigma 的影响"></a>两个参数 C 和 sigma 的影响</h4><ul>
-<li><p>C较大时，可能会导致过拟合,高方差</p>
+        <h2 id="NAO机器人（python语言）"><a href="#NAO机器人（python语言）" class="headerlink" title="NAO机器人（python语言）"></a>NAO机器人（python语言）</h2><p> <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1581250772063&di=3061ce9d85ee0ad29d92b8915fd5fdcd&imgtype=jpg&src=http%3A%2F%2Fimg4.imgtn.bdimg.com%2Fit%2Fu%3D794198939%2C4002284648%26fm%3D214%26gp%3D0.jpg" alt="img"> 是一种双足人形机器人，58公分高，可以做出各种与人类一样的</p>
+<p>肢体语言，通过代码实现了识别语言并根据代码做出相应的回应，能够通过感应器识别物体，与人类互动，NAO提供了一个独立的编程环境（Choregraphe），需要密匙才能激活对应</p>
+<p>机器人环境（到时候会帮助你们建立起来）。</p>
+<h5 id="NAO机器人是人工智能机器人，嵌入式软件使得NAO可以声音合成，图像识别，行为控制，双通道超声波探测障碍物，以及自身二极管进行视觉效果。"><a href="#NAO机器人是人工智能机器人，嵌入式软件使得NAO可以声音合成，图像识别，行为控制，双通道超声波探测障碍物，以及自身二极管进行视觉效果。" class="headerlink" title="NAO机器人是人工智能机器人，嵌入式软件使得NAO可以声音合成，图像识别，行为控制，双通道超声波探测障碍物，以及自身二极管进行视觉效果。"></a>NAO机器人是人工智能机器人，嵌入式软件使得NAO可以声音合成，图像识别，行为控制，双通道超声波探测障碍物，以及自身二极管进行视觉效果。</h5><p><img src="C:%5CUsers%5Cdell%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1581240565545.png" alt="1581240565545"></p>
+<p>在C++、Python、Choregraphe中，我们是通过编译代码实现对机器人控制实现，多看NAOqi API</p>
+<p>,在那之前我们了解一下NAO机器人的基本情况：</p>
+<p>1.NAO能够探测前方0.25-2.55m内是否有障碍物，探测角度60°。</p>
+<p>2.触摸、按压、划过接触传感器可以出发接触传感器产生电信号，进而完成向机器人输入信息.<br>头部：前中后三个触摸传感器。<br>手部触摸传感器，脚前部的碰撞传感器（也起到缓冲作用）。<br>胸前：长按、短按、连按。<br>开机：按胸前按钮。<br>报IP地址：在开机并且联网状态下，按胸前按钮。<br>关机：在开机状态下，按胸前按钮。<br>自主生活状态：连续按两次胸前按钮进入或退出。 </p>
+<p>3.测量身体状态以及加速度，包括2个陀螺仪，1个加速度计。<br>4.（MRE磁性编码器）：测量机器人自身关节位置，36个。<br>5.每只脚上有4个压力传感器，用来确定每只脚重心的位置。在行走过程中，NAO根据重心为在进行不太调整以保持身体平衡。<br>6.头部传感器周围：12个LED<br>耳部：2的10次方个16级蓝色LED, 2的8次方个全彩色LED, 胸前按钮和双足各有1个RGB全彩色LED。</p>
+<ol start="7">
+<li><p>使用的坐标系：<br>笛卡尔坐标系，X轴指向身体前方，Y为由右向左方向，Z轴为垂直向上方向。 沿Z轴方向的旋转称为偏转(Yam), 沿Y轴的旋转称为俯仰（Pitch)，沿X轴方向的旋转称为横滚（Roll）。</p>
 </li>
-<li><p>C较小时，可能会导致欠拟合,高偏差</p>
+<li><p>关节运动范围:<br>头部两个自由度分别控制Nao脑袋的扭转，其中控制头部关节在Z轴扭转的范围为-120°到120°，在Y轴前后运动的范围为-39°到39°；<br>左右手臂各有5个自由度且呈对称分布，肩关节控制Y轴前后运动的范围为-120°到120°，控制Z轴左右运动的范围为0°到95°，<br>肩关节控制在X轴扭转的范围为-90°到0°，<br>肘关节控制在Z轴运动的范围为-120°到120°，<br>腕关节控制在X轴扭转的范围为-105°到105°；<br>Nao的左右手上各有一个自由度，其控制Nao的手部的打开或合拢；<br>Nao左右腿的关节除髋关节和踝关节外其余均呈对称分布的，<br>左髋关节控制腿部在Y轴前后运动的范围为-104.5°到28.5°，<br>左髋关节控制腿部在X轴左右运动的范围为-25°到45°，<br>左踝关节控制在Y轴前后运动的范围为-70.5°到54°，<br>左控制X轴左右运动的范围为-45°到25°，<br>右髋关节控制腿部在Y轴前后运动的范围为-104.5°到28.5°，<br>右髋关节控制腿部在X轴左右运动的范围为-45°到25°，<br>右踝关节控制在Y轴前后运动的范围为-70.5°到54°，<br>右踝关节控制X轴左右运动的范围为-25°到45°；<br>膝关节控制腿部在Y轴运动的范围为-5°到125°；<br>髋部存在一个控制其髋部在Y轴运动的自由度，其运动范围为-65.62°到42.44°。 </p>
 </li>
-<li><p>sigma 较大时，可能导致低方差，高偏差 （欠拟合）</p>
+<li><p>自由度：</p>
+<p> 机器人能够独立运动的关节数目称为机器人的运动自由度。头部有两个关节，可以做偏转(Yam)和俯仰（pitch），因此，头部的自由度为2.<br>全身共有26个自由度。 </p>
+<ol start="10">
+<li><p>转矩是一种力矩，力矩=力<em>力臂 （N </em> m)<br>堵转转矩和标称转矩反应了电机在启动和政策工作状态下驱动力的大小。<br>堵转转矩是指当电机转速为0时的转矩，如膝关节电机在启动或维持半蹲状态都处于堵转状态。额定转矩是电机可以长期稳定运行的转矩。 </p>
 </li>
-<li><p>sigma 较小时，可能导致低偏差，高方差 （过拟合）</p>
+<li><p>主要方法：学习NAOqi  API</p>
+<p>goToPosture(postureName, speed):转到预定义姿势。阻塞调用。<br>getPosture():返回当前姿势名称，如果当前姿势不是预定义姿势，返回unknow。阻塞调用。<br>getPostureList():返回预定义姿势列表。阻塞调用。<br>applayPosture(postureName, speed)：将机器人关节设置为预定义姿势对应的状态（没有中间动作）。阻塞调用。<br>stopMove():停止当前动作。 </p>
+<ol start="12">
+<li>Nao行走控制主要的三种方式<br>moveTo:使机器人移动到指定位置，阻塞调用。<br>(1).moveTo(x, y, theta), 移动到指定位置。<br>(2)moveTo(x, y, theta, MoveConfig), 按给定的步态参数移动到指定位置。moveConfig为自定义步态参数列表，列表中的内容为步态参数键值对。<br>(3)moveTo(controlPoints)，沿控制点移动到指定位置，controlPoints为控制点列表。<br>(4)moveTo(controlPoints, moveConfig), movetoConfig为自定义步态参数列表。</li>
+</ol>
+<p>move:move方法是机器人按指定速度行走,非阻塞调用。 </p>
+<p>(1)move(x, y, theta), 按指定速度行走，x为绕X方向速度（m/s), theta为绕Z轴旋转角速度(rad/s), 负数表示顺时针<br>转动。非阻塞调用方法，需要time.sleep()延时，延时时间除了行走过程时间外，应还包括机器人走过程的初始化阶段和终止阶段。<br>(2)move(x, y, theata, moveConfig), 按给定的步态参数和指定速度行走。其中x为X方向，moveConfig为自定义步态参数列表<br>可以分别设置左脚和右脚的步态参数。</p>
+<p>moveToward:<br>moveToward()方法是机器人按指定速度行走，非阻塞调用方法。<br>(1)moveToward(x, y, theta), 按指定速度行走，其中x为X方向速度，取值范围[-1, 1], theta为绕Z轴旋转速度。<br>(2)moveToward(x, y, moveConfig), 按给定的步态参数、指定速度行走。</p>
 </li>
-</ul>
-<p>除了高斯核函数外，还有很多其他的核函数，这里不一一介绍了。</p>
-<p>这里只是初步对 SVM 作介绍和一些使用方法，其数学原理将在后续补充。</p>
-<p>了解更多人工智能方面欢迎光顾个人博客： <a href="https://戴挽舟.fun" target="_blank" rel="noopener">戴挽舟的博客</a></p>
+</ol>
+</li>
+</ol>
 
       </div>
 	  
@@ -441,9 +433,9 @@
 <div class="article-footer-copyright">
 <center>本文由<b><a href="/index.html" target="_blank" title="AIR@USC">AIR@USC</a></b>创作和发表,采用<b>BY</b>-<b>NC</b>-<b>SA</b>国际许可协议进行许可</center>
  
-<center>转载请注明作者及出处,本文作者为<b><a href="/index.html" target="_blank" title="AIR@USC">AIR@USC</a></b>,本文标题为<b><a href="/2020/01/23/支持向量机-SVM/" target="_blank" title="支持向量机(SVM)">支持向量机(SVM)</a></b></center>
+<center>转载请注明作者及出处,本文作者为<b><a href="/index.html" target="_blank" title="AIR@USC">AIR@USC</a></b>,本文标题为<b><a href="/2020/02/09/NAO机器人（python语言）/" target="_blank" title="Nao  机器人入门">Nao  机器人入门</a></b></center>
  
-<center>本文链接为<b><a href="/2020/01/23/支持向量机-SVM/" target="_blank" title="支持向量机(SVM)">http://uscair.club/2020/01/23/支持向量机-SVM/</a></b>.</center>
+<center>本文链接为<b><a href="/2020/02/09/NAO机器人（python语言）/" target="_blank" title="Nao  机器人入门">http://uscair.club/2020/02/09/NAO机器人（python语言）/</a></b>.</center>
 </div>
 <! -- 添加版权信息 -->
         
@@ -457,10 +449,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-01-23T16:16:00+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-02-09T19:28:56+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>updated at Jan 23, 2020</p>
+    <p>updated at Feb 9, 2020</p>
   </a>
 </div>
 
@@ -469,7 +461,7 @@
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/AI%E5%A4%A7%E6%95%B0%E6%8D%AE/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>AI大数据</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/NAOqi/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>NAOqi</p></a></div>
 
 
         
@@ -482,7 +474,7 @@
       
         <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=http://uscair.club/2020/01/23/%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA-SVM/&title=支持向量机(SVM) | AIR&summary=2020/01/23"
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://uscair.club/2020/02/09/NAO%E6%9C%BA%E5%99%A8%E4%BA%BA%EF%BC%88python%E8%AF%AD%E8%A8%80%EF%BC%89/&title=Nao  机器人入门 | AIR&summary="
           
           >
           
@@ -494,7 +486,7 @@
       
         <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://uscair.club/2020/01/23/%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA-SVM/&title=支持向量机(SVM) | AIR&summary=2020/01/23"
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://uscair.club/2020/02/09/NAO%E6%9C%BA%E5%99%A8%E4%BA%BA%EF%BC%88python%E8%AF%AD%E8%A8%80%EF%BC%89/&title=Nao  机器人入门 | AIR&summary="
           
           >
           
@@ -506,7 +498,7 @@
       
         <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=http://uscair.club/2020/01/23/%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA-SVM/&title=支持向量机(SVM) | AIR&summary=2020/01/23"
+          href="http://service.weibo.com/share/share.php?url=http://uscair.club/2020/02/09/NAO%E6%9C%BA%E5%99%A8%E4%BA%BA%EF%BC%88python%E8%AF%AD%E8%A8%80%EF%BC%89/&title=Nao  机器人入门 | AIR&summary="
           
           >
           
@@ -530,41 +522,17 @@
       
           <div class="prev-next">
               
-                  <section class="prev">
-                      <span class="art-item-left">
-                          <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;Previous</h6>
-                          <h4>
-                              <a href="/2020/02/06/%E5%8D%9A%E5%AE%A2%E6%A8%A1%E6%9D%BF/" rel="prev" title="博客模板">
-                                
-                                    博客模板
-                                
-                              </a>
-                          </h4>
-                          
-                              
-                              <h6 class="tags">
-                                  <a class="tag" href="/tags/%E6%A8%A1%E6%9D%BF/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 模板</a>
-                              </h6>
-                          
-                      </span>
-                  </section>
-              
               
                   <section class="next">
                       <span class="art-item-right" aria-hidden="true">
                           <h6>Next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                           <h4>
-                              <a href="/2020/01/13/hello-world/" rel="prev" title="Hello World">
+                              <a href="/2020/02/09/STM32-CubMx/" rel="prev" title="STM32-CubMx">
                                   
-                                      Hello World
+                                      STM32-CubMx
                                   
                               </a>
                           </h4>
-                          
-                              
-                              <h6 class="tags">
-                                  <a class="tag" href="/tags/test/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> test</a>
-                              </h6>
                           
                       </span>
                   </section>
@@ -607,7 +575,7 @@
 
   <script>
     window.subData = {
-      title: '支持向量机(SVM)',
+      title: 'Nao  机器人入门',
       tools: true
     }
   </script>
@@ -734,7 +702,7 @@
 </header>
 
     <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#支持向量机（Support-vector-machines）"><span class="toc-text">支持向量机（Support vector machines）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、简介"><span class="toc-text">一、简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、SVM-与-Logistic-regression"><span class="toc-text">二、SVM 与 Logistic regression</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、SVM"><span class="toc-text">三、SVM</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#参数C对划分的影响"><span class="toc-text">参数C对划分的影响:</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、核函数"><span class="toc-text">四、核函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#两个参数-C-和-sigma-的影响"><span class="toc-text">两个参数 C 和 sigma 的影响</span></a></li></ol></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#NAO机器人（python语言）"><span class="toc-text">NAO机器人（python语言）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#NAO机器人是人工智能机器人，嵌入式软件使得NAO可以声音合成，图像识别，行为控制，双通道超声波探测障碍物，以及自身二极管进行视觉效果。"><span class="toc-text">NAO机器人是人工智能机器人，嵌入式软件使得NAO可以声音合成，图像识别，行为控制，双通道超声波探测障碍物，以及自身二极管进行视觉效果。</span></a></li></ol></li></ol></li></ol></li></ol>
     </div>
   </section>
 
