@@ -395,8 +395,7 @@
 
     <section class="article typo">
       <div class="article-entry" itemprop="articleBody">
-        <p>@<a href="1.卷积神经网络（CNN）">TOC</a></p>
-<h2 id="一-概念"><a href="#一-概念" class="headerlink" title="一.概念"></a>一.概念</h2><h3 id="局部感受野（Local-Receptive-Fields）"><a href="#局部感受野（Local-Receptive-Fields）" class="headerlink" title="局部感受野（Local Receptive Fields）"></a>局部感受野（Local Receptive Fields）</h3><p>卷积神经网络则是把每一个隐藏节点只连接到图像的某个局部区域，从而减少参数训练的数量。例如，一张1024×720的图像，使用9×9的感受野，则只需要81个权值参数。对于一般的视觉也是如此，当观看一张图像时，更多的时候关注的是局部。</p>
+        <h2 id="一-概念"><a href="#一-概念" class="headerlink" title="一.概念"></a>一.概念</h2><h3 id="局部感受野（Local-Receptive-Fields）"><a href="#局部感受野（Local-Receptive-Fields）" class="headerlink" title="局部感受野（Local Receptive Fields）"></a>局部感受野（Local Receptive Fields）</h3><p>卷积神经网络则是把每一个隐藏节点只连接到图像的某个局部区域，从而减少参数训练的数量。例如，一张1024×720的图像，使用9×9的感受野，则只需要81个权值参数。对于一般的视觉也是如此，当观看一张图像时，更多的时候关注的是局部。</p>
 <h3 id="共享权值-Shared-Weights）"><a href="#共享权值-Shared-Weights）" class="headerlink" title="共享权值(Shared Weights）"></a>共享权值(Shared Weights）</h3><p>卷积神经网络卷积层中，神经元对应的权值是相同，共享的权值和偏置也被称作卷积核或滤汲器。</p>
 <h3 id="池化（Pooling"><a href="#池化（Pooling" class="headerlink" title="池化（Pooling)"></a>池化（Pooling)</h3><p>通过对图像卷积进行压缩，卷积之后，通过一个下采样过程，来调整图像大小。<br>Lp池化<br><img src="https://img-blog.csdnimg.cn/20200209214158597.png" alt="Lp池化"></p>
 <h3 id="监督学习"><a href="#监督学习" class="headerlink" title="监督学习"></a>监督学习</h3><p>根据已有的数据集，知道输入和输出结果之间的关系。根据这种已知的关系，训练得到一个最优的模型。也就是说，在监督学习中训练数据既有特征(feature)又有标签(label)，通过训练，让机器可以自己找到特征和标签之间的联系，在面对只有特征没有标签的数据时，可以判断出标签。</p>
