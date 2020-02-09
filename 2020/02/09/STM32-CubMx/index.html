@@ -349,7 +349,7 @@
       <a class='notlink'>
         <i class="fas fa-keyboard" aria-hidden="true"></i>
         <p>字数统计:</p>
-        <p>379字</p>
+        <p>358字</p>
       </a>
     </div>
     <div class="new-meta-item readtime">
@@ -378,21 +378,7 @@
 
     <section class="article typo">
       <div class="article-entry" itemprop="articleBody">
-        <hr>
-<p>title: STM32单片机系列(一)</p>
-<p>date: 2020-02-09</p>
-<p>author:</p>
-<p>  name: Page</p>
-<p>categories: </p>
-<ul>
-<li>单片机</li>
-</ul>
-<p>tags: </p>
-<ul>
-<li>STM32</li>
-</ul>
-<hr>
-<p><strong>介绍</strong><br>STM32CubeMX是一个图形化的工具，也是配置和初始化C代码生成器（STM32 configuration and initialization C code generation），也就是自动生成开发初期关于芯片相关的一些初始化代码。它包含了STM32所有系列的芯片，包含示例和样本（Examples and demos）、中间组件（Middleware Components）、硬件抽象层（Hardwaree abstraction layer）。<br>CubMX对一些开发工程的基本配置提供了很大的帮助，大大减少了编写基础代码所耗费的时间以及精力。<br><strong>内容</strong><br>今天就以点亮LED灯为例通过CubMX来编写相关程序。<br>首先选择对应的芯片类型这里以STM32F407IE为例：<img src="https://img-blog.csdnimg.cn/20200209102603860.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NDk0MDAz,size_16,color_FFFFFF,t_70" alt=""><br>其次可以通过对应芯片的用户手册来确定对应的IO口：407对应的是F9,F10俩个IO口（任选其一即可）。<br><img src="https://img-blog.csdnimg.cn/20200209103406651.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NDk0MDAz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">)然后就是最重要的时钟配置，时钟是心脏是重中之重。<img src="https://img-blog.csdnimg.cn/20200209104506401.png" alt="在这里插入图片描述"><br>设置了对应时钟源之后可以看到对应的IO口也有所改变<img src="https://img-blog.csdnimg.cn/20200209104536101.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NDk0MDAz,size_16,color_FFFFFF,t_70" alt="
+        <p><strong>介绍</strong><br>STM32CubeMX是一个图形化的工具，也是配置和初始化C代码生成器（STM32 configuration and initialization C code generation），也就是自动生成开发初期关于芯片相关的一些初始化代码。它包含了STM32所有系列的芯片，包含示例和样本（Examples and demos）、中间组件（Middleware Components）、硬件抽象层（Hardwaree abstraction layer）。<br>CubMX对一些开发工程的基本配置提供了很大的帮助，大大减少了编写基础代码所耗费的时间以及精力。<br><strong>内容</strong><br>今天就以点亮LED灯为例通过CubMX来编写相关程序。<br>首先选择对应的芯片类型这里以STM32F407IE为例：<img src="https://img-blog.csdnimg.cn/20200209102603860.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NDk0MDAz,size_16,color_FFFFFF,t_70" alt=""><br>其次可以通过对应芯片的用户手册来确定对应的IO口：407对应的是F9,F10俩个IO口（任选其一即可）。<br><img src="https://img-blog.csdnimg.cn/20200209103406651.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NDk0MDAz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">)然后就是最重要的时钟配置，时钟是心脏是重中之重。<img src="https://img-blog.csdnimg.cn/20200209104506401.png" alt="在这里插入图片描述"><br>设置了对应时钟源之后可以看到对应的IO口也有所改变<img src="https://img-blog.csdnimg.cn/20200209104536101.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NDk0MDAz,size_16,color_FFFFFF,t_70" alt="
 "></p>
 <p>F407 LED的IO挂载在了APB1时钟线上，配置对应的时钟频率</p>
 <p><img src="https://img-blog.csdnimg.cn/20200209104749668.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NDk0MDAz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">其次就是代码生成的一些配置：选择工程的名字，以及生成的工程文件的类型，这我这里由于我选择的是Keil5所以我选择了MDK-ARM V5<img src="https://img-blog.csdnimg.cn/20200209105312791.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NDk0MDAz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">然后记得勾选生成外设源文件和头文件的选项<br><img src="https://img-blog.csdnimg.cn/20200209105531924.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NDk0MDAz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">最后点击生成代码<br><img src="https://img-blog.csdnimg.cn/20200209105628935.png" alt="在这里插入图片描述"></p>
@@ -829,7 +815,7 @@
         
           <li><a class="flat-box" title="/categories/%E5%8D%95%E7%89%87%E6%9C%BA/" href="/categories/%E5%8D%95%E7%89%87%E6%9C%BA/"><div class='name'>单片机</div><div class='badge'>(1)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" href="/categories/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"><div class='name'>数字图像处理</div><div class='badge'>(2)</div></a></li>
+          <li><a class="flat-box" title="/categories/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" href="/categories/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"><div class='name'>数字图像处理</div><div class='badge'>(3)</div></a></li>
         
           <li><a class="flat-box" title="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"><div class='name'>机器学习</div><div class='badge'>(5)</div></a></li>
         
@@ -882,7 +868,7 @@
 </header>
 
     <div class='content pure'>
-      <a href="/tags/AI%E5%A4%A7%E6%95%B0%E6%8D%AE/" style="font-size: 14px; color: #999">AI大数据</a> <a href="/tags/NAOqi/" style="font-size: 19px; color: #777">NAOqi</a> <a href="/tags/OpenCV/" style="font-size: 14px; color: #999">OpenCV</a> <a href="/tags/STM32/" style="font-size: 14px; color: #999">STM32</a> <a href="/tags/robocup/" style="font-size: 14px; color: #999">robocup</a> <a href="/tags/test/" style="font-size: 14px; color: #999">test</a> <a href="/tags/%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF/" style="font-size: 14px; color: #999">拉普拉斯</a> <a href="/tags/%E6%95%B0%E7%90%86%E5%9F%BA%E7%A1%80/" style="font-size: 14px; color: #999">数理基础</a> <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/" style="font-size: 24px; color: #555">机器学习基础</a> <a href="/tags/%E6%A8%A1%E6%9D%BF/" style="font-size: 14px; color: #999">模板</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/" style="font-size: 14px; color: #999">线性回归</a>
+      <a href="/tags/AI%E5%A4%A7%E6%95%B0%E6%8D%AE/" style="font-size: 14px; color: #999">AI大数据</a> <a href="/tags/NAOqi/" style="font-size: 19px; color: #777">NAOqi</a> <a href="/tags/OpenCV/" style="font-size: 19px; color: #777">OpenCV</a> <a href="/tags/STM32/" style="font-size: 14px; color: #999">STM32</a> <a href="/tags/robocup/" style="font-size: 14px; color: #999">robocup</a> <a href="/tags/test/" style="font-size: 14px; color: #999">test</a> <a href="/tags/%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF/" style="font-size: 14px; color: #999">拉普拉斯</a> <a href="/tags/%E6%95%B0%E7%90%86%E5%9F%BA%E7%A1%80/" style="font-size: 14px; color: #999">数理基础</a> <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/" style="font-size: 24px; color: #555">机器学习基础</a> <a href="/tags/%E6%A8%A1%E6%9D%BF/" style="font-size: 14px; color: #999">模板</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/" style="font-size: 14px; color: #999">线性回归</a>
     </div>
   </section>
 
