@@ -267,6 +267,23 @@
 
   <section class='meta'>
     
+      
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.css">
+  <div class="aplayer"
+    data-theme=""
+    data-mini=true 
+    
+    data-mode="circulation"
+    data-server="netease"
+    data-type="playlist"
+    data-id="2615636388"
+    data-volume="0.7">
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
+
+
+    
     
     <div class="meta" id="header-meta">
       
@@ -289,11 +306,11 @@
             
   <div class='new-meta-item author'>
     
-      <a href="http://uscair.club" rel="nofollow">
+      <a href="/" rel="nofollow">
         
           <i class="fas fa-user" aria-hidden="true"></i>
         
-        <p>AIR@USC</p>
+        <p>Gowi</p>
       </a>
     
   </div>
@@ -313,6 +330,14 @@
         
           
             
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>机器学习</p>
+    </a>
+  </div>
+
 
           
         
@@ -341,14 +366,14 @@
       <a class='notlink'>
         <i class="fas fa-keyboard" aria-hidden="true"></i>
         <p>字数统计:</p>
-        <p>4.5k字</p>
+        <p>4.4k字</p>
       </a>
     </div>
     <div class="new-meta-item readtime">
       <a class='notlink'>
         <i class="fas fa-hourglass-half" aria-hidden="true"></i>
         <p>阅读时长≈</p>
-        <p>19分</p>
+        <p>18分</p>
       </a>
     </div>
   
@@ -370,8 +395,7 @@
 
     <section class="article typo">
       <div class="article-entry" itemprop="articleBody">
-        <h1 id="神经网络–反向传播算法推导"><a href="#神经网络–反向传播算法推导" class="headerlink" title="神经网络–反向传播算法推导"></a>神经网络–反向传播算法推导</h1><p>[toc]</p>
-<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>以监督学习为例，假设我们有训练样本集$(x^{(i)},y^{(i)})$，那么神经网络算法能提供一种复杂且非线性的假设模型$h_{(W,b)}(x)$,它具有参数$W$，$b$，可以以此参数来拟合我们的数据。</p>
+        <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>以监督学习为例，假设我们有训练样本集$(x^{(i)},y^{(i)})$，那么神经网络算法能提供一种复杂且非线性的假设模型$h_{(W,b)}(x)$,它具有参数$W$，$b$，可以以此参数来拟合我们的数据。</p>
 <p>为了描述神经网络，我们先从最简单的神经网络讲起，这个神经网络仅由一个“神经元”构成，以下即是这个“神经元”的图示：</p>
 <p><img src="https://gowi-picgo.oss-cn-shenzhen.aliyuncs.com/picgo/20200213092017.png" alt=""></p>
 <p>这个神经元是一个以$x_1,x_2,x_3$以及截距+1为输入值的运算单元，其输出为$h_{(W,b)}(x)=f(W^Tx)=f(\overset{3}{\underset{i=1}{\sum}}W_iX_i+b)$,其中函数$f:\mathbb{R}\to\mathbb{R}$被称为<code>激活函数</code></p>
@@ -388,7 +412,7 @@
 <p>目前为止，我们讨论了一种神经网络，我们也可以构建另一种<strong>结构</strong>的神经网络（这里结构指的是神经元之间的联接模式），也就是包含多个隐藏层的神经网络。最常见的一个例子是 $\textstyle  n_l$ 层的神经网络，第 $\textstyle  1$ 层是输入层，第 $\textstyle  n_l$ 层是输出层，中间的每个层 $\textstyle  l$ 与层 $\textstyle  l+1$ 紧密相联。这种模式下，要计算神经网络的输出结果，我们可以按照之前描述的等式，按部就班，进行前向传播，逐一计算第 $\textstyle  L_2$ 层的所有激活值，然后是第 $\textstyle  L_3$ 层的激活值，以此类推，直到第 $\textstyle  L_{n_l}$层。这是一个<strong>前馈</strong>神经网络的例子，因为这种联接图没有闭环或回路。</p>
 <p>神经网络也可以有多个输出单元。比如，下面的神经网络有两层隐藏层： $\textstyle L_2$ 及 $\textstyle L_3$ ，输出层 $\textstyle L_4$ 有两个输出单元。</p>
 <p><img src="https://gowi-picgo.oss-cn-shenzhen.aliyuncs.com/picgo/20200213103639.png" alt=""></p>
-<p>要求解这样的神经网络，需要样本集 $\textstyle (x^{(i)}, y^{(i)})$ ，其中 $\textstyle y^{(i)} \in \Re^2$ 。如果你想预测的输出是多个的，那这种神经网络很适用。（比如，在医疗诊断应用中，患者的体征指标就可以作为向量的输入值，而不同的输出值 <img src="http://ufldl.stanford.edu/wiki/images/math/7/a/5/7a5d164f3df0329a8032cda67d95d9d4.png" alt="\textstyle y_i"> 可以表示不同的疾病存在与否。）</p>
+<p>要求解这样的神经网络，需要样本集 $\textstyle (x^{(i)}, y^{(i)})$ ，其中 $\textstyle y^{(i)} \in \Re^2$ 。如果你想预测的输出是多个的，那这种神经网络很适用。（比如，在医疗诊断应用中，患者的体征指标就可以作为向量的输入值，而不同的输出值$\textstyle y_i$可以表示不同的疾病存在与否。）</p>
 <h2 id="反向传导算法"><a href="#反向传导算法" class="headerlink" title="反向传导算法"></a>反向传导算法</h2><p>假设我们有一个固定样本集 $\textstyle \{ (x^{(1)}, y^{(1)}), \ldots, (x^{(m)}, y^{(m)}) \}$，它包含 $\textstyle m$ 个样例。我们可以用批量梯度下降法来求解神经网络。具体来讲，对于单个样例 $\textstyle (x,y)$)，其代价函数为：<br>$$<br>\begin{align}J(W,b; x,y) = \frac{1}{2} \left| h_{W,b}(x) - y \right|^2.\end{align}<br>$$<br>这是一个（二分之一的）方差代价函数。给定一个包含 $\textstyle m$ 个样例的数据集，我们可以定义整体代价函数为：<br>$$<br>\begin{align}J(W,b)&amp;= \left[ \frac{1}{m} \sum_{i=1}^m J(W,b;x^{(i)},y^{(i)}) \right]                       + \frac{\lambda}{2} \sum_{l=1}^{n_l-1} \; \sum_{i=1}^{s_l} \; \sum_{j=1}^{s_{l+1}} \left( W^{(l)}_{ji} \right)^2 \\&amp;= \left[ \frac{1}{m} \sum_{i=1}^m \left( \frac{1}{2} \left| h_{W,b}(x^{(i)}) - y^{(i)} \right|^2 \right) \right]                       + \frac{\lambda}{2} \sum_{l=1}^{n_l-1} \; \sum_{i=1}^{s_l} \; \sum_{j=1}^{s_{l+1}} \left( W^{(l)}_{ji} \right)^2\end{align}<br>$$<br>以上关于$\textstyle J(W,b)$定义中的第一项是一个均方差项。第二项是一个规则化项（也叫<strong>权重衰减项</strong>），其目的是减小权重的幅度，防止过度拟合。</p>
 <p>[注：通常权重衰减的计算并不使用偏置项 $\textstyle b^{(l)}_i$，比如我们在 $\textstyle J(W, b)$ 的定义中就没有使用。一般来说，将偏置项包含在权重衰减项中只会对最终的神经网络产生很小的影响。在贝叶斯规则化方法中，我们将高斯先验概率引入到参数中计算MAP（极大后验）估计（而不是极大似然估计）。]</p>
 <p><strong>权重衰减参数</strong> $\textstyle \lambda$ 用于控制公式中两项的相对重要性。在此重申一下这两个复杂函数的含义：$\textstyle J(W,b;x,y)$ 是针对单个样例计算得到的方差代价函数；$\textstyle J(W,b)$ 是整体样本代价函数，它包含权重衰减项。</p>
@@ -400,17 +424,10 @@
 <ol>
 <li><p>进行前馈传导计算，利用前向传导公式，得到 $\textstyle L_2, L_3, \ldots$ 直到输出层 $\textstyle L_{n_l}$ 的激活值。</p>
 </li>
-<li><p>对于第 $n_l$（输出层）的每个输出单元$i$我们根据以下公式计算残差：</p>
+<li><p>对于第 $n_l$（输出层）的每个输出单元$i$我们根据以下公式计算残差：<br><img src="https://gowi-picgo.oss-cn-shenzhen.aliyuncs.com/picgo/20200213205426.png" alt=""></p>
 </li>
-</ol>
-<pre><code>$$
-\begin{align}\delta^{(n_l)}_i= \frac{\partial}{\partial z^{(n_l)}_i} \;\;        \frac{1}{2} \left\|y - h_{W,b}(x)\right\|^2 = - (y_i - a^{(n_l)}_i) \cdot f&apos;(z^{(n_l)}_i)\end{align}
-$$
-
-$$
-\begin{align}\delta^{(n_l)}_i &amp;= \frac{\partial}{\partial z^{n_l}_i}J(W,b;x,y) = \frac{\partial}{\partial z^{n_l}_i}\frac{1}{2} \left\|y - h_{W,b}(x)\right\|^2 \\ &amp;= \frac{\partial}{\partial z^{n_l}_i}\frac{1}{2} \sum_{j=1}^{S_{n_l}} (y_j-a_j^{(n_l)})^2 = \frac{\partial}{\partial z^{n_l}_i}\frac{1}{2} \sum_{j=1}^{S_{n_l}} (y_j-f(z_j^{(n_l)}))^2 \\ &amp;= - (y_i - f(z_i^{(n_l)})) \cdot f&apos;(z^{(n_l)}_i) = - (y_i - a^{(n_l)}_i) \cdot f&apos;(z^{(n_l)}_i)\end{align}
-$$</code></pre><ol start="3">
-<li>对 $\textstyle l = n_l-1, n_l-2, n_l-3, \ldots, 2$ 的各个层，第$\textstyle l$层的第 $\textstyle i$ 个节点的残差计算方法如下：</li>
+<li><p>对 $\textstyle l = n_l-1, n_l-2, n_l-3, \ldots, 2$ 的各个层，第$\textstyle l$层的第 $\textstyle i$ 个节点的残差计算方法如下：</p>
+</li>
 </ol>
 <p>$$<br>\delta_i^{(n_l)}=(\overset{s_{l+1}}{\underset{j=1}{\sum}}W_{ji}^{(l)}\delta_j^{(l+1)})f’(z_i^{(l)})<br>$$</p>
 <p>$$<br>\begin{align}\delta^{(n_l-1)}_i &amp;=\frac{\partial}{\partial z^{n_l-1}_i}J(W,b;x,y) = \frac{\partial}{\partial z^{n_l-1}_i}\frac{1}{2} \left|y - h_{W,b}(x)\right|^2  = \frac{\partial}{\partial z^{n_l-1}_i}\frac{1}{2} \sum_{j=1}^{S_{n_l}}(y_j-a_j^{(n_l)})^2 \\&amp;= \frac{1}{2} \sum_{j=1}^{S_{n_l}}\frac{\partial}{\partial z^{n_l-1}_i}(y_j-a_j^{(n_l)})^2 = \frac{1}{2} \sum_{j=1}^{S_{n_l}}\frac{\partial}{\partial z^{n_l-1}_i}(y_j-f(z_j^{(n_l)}))^2 \\&amp;= \sum_{j=1}^{S_{n_l}}-(y_j-f(z_j^{(n_l)})) \cdot \frac{\partial}{\partial z_i^{(n_l-1)}}f(z_j^{(n_l)}) = \sum_{j=1}^{S_{n_l}}-(y_j-f(z_j^{(n_l)})) \cdot  f’(z_j^{(n_l)}) \cdot \frac{\partial z_j^{(n_l)}}{\partial z_i^{(n_l-1)}} \\&amp;= \sum_{j=1}^{S_{n_l}} \delta_j^{(n_l)} \cdot \frac{\partial z_j^{(n_l)}}{\partial z_i^{n_l-1}} = \sum_{j=1}^{S_{n_l}} \left(\delta_j^{(n_l)} \cdot \frac{\partial}{\partial z_i^{n_l-1}}\sum_{k=1}^{S_{n_l-1}}f(z_k^{n_l-1}) \cdot W_{jk}^{n_l-1}\right) \\&amp;= \sum_{j=1}^{S_{n_l}} \delta_j^{(n_l)} \cdot  W_{ji}^{n_l-1} \cdot f’(z_i^{n_l-1}) = \left(\sum_{j=1}^{S_{n_l}}W_{ji}^{n_l-1}\delta_j^{(n_l)}\right)f’(z_i^{n_l-1})\end{align}<br>$$</p>
@@ -467,7 +484,7 @@ $$</code></pre><ol start="3">
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-02-13T20:04:11+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-02-13T00:00:00+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>updated at Feb 13, 2020</p>
@@ -478,6 +495,9 @@ $$</code></pre><ol start="3">
       
         
           
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E3%80%81%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>神经网络、机器学习基础</p></a></div>
+
 
         
       
@@ -590,6 +610,44 @@ $$</code></pre><ol start="3">
 
 
 <!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+  <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX","TeX"],
+      linebreaks: { automatic:true },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: { autoNumber: "AMS" },
+      noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+      Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+  });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += (all[i].SourceElement().parentNode.className ? ' ' : '') + 'has-jax';
+    }
+  });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
 
 
 
@@ -722,7 +780,7 @@ $$</code></pre><ol start="3">
 </header>
 
     <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#神经网络–反向传播算法推导"><span class="toc-text">神经网络–反向传播算法推导</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#概述"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#神经网络模型"><span class="toc-text">神经网络模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#反向传导算法"><span class="toc-text">反向传导算法</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#概述"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#神经网络模型"><span class="toc-text">神经网络模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#反向传导算法"><span class="toc-text">反向传导算法</span></a></li></ol>
     </div>
   </section>
 
@@ -871,7 +929,7 @@ $$</code></pre><ol start="3">
         
           <li><a class="flat-box" title="/categories/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" href="/categories/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"><div class='name'>数字图像处理</div><div class='badge'>(4)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"><div class='name'>机器学习</div><div class='badge'>(6)</div></a></li>
+          <li><a class="flat-box" title="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"><div class='name'>机器学习</div><div class='badge'>(7)</div></a></li>
         
       </ul>
     </div>
@@ -922,7 +980,7 @@ $$</code></pre><ol start="3">
 </header>
 
     <div class='content pure'>
-      <a href="/tags/AI%E5%A4%A7%E6%95%B0%E6%8D%AE/" style="font-size: 14px; color: #999">AI大数据</a> <a href="/tags/CNN/" style="font-size: 14px; color: #999">CNN</a> <a href="/tags/NAOqi/" style="font-size: 19px; color: #777">NAOqi</a> <a href="/tags/OpenCV/" style="font-size: 19px; color: #777">OpenCV</a> <a href="/tags/STM32/" style="font-size: 14px; color: #999">STM32</a> <a href="/tags/robocup/" style="font-size: 14px; color: #999">robocup</a> <a href="/tags/test/" style="font-size: 14px; color: #999">test</a> <a href="/tags/%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF/" style="font-size: 14px; color: #999">拉普拉斯</a> <a href="/tags/%E6%95%B0%E7%90%86%E5%9F%BA%E7%A1%80/" style="font-size: 14px; color: #999">数理基础</a> <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/" style="font-size: 24px; color: #555">机器学习基础</a> <a href="/tags/%E6%A8%A1%E6%9D%BF/" style="font-size: 14px; color: #999">模板</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/" style="font-size: 14px; color: #999">线性回归</a>
+      <a href="/tags/AI%E5%A4%A7%E6%95%B0%E6%8D%AE/" style="font-size: 14px; color: #999">AI大数据</a> <a href="/tags/CNN/" style="font-size: 14px; color: #999">CNN</a> <a href="/tags/NAOqi/" style="font-size: 19px; color: #777">NAOqi</a> <a href="/tags/OpenCV/" style="font-size: 19px; color: #777">OpenCV</a> <a href="/tags/STM32/" style="font-size: 14px; color: #999">STM32</a> <a href="/tags/robocup/" style="font-size: 14px; color: #999">robocup</a> <a href="/tags/test/" style="font-size: 14px; color: #999">test</a> <a href="/tags/%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF/" style="font-size: 14px; color: #999">拉普拉斯</a> <a href="/tags/%E6%95%B0%E7%90%86%E5%9F%BA%E7%A1%80/" style="font-size: 14px; color: #999">数理基础</a> <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/" style="font-size: 24px; color: #555">机器学习基础</a> <a href="/tags/%E6%A8%A1%E6%9D%BF/" style="font-size: 14px; color: #999">模板</a> <a href="/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E3%80%81%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/" style="font-size: 14px; color: #999">神经网络、机器学习基础</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/" style="font-size: 14px; color: #999">线性回归</a>
     </div>
   </section>
 
