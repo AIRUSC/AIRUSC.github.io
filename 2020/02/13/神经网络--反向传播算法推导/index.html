@@ -267,6 +267,23 @@
 
   <section class='meta'>
     
+      
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.css">
+  <div class="aplayer"
+    data-theme=""
+    data-mini=true 
+    
+    data-mode="circulation"
+    data-server="netease"
+    data-type="playlist"
+    data-id="2615636388"
+    data-volume="0.7">
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
+
+
+    
     
     <div class="meta" id="header-meta">
       
@@ -289,11 +306,11 @@
             
   <div class='new-meta-item author'>
     
-      <a href="http://uscair.club" rel="nofollow">
+      <a href="/" rel="nofollow">
         
           <i class="fas fa-user" aria-hidden="true"></i>
         
-        <p>AIR@USC</p>
+        <p>Gowi</p>
       </a>
     
   </div>
@@ -313,6 +330,14 @@
         
           
             
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>机器学习</p>
+    </a>
+  </div>
+
 
           
         
@@ -341,14 +366,14 @@
       <a class='notlink'>
         <i class="fas fa-keyboard" aria-hidden="true"></i>
         <p>字数统计:</p>
-        <p>4.6k字</p>
+        <p>4.5k字</p>
       </a>
     </div>
     <div class="new-meta-item readtime">
       <a class='notlink'>
         <i class="fas fa-hourglass-half" aria-hidden="true"></i>
         <p>阅读时长≈</p>
-        <p>20分</p>
+        <p>19分</p>
       </a>
     </div>
   
@@ -370,23 +395,7 @@
 
     <section class="article typo">
       <div class="article-entry" itemprop="articleBody">
-        <p>-—</p>
-<p>title: 神经网络–反向传播算法推导</p>
-<p>date: 2020-02-13</p>
-<p>author:</p>
-<p> name: Gowi</p>
-<p>categories: </p>
-<p> - 机器学习 #分类 </p>
-<p>tags: </p>
-<p> -  神经网络、机器学习基础 #标签</p>
-<p>music:</p>
-<p> enable: true  # true（文章内和文章列表都显示） internal（只在文章内显示）</p>
-<p> server:  # netease（网易云音乐）tencent（QQ音乐） xiami（虾米） kugou（酷狗）</p>
-<p> type:  # song （单曲） album （专辑） playlist （歌单） search （搜索）</p>
-<p> id:  # 歌曲/专辑/歌单 ID</p>
-<p>mathjax: true #博客内有公式要加上</p>
-<p>-—</p>
-<h1 id="神经网络–反向传播算法推导"><a href="#神经网络–反向传播算法推导" class="headerlink" title="神经网络–反向传播算法推导"></a>神经网络–反向传播算法推导</h1><p>[toc]</p>
+        <h1 id="神经网络–反向传播算法推导"><a href="#神经网络–反向传播算法推导" class="headerlink" title="神经网络–反向传播算法推导"></a>神经网络–反向传播算法推导</h1><p>[toc]</p>
 <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>以监督学习为例，假设我们有训练样本集$(x^{(i)},y^{(i)})$，那么神经网络算法能提供一种复杂且非线性的假设模型$h_{(W,b)}(x)$,它具有参数$W$，$b$，可以以此参数来拟合我们的数据。</p>
 <p>为了描述神经网络，我们先从最简单的神经网络讲起，这个神经网络仅由一个“神经元”构成，以下即是这个“神经元”的图示：</p>
 <p><img src="https://gowi-picgo.oss-cn-shenzhen.aliyuncs.com/picgo/20200213092017.png" alt=""></p>
@@ -479,7 +488,7 @@ $$</code></pre><ol start="3">
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-02-13T19:27:23+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-02-13T00:00:00+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>updated at Feb 13, 2020</p>
@@ -490,6 +499,9 @@ $$</code></pre><ol start="3">
       
         
           
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E3%80%81%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>神经网络、机器学习基础</p></a></div>
+
 
         
       
@@ -602,6 +614,44 @@ $$</code></pre><ol start="3">
 
 
 <!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+  <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX","TeX"],
+      linebreaks: { automatic:true },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: { autoNumber: "AMS" },
+      noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+      Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+  });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += (all[i].SourceElement().parentNode.className ? ' ' : '') + 'has-jax';
+    }
+  });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
 
 
 
@@ -883,7 +933,7 @@ $$</code></pre><ol start="3">
         
           <li><a class="flat-box" title="/categories/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" href="/categories/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"><div class='name'>数字图像处理</div><div class='badge'>(4)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"><div class='name'>机器学习</div><div class='badge'>(6)</div></a></li>
+          <li><a class="flat-box" title="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"><div class='name'>机器学习</div><div class='badge'>(7)</div></a></li>
         
       </ul>
     </div>
@@ -934,7 +984,7 @@ $$</code></pre><ol start="3">
 </header>
 
     <div class='content pure'>
-      <a href="/tags/AI%E5%A4%A7%E6%95%B0%E6%8D%AE/" style="font-size: 14px; color: #999">AI大数据</a> <a href="/tags/CNN/" style="font-size: 14px; color: #999">CNN</a> <a href="/tags/NAOqi/" style="font-size: 19px; color: #777">NAOqi</a> <a href="/tags/OpenCV/" style="font-size: 19px; color: #777">OpenCV</a> <a href="/tags/STM32/" style="font-size: 14px; color: #999">STM32</a> <a href="/tags/robocup/" style="font-size: 14px; color: #999">robocup</a> <a href="/tags/test/" style="font-size: 14px; color: #999">test</a> <a href="/tags/%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF/" style="font-size: 14px; color: #999">拉普拉斯</a> <a href="/tags/%E6%95%B0%E7%90%86%E5%9F%BA%E7%A1%80/" style="font-size: 14px; color: #999">数理基础</a> <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/" style="font-size: 24px; color: #555">机器学习基础</a> <a href="/tags/%E6%A8%A1%E6%9D%BF/" style="font-size: 14px; color: #999">模板</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/" style="font-size: 14px; color: #999">线性回归</a>
+      <a href="/tags/AI%E5%A4%A7%E6%95%B0%E6%8D%AE/" style="font-size: 14px; color: #999">AI大数据</a> <a href="/tags/CNN/" style="font-size: 14px; color: #999">CNN</a> <a href="/tags/NAOqi/" style="font-size: 19px; color: #777">NAOqi</a> <a href="/tags/OpenCV/" style="font-size: 19px; color: #777">OpenCV</a> <a href="/tags/STM32/" style="font-size: 14px; color: #999">STM32</a> <a href="/tags/robocup/" style="font-size: 14px; color: #999">robocup</a> <a href="/tags/test/" style="font-size: 14px; color: #999">test</a> <a href="/tags/%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF/" style="font-size: 14px; color: #999">拉普拉斯</a> <a href="/tags/%E6%95%B0%E7%90%86%E5%9F%BA%E7%A1%80/" style="font-size: 14px; color: #999">数理基础</a> <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/" style="font-size: 24px; color: #555">机器学习基础</a> <a href="/tags/%E6%A8%A1%E6%9D%BF/" style="font-size: 14px; color: #999">模板</a> <a href="/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E3%80%81%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/" style="font-size: 14px; color: #999">神经网络、机器学习基础</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/" style="font-size: 14px; color: #999">线性回归</a>
     </div>
   </section>
 
