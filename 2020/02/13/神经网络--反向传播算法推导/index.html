@@ -267,23 +267,6 @@
 
   <section class='meta'>
     
-      
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.css">
-  <div class="aplayer"
-    data-theme=""
-    data-mini=true 
-    
-    data-mode="circulation"
-    data-server="netease"
-    data-type="playlist"
-    data-id="2615636388"
-    data-volume="0.7">
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
-
-
-    
     
     <div class="meta" id="header-meta">
       
@@ -406,8 +389,8 @@
 <h2 id="神经网络模型"><a href="#神经网络模型" class="headerlink" title="神经网络模型"></a>神经网络模型</h2><p>所谓神经网络就是将许多个单一“神经元”联结在一起，这样，一个“神经元”的输出就可以是另一个“神经元”的输入。例如，下图就是一个简单的神经网络：</p>
 <p><img src="https://gowi-picgo.oss-cn-shenzhen.aliyuncs.com/picgo/20200213100507.png" alt=""></p>
 <p>我们使用圆圈来表示神经网络的输入，标上“+1”的圆圈被称为<strong>偏置节点</strong>，也就是截距项。神经网络最左边的一层叫做<strong>输入层</strong>，最右的一层叫做<strong>输出层</strong>（本例中，输出层只有一个节点）。中间所有节点组成的一层叫做<strong>隐藏层</strong>，因为我们不能在训练样本集中观测到它们的值。同时可以看到，以上神经网络的例子中有3个<strong>输入单元</strong>（偏置单元不计在内），3个<strong>隐藏单元</strong>及一个<strong>输出单元</strong>。</p>
-<p>我们用$n_l$来表示网络的层数，本例中 $\textstyle n_l=3$ ，我们将第 $\textstyle l$ 层记为 $\textstyle L_l$ ，于是$\textstyle L_1$ 是输入层，输出层是 $\textstyle L_{n_l}$ 。本例神经网络有参数 $\textstyle (W,b) = (W^{(1)}, b^{(1)}, W^{(2)}, b^{(2)})$ ，其中$\textstyle W^{(l)}_{ij}$（下面的式子中用到）是第 $\textstyle l$ 层第 $\textstyle j$ 单元与第 $\textstyle l+1$ 层第 $\textstyle l+1$ 单元之间的联接参数（其实就是连接线上的权重，注意标号顺序）， $\textstyle b^{(l)}_i$ 是第 $\textstyle l+1$ 层第 <img src="http://ufldl.stanford.edu/wiki/images/math/0/b/3/0b36ee693126b34b58f77dba7ed23987.png" alt="\textstyle i"> 单元的偏置项。因此在本例中， $\textstyle W^{(1)} \in \Re^{3\times 3}$ ， $\textstyle W^{(2)} \in \Re^{1\times 3}$ 。注意，没有其他单元连向偏置单元(即偏置单元没有输入)，因为它们总是输出 $\textstyle +1$。同时，我们用 $\textstyle s_l$ 表示第 $\textstyle l$ 层的节点数（偏置单元不计在内）。</p>
-<p>我们用 $\textstyle a^{(l)}_i$ 表示第 $\textstyle l$层第 $\textstyle i$ 单元的<strong>激活值</strong>（输出值）。当$\textstyle l=1$ 时，$ \textstyle a^{(1)}_i = x_i $，也就是第 $\textstyle i$ 个输入值（输入值的第$\textstyle i$个特征)。对于给定参数集合 !$\textstyle W,b$，我们的神经网络就可以按照函数 $\textstyle h_{W,b}(x)$ 来计算输出结果。本例神经网络的计算步骤如下：<br>$$<br>a_1^{(2)}=f(W_{11}^{(1)}x_1+W_{12}^{(1)}x_2+W_{13}^{(1)}x_3+b_1^{(1)})\<br>a_1^{(2)}=f(W_{21}^{(1)}x_1+W_{22}^{(1)}x_2+W_{23}^{(1)}x_3+b_1^{(1)})\<br>a_1^{(2)}=f(W_{31}^{(1)}x_1+W_{32}^{(1)}x_2+W_{33}^{(1)}x_3+b_1^{(1)})\<br>h_{W,b}(x)=a_1^{(3)}=f(W_{11}^{(2)}a_1^{(2)}+W_{12}^{(2)}a_2^{(2)}+W_{13}^{(2)}a_3^{(2)}+b_1^{(2)})<br>$$<br>我们用 $\textstyle z^{(l)}_i$ 表示第$\textstyle l$ 层第 $\textstyle i$ 单元输入加权和（包括偏置单元），比如， $\textstyle  z_i^{(2)} = \sum_{j=1}^n W^{(1)}_{ij} x_j + b^{(1)}_i$ ，则 $\textstyle a^{(l)}_i = f(z^{(l)}_i)$ 。</p>
+<p>我们用$n_l$来表示网络的层数，本例中 $\textstyle n_l=3$ ，我们将第 $\textstyle l$ 层记为 $\textstyle L_l$ ，于是$\textstyle L_1$ 是输入层，输出层是 $\textstyle L_{n_l}$ 。本例神经网络有参数 $\textstyle (W,b) = (W^{(1)}, b^{(1)}, W^{(2)}, b^{(2)})$ ，其中$\textstyle W^{(l)}_{ij}$（下面的式子中用到）是第 $\textstyle l$ 层第 $\textstyle j$ 单元与第 $\textstyle l+1$ 层第 $i$ 单元之间的联接参数（其实就是连接线上的权重，注意标号顺序）， $\textstyle b^{(l)}_i$ 是第 $\textstyle l+1$ 层第$i$单元的偏置项。因此在本例中， $\textstyle W^{(1)} \in \Re^{3\times 3}$ ， $\textstyle W^{(2)} \in \Re^{1\times 3}$ 。注意，没有其他单元连向偏置单元(即偏置单元没有输入)，因为它们总是输出 $\textstyle +1$。同时，我们用 $\textstyle s_l$ 表示第 $\textstyle l$ 层的节点数（偏置单元不计在内）。</p>
+<p>我们用 $\textstyle a^{(l)}_i$ 表示第 $\textstyle l$层第 $\textstyle i$ 单元的<strong>激活值</strong>（输出值）。当$\textstyle l=1$ 时，$ \textstyle a^{(1)}_i = x_i $，也就是第 $\textstyle i$ 个输入值（输入值的第$\textstyle i$个特征)。对于给定参数集合 $\textstyle W,b$，我们的神经网络就可以按照函数 $\textstyle h_{W,b}(x)$ 来计算输出结果。本例神经网络的计算步骤如下：<br>$$<br>a_1^{(2)}=f(W_{11}^{(1)}x_1+W_{12}^{(1)}x_2+W_{13}^{(1)}x_3+b_1^{(1)})\<br>a_1^{(2)}=f(W_{21}^{(1)}x_1+W_{22}^{(1)}x_2+W_{23}^{(1)}x_3+b_1^{(1)})\<br>a_1^{(2)}=f(W_{31}^{(1)}x_1+W_{32}^{(1)}x_2+W_{33}^{(1)}x_3+b_1^{(1)})\<br>h_{W,b}(x)=a_1^{(3)}=f(W_{11}^{(2)}a_1^{(2)}+W_{12}^{(2)}a_2^{(2)}+W_{13}^{(2)}a_3^{(2)}+b_1^{(2)})<br>$$<br>我们用 $\textstyle z^{(l)}_i$ 表示第$\textstyle l$ 层第 $\textstyle i$ 单元输入加权和（包括偏置单元），比如， $\textstyle  z_i^{(2)} = \sum_{j=1}^n W^{(1)}_{ij} x_j + b^{(1)}_i$ ，则 $\textstyle a^{(l)}_i = f(z^{(l)}_i)$ 。</p>
 <p>这样我们就可以得到一种更简洁的表示法。这里我们将激活函数 $\textstyle f(\cdot)$ 扩展为用向量（分量的形式）来表示，即 $\textstyle f([z_1, z_2, z_3]) = [f(z_1), f(z_2), f(z_3)]$，那么，上面的等式可以更简洁地表示为：<br>$$<br>z^{(2)}=W^{(1)}x+b^{(1)}\<br>a^{(2)}=f(z^{(2)})\<br>z^{(3)}=W^{(2)}x+b^{(2)}\<br>h_{W,b}(x)=a^{(3)}=f(z^{(3)})<br>$$<br>我们将上面的计算步骤叫作<strong>前向传播</strong>。回想一下，之前我们用 $\textstyle a^{(1)} = x$ 表示输入层的激活值，那么给定第 $\textstyle l$的激活值 $\textstyle a^{(l)}$ 后，第 $\textstyle l+1$ 层的激活值 $\textstyle a^{(l+1)}$ 就可以按照下面步骤计算得到：<br>$$<br>z^{(l+1)}=W^{(l)}a^{(l)}+b^{(l)}\<br>a^{(l+1)}=f(z^{(l+1)})<br>$$<br>将参数矩阵化，使用矩阵－向量运算方式，我们就可以利用线性代数的优势对神经网络进行快速求解。</p>
 <p>目前为止，我们讨论了一种神经网络，我们也可以构建另一种<strong>结构</strong>的神经网络（这里结构指的是神经元之间的联接模式），也就是包含多个隐藏层的神经网络。最常见的一个例子是 $\textstyle  n_l$ 层的神经网络，第 $\textstyle  1$ 层是输入层，第 $\textstyle  n_l$ 层是输出层，中间的每个层 $\textstyle  l$ 与层 $\textstyle  l+1$ 紧密相联。这种模式下，要计算神经网络的输出结果，我们可以按照之前描述的等式，按部就班，进行前向传播，逐一计算第 $\textstyle  L_2$ 层的所有激活值，然后是第 $\textstyle  L_3$ 层的激活值，以此类推，直到第 $\textstyle  L_{n_l}$层。这是一个<strong>前馈</strong>神经网络的例子，因为这种联接图没有闭环或回路。</p>
 <p>神经网络也可以有多个输出单元。比如，下面的神经网络有两层隐藏层： $\textstyle L_2$ 及 $\textstyle L_3$ ，输出层 $\textstyle L_4$ 有两个输出单元。</p>
