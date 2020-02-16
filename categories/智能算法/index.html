@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>Robocup新手指南 | AIR</title>
+  <title>Category: 智能算法 | AIR</title>
   
   <meta name="keywords" content="AI ,NAO ,Scientific Research">
   
@@ -79,7 +79,7 @@
   
   
   <div class="cover-wrapper">
-    <cover class='cover post half'>
+    <cover class='cover  half'>
       
         
   <h1 class='title'>AIR</h1>
@@ -258,11 +258,25 @@
 
   <div class="l_body">
     <div class='body-wrapper'>
-      <div class='l_main'>
+      
+<div class='l_main'>
   
-
-  <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
     
+      
+  <section class="post-list">
+    
+      
+        
+          
+        
+      
+    
+    
+      
+        
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
 
 
   <section class='meta'>
@@ -271,13 +285,11 @@
     <div class="meta" id="header-meta">
       
         
-  
-    <h1 class="title">
-      <a href="/2020/02/08/Robocup%E6%96%B0%E6%89%8B%E6%8C%87%E5%8D%97/">
-        Robocup新手指南
-      </a>
-    </h1>
-  
+  <h2 class="title">
+    <a href="/2020/02/16/%E6%99%BA%E8%83%BD%E7%AE%97%E6%B3%95/">
+      智能算法
+    </a>
+  </h2>
 
 
       
@@ -293,7 +305,7 @@
         
           <i class="fas fa-user" aria-hidden="true"></i>
         
-        <p>徐雯君</p>
+        <p></p>
       </a>
     
   </div>
@@ -305,7 +317,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2020-02-08</p>
+    <p>2020-02-16</p>
   </a>
 </div>
 
@@ -315,29 +327,11 @@
             
   
   <div class='new-meta-item category'>
-    <a href='/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/' rel="nofollow">
+    <a href='/categories/%E6%99%BA%E8%83%BD%E7%AE%97%E6%B3%95/' rel="nofollow">
       <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>人工智能</p>
+      <p>智能算法</p>
     </a>
   </div>
-
-
-          
-        
-          
-            
-  
-    <div class="new-meta-item browse busuanzi">
-      <a class='notlink'>
-        <i class="fas fa-eye" aria-hidden="true"></i>
-        <p>
-          <span id="busuanzi_value_page_pv">
-            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
-          </span>
-        </p>
-      </a>
-    </div>
-  
 
 
           
@@ -349,14 +343,14 @@
       <a class='notlink'>
         <i class="fas fa-keyboard" aria-hidden="true"></i>
         <p>字数统计:</p>
-        <p>479字</p>
+        <p>1.7k字</p>
       </a>
     </div>
     <div class="new-meta-item readtime">
       <a class='notlink'>
         <i class="fas fa-hourglass-half" aria-hidden="true"></i>
         <p>阅读时长≈</p>
-        <p>1分</p>
+        <p>5分</p>
       </a>
     </div>
   
@@ -376,193 +370,44 @@
   </section>
 
 
-    <section class="article typo">
-      <div class="article-entry" itemprop="articleBody">
-        <h2 id="初学者该从哪些方面了解"><a href="#初学者该从哪些方面了解" class="headerlink" title="初学者该从哪些方面了解"></a>初学者该从哪些方面了解</h2><p>1.robocup比赛过程以及相关规则<br><img src="https://img-blog.csdnimg.cn/20200208211812624.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0NjgzOTA3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<p>2.什么是robocup</p>
-<h2 id="robocup简介"><a href="#robocup简介" class="headerlink" title="robocup简介"></a>robocup简介</h2><p>RoboCup (Robot World Cup)，即机器人世界杯足球锦标赛。它是国际上一项为提高相关领域的教育和研究水平而举行的大型比赛和学术活动,通过提供一个标准任务来促进分布式人工智能、智能机器人技术、及其相关领域的研究与发展。</p>
-<h3 id="server"><a href="#server" class="headerlink" title="server"></a>server</h3><p>能在server上工作是建立在对SPADES上的，所以接下来主要介绍一下SPADES相关的两点主要内容，即Agent可接收的感觉和动作</p>
-<h4 id="感觉"><a href="#感觉" class="headerlink" title="感觉"></a>感觉</h4><p>感觉信息格式：Stime time data<br>其中第一个time指的是感觉发出的周期，其二个time指的是信息到达agent的周期，data指感觉信息的字符串，值得注意的是一条感觉信息可以包含多种感觉。<br>1.视觉：全方向，所感观物体是透明的，物体位置以相对于agent的极坐标形式给出，坐标参数为（距离，theta，phi）<br>2.competition state即比赛状态：主要提供信息，例如球门球员尺寸,物体质量，时间以及比赛模式，球员号码，球员是左还是右的位置<br>3.agent状态：主要提供自身内部信息，即电池状态和温度<br>4.听觉：可通过听说来相互通讯</p>
-<h4 id="动作"><a href="#动作" class="headerlink" title="动作"></a>动作</h4><p>与感觉一样，通过一些动作来实现agent对环境的作用。每种动作信息以字母”A”开头，后面是字符串。<br>格式：<br>Adata<br>data包含动作信息<br>Creat：这是agent必须发送的第一个动作。这个动作使得server登录agent并创建与agent的通讯。格式如下： <br>A(create) <br>类似的还有Init，Beam，Drive，Kick，Catch，Say等，具体内容可点击下方链接查看。</p>
-<p><a href="https://wenku.baidu.com/view/a30ed14bcf84b9d528ea7a13.html?tdsourcetag=s_pcqq_aiomsg&qq-pf-to=pcqq.c2c" target="_blank" rel="noopener">关于3D的具体内容指导</a></p>
-
-      </div>
-	  
-            <! -- 添加版权信息 -->
-<div class="article-footer-copyright">
-<center>本文由<b><a href="/index.html" target="_blank" title="AIR@USC">AIR@USC</a></b>创作和发表,采用<b>BY</b>-<b>NC</b>-<b>SA</b>国际许可协议进行许可</center>
- 
-<center>转载请注明作者及出处,本文作者为<b><a href="/index.html" target="_blank" title="AIR@USC">AIR@USC</a></b>,本文标题为<b><a href="/2020/02/08/Robocup新手指南/" target="_blank" title="Robocup新手指南">Robocup新手指南</a></b></center>
- 
-<center>本文链接为<b><a href="/2020/02/08/Robocup新手指南/" target="_blank" title="Robocup新手指南">http://uscair.club/2020/02/08/Robocup新手指南/</a></b>.</center>
-</div>
-<! -- 添加版权信息 -->
-        
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
       
       
-        <br>
-        
-
-
-  <section class='meta' id="footer-meta">
-    <div class='new-meta-box'>
-      
-        
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-02-08T00:00:00+08:00">
-  <a class='notlink'>
-    <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>updated at Feb 8, 2020</p>
-  </a>
-</div>
-
-        
-      
-        
-          
-  
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/robocup/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>robocup</p></a></div>
-
-
-        
-      
-        
-          
-  <div class="new-meta-item share -mob-share-list">
-  <div class="-mob-share-list share-body">
-    
-      
-        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
-          
-          href="http://connect.qq.com/widget/shareqq/index.html?url=http://uscair.club/2020/02/08/Robocup%E6%96%B0%E6%89%8B%E6%8C%87%E5%8D%97/&title=Robocup新手指南 | AIR&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
-          
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://uscair.club/2020/02/08/Robocup%E6%96%B0%E6%89%8B%E6%8C%87%E5%8D%97/&title=Robocup新手指南 | AIR&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
-          
-          href="http://service.weibo.com/share/share.php?url=http://uscair.club/2020/02/08/Robocup%E6%96%B0%E6%89%8B%E6%8C%87%E5%8D%97/&title=Robocup新手指南 | AIR&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
-          
-        </a>
-      
-    
-  </div>
-</div>
-
-
-
-        
+        <div class="readmore">
+          <a href="/2020/02/16/%E6%99%BA%E8%83%BD%E7%AE%97%E6%B3%95/" class="flat-box">
+            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+            Read More
+          </a>
+        </div>
       
     </div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="/tags/AI%E5%A4%A7%E6%95%B0%E6%8D%AE/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> AI大数据</a>
+        
+      </div>
+    
   </section>
+</article>
 
-
-      
-      
-          <div class="prev-next">
-              
-                  <section class="prev">
-                      <span class="art-item-left">
-                          <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;Previous</h6>
-                          <h4>
-                              <a href="/2020/02/09/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/" rel="prev" title="线性回归的几种解法">
-                                
-                                    线性回归的几种解法
-                                
-                              </a>
-                          </h4>
-                          
-                              
-                              <h6 class="tags">
-                                  <a class="tag" href="/tags/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 线性回归</a>
-                              </h6>
-                          
-                      </span>
-                  </section>
-              
-              
-                  <section class="next">
-                      <span class="art-item-right" aria-hidden="true">
-                          <h6>Next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
-                          <h4>
-                              <a href="/2020/02/06/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E2%80%94%E2%80%94%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E7%AE%97%E5%AD%90%E3%80%90%E5%83%8F%E7%B4%A0%E7%BA%A7%E5%88%AB%E5%A4%84%E7%90%86%E3%80%91%EF%BC%88python%EF%BC%89/" rel="prev" title="数字图像处理——拉普拉斯算子【像素级别处理】（python）">
-                                  
-                                      数字图像处理——拉普拉斯算子【像素级别处理】（python）
-                                  
-                              </a>
-                          </h4>
-                          
-                              
-                              <h6 class="tags">
-                                  <a class="tag" href="/tags/%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 拉普拉斯</a>
-                              </h6>
-                          
-                      </span>
-                  </section>
-              
           </div>
+        
       
-    </section>
-  </article>
+    
+  </section>
+  
+    
+    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
+    
+    
+
+  
 
 
-
-  <!-- 显示推荐文章和评论 -->
-
-
-
-  <article class="post white-box comments">
-    <section class="article typo">
-      <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;Comments</h4>
-      
-      
-        <section id="comments">
-          <div id="lv-container" data-id="city" data-uid="MTAyMC80ODI4NC8yNDc3OA==">
-            <noscript><div><i class='fas fa-exclamation-triangle'>&nbsp;Unable to load Livere, please make sure your network can access.</div></noscript>
-          </div>
-        </section>
-      
-      
-      
-    </section>
-  </article>
-
-
-
-
-
-
-<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
-
-
-
-  <script>
-    window.subData = {
-      title: 'Robocup新手指南',
-      tools: true
-    }
-  </script>
-
+    
+  
 
 </div>
 <aside class='l_side'>
@@ -672,25 +517,6 @@
           
         
           
-          
-            
-              
-  <section class='widget toc-wrapper'>
-    
-<header class='pure'>
-  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;TOC</div>
-  
-    <!-- <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div> -->
-  
-</header>
-
-    <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#初学者该从哪些方面了解"><span class="toc-text">初学者该从哪些方面了解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#robocup简介"><span class="toc-text">robocup简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#server"><span class="toc-text">server</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#感觉"><span class="toc-text">感觉</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#动作"><span class="toc-text">动作</span></a></li></ol></li></ol></li></ol>
-    </div>
-  </section>
-
-
-            
           
         
           
@@ -901,46 +727,6 @@
           
         
       
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-      
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-      
     
 
   
@@ -1099,17 +885,6 @@ setInterval("createtime()",250);
 
 
 
-
-  <script type="text/javascript">
-    (function(d, s) {
-      var j, e = d.getElementsByTagName(s)[0];
-      if (typeof LivereTower === 'function') { return; }
-      j = d.createElement(s);
-      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-      j.async = true;
-      e.parentNode.insertBefore(j, e);
-    })(document, 'script');
-  </script>
 
 
 

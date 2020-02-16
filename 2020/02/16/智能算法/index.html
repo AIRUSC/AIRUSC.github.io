@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>Robocup新手指南 | AIR</title>
+  <title>智能算法 | AIR</title>
   
   <meta name="keywords" content="AI ,NAO ,Scientific Research">
   
@@ -273,8 +273,8 @@
         
   
     <h1 class="title">
-      <a href="/2020/02/08/Robocup%E6%96%B0%E6%89%8B%E6%8C%87%E5%8D%97/">
-        Robocup新手指南
+      <a href="/2020/02/16/%E6%99%BA%E8%83%BD%E7%AE%97%E6%B3%95/">
+        智能算法
       </a>
     </h1>
   
@@ -293,7 +293,7 @@
         
           <i class="fas fa-user" aria-hidden="true"></i>
         
-        <p>徐雯君</p>
+        <p></p>
       </a>
     
   </div>
@@ -305,7 +305,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2020-02-08</p>
+    <p>2020-02-16</p>
   </a>
 </div>
 
@@ -315,9 +315,9 @@
             
   
   <div class='new-meta-item category'>
-    <a href='/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/' rel="nofollow">
+    <a href='/categories/%E6%99%BA%E8%83%BD%E7%AE%97%E6%B3%95/' rel="nofollow">
       <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>人工智能</p>
+      <p>智能算法</p>
     </a>
   </div>
 
@@ -349,14 +349,14 @@
       <a class='notlink'>
         <i class="fas fa-keyboard" aria-hidden="true"></i>
         <p>字数统计:</p>
-        <p>479字</p>
+        <p>1.7k字</p>
       </a>
     </div>
     <div class="new-meta-item readtime">
       <a class='notlink'>
         <i class="fas fa-hourglass-half" aria-hidden="true"></i>
         <p>阅读时长≈</p>
-        <p>1分</p>
+        <p>5分</p>
       </a>
     </div>
   
@@ -378,13 +378,22 @@
 
     <section class="article typo">
       <div class="article-entry" itemprop="articleBody">
-        <h2 id="初学者该从哪些方面了解"><a href="#初学者该从哪些方面了解" class="headerlink" title="初学者该从哪些方面了解"></a>初学者该从哪些方面了解</h2><p>1.robocup比赛过程以及相关规则<br><img src="https://img-blog.csdnimg.cn/20200208211812624.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0NjgzOTA3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<p>2.什么是robocup</p>
-<h2 id="robocup简介"><a href="#robocup简介" class="headerlink" title="robocup简介"></a>robocup简介</h2><p>RoboCup (Robot World Cup)，即机器人世界杯足球锦标赛。它是国际上一项为提高相关领域的教育和研究水平而举行的大型比赛和学术活动,通过提供一个标准任务来促进分布式人工智能、智能机器人技术、及其相关领域的研究与发展。</p>
-<h3 id="server"><a href="#server" class="headerlink" title="server"></a>server</h3><p>能在server上工作是建立在对SPADES上的，所以接下来主要介绍一下SPADES相关的两点主要内容，即Agent可接收的感觉和动作</p>
-<h4 id="感觉"><a href="#感觉" class="headerlink" title="感觉"></a>感觉</h4><p>感觉信息格式：Stime time data<br>其中第一个time指的是感觉发出的周期，其二个time指的是信息到达agent的周期，data指感觉信息的字符串，值得注意的是一条感觉信息可以包含多种感觉。<br>1.视觉：全方向，所感观物体是透明的，物体位置以相对于agent的极坐标形式给出，坐标参数为（距离，theta，phi）<br>2.competition state即比赛状态：主要提供信息，例如球门球员尺寸,物体质量，时间以及比赛模式，球员号码，球员是左还是右的位置<br>3.agent状态：主要提供自身内部信息，即电池状态和温度<br>4.听觉：可通过听说来相互通讯</p>
-<h4 id="动作"><a href="#动作" class="headerlink" title="动作"></a>动作</h4><p>与感觉一样，通过一些动作来实现agent对环境的作用。每种动作信息以字母”A”开头，后面是字符串。<br>格式：<br>Adata<br>data包含动作信息<br>Creat：这是agent必须发送的第一个动作。这个动作使得server登录agent并创建与agent的通讯。格式如下： <br>A(create) <br>类似的还有Init，Beam，Drive，Kick，Catch，Say等，具体内容可点击下方链接查看。</p>
-<p><a href="https://wenku.baidu.com/view/a30ed14bcf84b9d528ea7a13.html?tdsourcetag=s_pcqq_aiomsg&qq-pf-to=pcqq.c2c" target="_blank" rel="noopener">关于3D的具体内容指导</a></p>
+        <a id="more"></a>
+<h2 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h2><h3 id="什么是群体智能优化算法"><a href="#什么是群体智能优化算法" class="headerlink" title="什么是群体智能优化算法"></a>什么是群体智能优化算法</h3><p>群体智能优化算法属于一种生物启发式方法。<br><br><em>群体智能优化算法主要模拟了昆虫、兽群、鸟群和鱼群的群集行为，这些群体按照一种合作的方式寻找食物，群体中的每个成员通过学习它自身的经验和其他成员的经验来不断地改变搜索的方向。</em><br><br>群体智能优化算法的突出特点就是利用了种群的群体智慧进行协同搜索，从而在解空间内找到最优解。</p>
+<h2 id="二、群体智能优化算法"><a href="#二、群体智能优化算法" class="headerlink" title="二、群体智能优化算法"></a>二、群体智能优化算法</h2><h3 id="1-常见的群体智能优化算法分类"><a href="#1-常见的群体智能优化算法分类" class="headerlink" title="1.常见的群体智能优化算法分类"></a>1.常见的群体智能优化算法分类</h3><p>常见的群体智能优化算法主要有如下几类：<br><br>　　（1）蚁群算法（Ant Colony Optimization，简称ACO）[1992年提出]；<br><br>　　（2）粒子群优化算法（Particle Swarm Optimization，简称PSO）[1995年提出]（简单易于实现，也是目前应用最为广泛的群体智能优化算法）；<br><br>　　（3）菌群优化算法（Bacterial Foraging Optimization，简称BFO）[2002年提出]；<br><br>　　（4）蛙跳算法（Shuffled Frog Leading Algorithm，简称SFLA）[2003年提出]；<br><br>　　（5）人工蜂群算法（Artificial Bee Colony Algorithm，简称ABC）[2005年提出]；<br><br>　　除了上述几种常见的群体智能算法以外，还有一些并不是广泛应用的群体智能算法，比如萤火虫算法、布谷鸟算法、蝙蝠算法以及磷虾群算法等等。</p>
+<h3 id="2-粒子群优化算法思想"><a href="#2-粒子群优化算法思想" class="headerlink" title="2.粒子群优化算法思想"></a>2.粒子群优化算法思想</h3><p>　　粒子群优化算法是在1995年由Eberhart博士和Kennedy博士一起提出的，它源于对鸟群捕食行为的研究。<strong>它的基本核心是利用群体中的个体对信息的共享从而使得整个群体的运动在问题求解空间中产生从无序到有序的演化过程，从而获得问题的最优解。</strong>我们可以利用一个有关PSO的经典描述来对PSO算法进行一个直观的描述。<em>设想这么一个场景：一群鸟进行觅食，而远处有一片玉米地，所有的鸟都不知道玉米地到底在哪里，但是它们知道自己当前的位置距离玉米地有多远。那么找到玉米地的最佳策略，也是最简单有效的策略就是是搜寻目前距离玉米地最近的鸟群的周围区域。</em>PSO就是从这种群体觅食的行为中得到了启示，从而构建的一种优化模型。<br><br>　　在PSO中，每个优化问题的解都是搜索空间中的一只鸟，称之为“粒子”，而问题的最优解就对应为鸟群要寻找的“玉米地”。所有的粒子都具有一个位置向量（粒子在解空间的位置）和速度向量（决定下次飞行的方向和速度），并可以根据目标函数来计算当前的所在位置的适应值（fitness value），可以将其理解为距离“玉米地”的距离。在每次的迭代中，种群中的粒子除了根据自身的“经验”（历史位置）进行学习以外，还可以根据种群中最优粒子的“经验”来学习，从而确定下一次迭代时需要如何调整和改变飞行的方向和速度。就这样逐步迭代，最终整个种群的粒子就会逐步趋于最优解。</p>
+<h3 id="3-粒子群优化算法的基本框架"><a href="#3-粒子群优化算法的基本框架" class="headerlink" title="3. 粒子群优化算法的基本框架"></a>3. 粒子群优化算法的基本框架</h3><p>　　在介绍PSO的算法流程之前，我们写给出PSO中常用的迭代算子的形式。<br><br><img src="/images/pasted-39.png" alt="upload successful">代表粒子i的位置向量,<br><img src="/images/pasted-40.png" alt="upload successful">代表粒子i的速度向量（其中n为优化问题的维度大小），最早版本的粒子群优化算法的迭代算子形式如下：<br><img src="/images/pasted-41.png" alt="upload successful"><br>其中在公式(1)中，Pbesti与Gbest分别代表<em>粒子i历史最佳位置</em>和<em>种群历史最佳位置</em>向量。根据公式(1)(2)可以看出，种群中的粒子通过不断地向自身和种群的历史信息进行学习，从而可以找出问题的最优解。<br><br>　　但是，在后续的研究中表明，上述原始的公式中存在一个问题：<strong>公式(1)中Vi的更新太具有随机性，从而使得整个PSO算法的全局优化能力很强，但是局部搜索能力较差。</strong>而实际上，我们需要在算法迭代初期PSO有着较强的全局优化能力，而在算法的后期，整个种群应该具有更强的局部搜索能力。所以根据上述的弊端，Shi和Eberhart通过引入惯性权重修改了公式(1)，从而提出了PSO的惯性权重模型：<br><img src="/images/pasted-42.png" alt="upload successful"><br>其中参数 w 称为是PSO的惯性权重(inertia weight)， w 为控制单个粒子之前速度影响以及对后续行为影响的内置权重，它的取值介于[0,1]区间，一般应用中均采取自适应的取值方法，即一开始令 w=0.9，使得PSO全局优化能力较强，随着迭代的深入，参数w进行递减，从而使得PSO具有较强的局部优化能力，当迭代结束时，w=0.1。参数 c1 和 c2 称为是学习因子(learn factor)，一般设置为1.4961；而 r1 和 r2 为介于[0,1]之间的随机概率值。(可以用rand()代替，rand()为 0~1 之间的归一化随机数)<br><br><br>　　整个粒子群优化算法的算法框架如下：</p>
+<ul>
+<li>Step 1 种群初始化：<br>可以进行随机初始化或者根据被优化的问题设计特定的初始化方法，然后计算个体的适应值，从而选择出个体的局部最优位置向量<em>Pbesti</em>和种群全局最优位置向量<em>Gbest</em>。</li>
+<li>Step 2 迭代设置：<br>设置迭代次数 <em>gmax</em>，并令当前迭代次数 g=1;</li>
+<li>Step 3 速度更新：<br>根据公式（3）更新每个个体的速度向量；</li>
+<li>Step 4 位置更新：<br>根据公式（2）更新每个个体的位置向量；</li>
+<li>Step 5 局部位置向量和全局位置向量更新：<br>更新每个个体的<em>Pbesti</em>和<em>Gbest</em> ；</li>
+<li>Step 6终止条件判断：<br>判断迭代次数时都达到 <em>gmax</em> 。如果满足，输出 <em>Gbest</em><br>否则继续进行迭代，跳转至 <strong>Step 3</strong> 。</li>
+</ul>
+<blockquote>
+<p>对于粒子群优化算法的运用，主要是对速度和位置向量迭代算子的设计。迭代算子是否有效将决定整个PSO算法性能的优劣，所以如何设计PSO的迭代算子是PSO算法应用的研究重点和难点。</p>
+</blockquote>
 
       </div>
 	  
@@ -392,9 +401,9 @@
 <div class="article-footer-copyright">
 <center>本文由<b><a href="/index.html" target="_blank" title="AIR@USC">AIR@USC</a></b>创作和发表,采用<b>BY</b>-<b>NC</b>-<b>SA</b>国际许可协议进行许可</center>
  
-<center>转载请注明作者及出处,本文作者为<b><a href="/index.html" target="_blank" title="AIR@USC">AIR@USC</a></b>,本文标题为<b><a href="/2020/02/08/Robocup新手指南/" target="_blank" title="Robocup新手指南">Robocup新手指南</a></b></center>
+<center>转载请注明作者及出处,本文作者为<b><a href="/index.html" target="_blank" title="AIR@USC">AIR@USC</a></b>,本文标题为<b><a href="/2020/02/16/智能算法/" target="_blank" title="智能算法">智能算法</a></b></center>
  
-<center>本文链接为<b><a href="/2020/02/08/Robocup新手指南/" target="_blank" title="Robocup新手指南">http://uscair.club/2020/02/08/Robocup新手指南/</a></b>.</center>
+<center>本文链接为<b><a href="/2020/02/16/智能算法/" target="_blank" title="智能算法">http://uscair.club/2020/02/16/智能算法/</a></b>.</center>
 </div>
 <! -- 添加版权信息 -->
         
@@ -408,10 +417,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-02-08T00:00:00+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-02-16T19:58:00+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>updated at Feb 8, 2020</p>
+    <p>updated at Feb 16, 2020</p>
   </a>
 </div>
 
@@ -420,7 +429,7 @@
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/robocup/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>robocup</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/AI%E5%A4%A7%E6%95%B0%E6%8D%AE/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>AI大数据</p></a></div>
 
 
         
@@ -433,7 +442,7 @@
       
         <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=http://uscair.club/2020/02/08/Robocup%E6%96%B0%E6%89%8B%E6%8C%87%E5%8D%97/&title=Robocup新手指南 | AIR&summary="
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://uscair.club/2020/02/16/%E6%99%BA%E8%83%BD%E7%AE%97%E6%B3%95/&title=智能算法 | AIR&summary="
           
           >
           
@@ -445,7 +454,7 @@
       
         <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://uscair.club/2020/02/08/Robocup%E6%96%B0%E6%89%8B%E6%8C%87%E5%8D%97/&title=Robocup新手指南 | AIR&summary="
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://uscair.club/2020/02/16/%E6%99%BA%E8%83%BD%E7%AE%97%E6%B3%95/&title=智能算法 | AIR&summary="
           
           >
           
@@ -457,7 +466,7 @@
       
         <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=http://uscair.club/2020/02/08/Robocup%E6%96%B0%E6%89%8B%E6%8C%87%E5%8D%97/&title=Robocup新手指南 | AIR&summary="
+          href="http://service.weibo.com/share/share.php?url=http://uscair.club/2020/02/16/%E6%99%BA%E8%83%BD%E7%AE%97%E6%B3%95/&title=智能算法 | AIR&summary="
           
           >
           
@@ -481,40 +490,21 @@
       
           <div class="prev-next">
               
-                  <section class="prev">
-                      <span class="art-item-left">
-                          <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;Previous</h6>
-                          <h4>
-                              <a href="/2020/02/09/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/" rel="prev" title="线性回归的几种解法">
-                                
-                                    线性回归的几种解法
-                                
-                              </a>
-                          </h4>
-                          
-                              
-                              <h6 class="tags">
-                                  <a class="tag" href="/tags/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 线性回归</a>
-                              </h6>
-                          
-                      </span>
-                  </section>
-              
               
                   <section class="next">
                       <span class="art-item-right" aria-hidden="true">
                           <h6>Next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                           <h4>
-                              <a href="/2020/02/06/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E2%80%94%E2%80%94%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E7%AE%97%E5%AD%90%E3%80%90%E5%83%8F%E7%B4%A0%E7%BA%A7%E5%88%AB%E5%A4%84%E7%90%86%E3%80%91%EF%BC%88python%EF%BC%89/" rel="prev" title="数字图像处理——拉普拉斯算子【像素级别处理】（python）">
+                              <a href="/2020/02/16/%E5%85%B3%E4%BA%8Enumpy%E7%9F%A9%E9%98%B5%E8%BF%90%E7%AE%97%E7%9A%84%E5%B0%8F%E8%AE%B0/" rel="prev" title="关于numpy矩阵运算的小记">
                                   
-                                      数字图像处理——拉普拉斯算子【像素级别处理】（python）
+                                      关于numpy矩阵运算的小记
                                   
                               </a>
                           </h4>
                           
                               
                               <h6 class="tags">
-                                  <a class="tag" href="/tags/%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 拉普拉斯</a>
+                                  <a class="tag" href="/tags/Numpy/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Numpy</a>
                               </h6>
                           
                       </span>
@@ -558,7 +548,7 @@
 
   <script>
     window.subData = {
-      title: 'Robocup新手指南',
+      title: '智能算法',
       tools: true
     }
   </script>
@@ -685,7 +675,7 @@
 </header>
 
     <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#初学者该从哪些方面了解"><span class="toc-text">初学者该从哪些方面了解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#robocup简介"><span class="toc-text">robocup简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#server"><span class="toc-text">server</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#感觉"><span class="toc-text">感觉</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#动作"><span class="toc-text">动作</span></a></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、简介"><span class="toc-text">一、简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是群体智能优化算法"><span class="toc-text">什么是群体智能优化算法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、群体智能优化算法"><span class="toc-text">二、群体智能优化算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-常见的群体智能优化算法分类"><span class="toc-text">1.常见的群体智能优化算法分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-粒子群优化算法思想"><span class="toc-text">2.粒子群优化算法思想</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-粒子群优化算法的基本框架"><span class="toc-text">3. 粒子群优化算法的基本框架</span></a></li></ol></li></ol>
     </div>
   </section>
 
