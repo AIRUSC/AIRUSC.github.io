@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>STM32单片机系列(一) | AIR</title>
+  <title>STM32单片机系列（二） | AIR</title>
   
   <meta name="keywords" content="AI ,NAO ,Scientific Research">
   
@@ -273,8 +273,8 @@
         
   
     <h1 class="title">
-      <a href="/2020/02/09/STM32-CubMx/">
-        STM32单片机系列(一)
+      <a href="/2020/02/16/32%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1%20(2)/">
+        STM32单片机系列（二）
       </a>
     </h1>
   
@@ -305,7 +305,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2020-02-09</p>
+    <p>2020-02-16</p>
   </a>
 </div>
 
@@ -313,14 +313,6 @@
         
           
             
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/%E5%8D%95%E7%89%87%E6%9C%BA/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>单片机</p>
-    </a>
-  </div>
-
 
           
         
@@ -349,7 +341,7 @@
       <a class='notlink'>
         <i class="fas fa-keyboard" aria-hidden="true"></i>
         <p>字数统计:</p>
-        <p>358字</p>
+        <p>502字</p>
       </a>
     </div>
     <div class="new-meta-item readtime">
@@ -378,10 +370,18 @@
 
     <section class="article typo">
       <div class="article-entry" itemprop="articleBody">
-        <p><strong>介绍</strong><br>STM32CubeMX是一个图形化的工具，也是配置和初始化C代码生成器（STM32 configuration and initialization C code generation），也就是自动生成开发初期关于芯片相关的一些初始化代码。它包含了STM32所有系列的芯片，包含示例和样本（Examples and demos）、中间组件（Middleware Components）、硬件抽象层（Hardwaree abstraction layer）。<br>CubMX对一些开发工程的基本配置提供了很大的帮助，大大减少了编写基础代码所耗费的时间以及精力。<br><strong>内容</strong><br>今天就以点亮LED灯为例通过CubMX来编写相关程序。<br>首先选择对应的芯片类型这里以STM32F407IE为例：<img src="https://img-blog.csdnimg.cn/20200209102603860.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NDk0MDAz,size_16,color_FFFFFF,t_70" alt=""><br>其次可以通过对应芯片的用户手册来确定对应的IO口：407对应的是F9,F10俩个IO口（任选其一即可）。<br><img src="https://img-blog.csdnimg.cn/20200209103406651.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NDk0MDAz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">)然后就是最重要的时钟配置，时钟是心脏是重中之重。<img src="https://img-blog.csdnimg.cn/20200209104506401.png" alt="在这里插入图片描述"><br>设置了对应时钟源之后可以看到对应的IO口也有所改变<img src="https://img-blog.csdnimg.cn/20200209104536101.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NDk0MDAz,size_16,color_FFFFFF,t_70" alt="
-"></p>
-<p>F407 LED的IO挂载在了APB1时钟线上，配置对应的时钟频率</p>
-<p><img src="https://img-blog.csdnimg.cn/20200209104749668.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NDk0MDAz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">其次就是代码生成的一些配置：选择工程的名字，以及生成的工程文件的类型，这我这里由于我选择的是Keil5所以我选择了MDK-ARM V5<img src="https://img-blog.csdnimg.cn/20200209105312791.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NDk0MDAz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">然后记得勾选生成外设源文件和头文件的选项<br><img src="https://img-blog.csdnimg.cn/20200209105531924.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NDk0MDAz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">最后点击生成代码<br><img src="https://img-blog.csdnimg.cn/20200209105628935.png" alt="在这里插入图片描述"></p>
+        <p>串口通信与配置：<br>串行通信  同步通信带时钟如：SPI,IIC。<br>        异步通信：不带有时钟信号UART。<br>        同步通信一般都有同步时钟<br>全双工一般都有独立的发送和接收的引脚<br>半双工一般只要一个共用的发送和接收的引脚</p>
+<p>STM32串口通信的接口：UART通用异步收发器，USART 通用同步异步收发器，使用了RS232接口，使不同的设备可以进行方便的通讯。其全名为：数据终端设备(DTE)和数据通讯设备(DCE)之间串行二进制数据交换接口技术标准。(有9针或25针的D型插头，一般为9针插头)。<br><img src="https://img-blog.csdnimg.cn/20191104204055828.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NDk0MDAz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>STM32串口通信UART异步通信预先定义：</p>
+<ol>
+<li>起始位</li>
+<li>数据位（8位或者9位）</li>
+<li>奇偶校验位（第9位）</li>
+<li>停止位（1，15，2位）</li>
+<li>波特率设置</li>
+</ol>
+<p>STM32串口1和6使用PCLK2(x=2)  2-5s使用PCLK1(x=1)<br>STM32F4 给IO的中断线为0-15一共16个中断线对应112（16x7）个IO口。</p>
+<p><img src="https://img-blog.csdnimg.cn/20191104204042603.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NDk0MDAz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>每一个中断线可以映射的IO口有7个但是同组IO口里面一次只能有一个IO口占用中断线。如（PA0-PG0）是一组可以映射到中断线EXTI0但是一次只能有其中的一个IO口映射上去。<br>每一个中断线可以设置它的触发方式（上升沿触发，下降沿触发，边沿触发【上升沿的下降沿都可以触发】）和使能位状态位。<br>IO在外部中断向量里面只分配了7个中断服务函数0，1，2，3，4，5-9，10-15<br>库函数：SYSCFG_EXTILineConfig(EXIT_PortSourceGPIOE,EXIT_PinSource2)【把PE2口连接到中断线2】为IO设置对应的中断线<br>EXTI_Init()【】初始化中断线上的触发方式。<br>EXIT_GetITStatus()判断中断线上的中断是否发生<br>EXIT_ClearITPendingBit（）清楚对应线上的中断标志位。<br>RCC_APB2PeriphClockCmd（）使能对应中断的时钟<br>EXIT_IRQHandler（）对应的中断服务函数（发生中断就跳转至函数里面）</p>
 
       </div>
 	  
@@ -389,9 +389,9 @@
 <div class="article-footer-copyright">
 <center>本文由<b><a href="/index.html" target="_blank" title="AIR@USC">AIR@USC</a></b>创作和发表,采用<b>BY</b>-<b>NC</b>-<b>SA</b>国际许可协议进行许可</center>
  
-<center>转载请注明作者及出处,本文作者为<b><a href="/index.html" target="_blank" title="AIR@USC">AIR@USC</a></b>,本文标题为<b><a href="/2020/02/09/STM32-CubMx/" target="_blank" title="STM32单片机系列(一)">STM32单片机系列(一)</a></b></center>
+<center>转载请注明作者及出处,本文作者为<b><a href="/index.html" target="_blank" title="AIR@USC">AIR@USC</a></b>,本文标题为<b><a href="/2020/02/16/32串口通信 (2)/" target="_blank" title="STM32单片机系列（二）">STM32单片机系列（二）</a></b></center>
  
-<center>本文链接为<b><a href="/2020/02/09/STM32-CubMx/" target="_blank" title="STM32单片机系列(一)">http://uscair.club/2020/02/09/STM32-CubMx/</a></b>.</center>
+<center>本文链接为<b><a href="/2020/02/16/32串口通信 (2)/" target="_blank" title="STM32单片机系列（二）">http://uscair.club/2020/02/16/32串口通信 (2)/</a></b>.</center>
 </div>
 <! -- 添加版权信息 -->
         
@@ -405,10 +405,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-02-09T00:00:00+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-02-16T00:00:00+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>updated at Feb 9, 2020</p>
+    <p>updated at Feb 16, 2020</p>
   </a>
 </div>
 
@@ -416,9 +416,6 @@
       
         
           
-  
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/STM32/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>STM32</p></a></div>
-
 
         
       
@@ -430,7 +427,7 @@
       
         <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=http://uscair.club/2020/02/09/STM32-CubMx/&title=STM32单片机系列(一) | AIR&summary="
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://uscair.club/2020/02/16/32%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1%20(2)/&title=STM32单片机系列（二） | AIR&summary="
           
           >
           
@@ -442,7 +439,7 @@
       
         <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://uscair.club/2020/02/09/STM32-CubMx/&title=STM32单片机系列(一) | AIR&summary="
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://uscair.club/2020/02/16/32%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1%20(2)/&title=STM32单片机系列（二） | AIR&summary="
           
           >
           
@@ -454,7 +451,7 @@
       
         <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=http://uscair.club/2020/02/09/STM32-CubMx/&title=STM32单片机系列(一) | AIR&summary="
+          href="http://service.weibo.com/share/share.php?url=http://uscair.club/2020/02/16/32%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1%20(2)/&title=STM32单片机系列（二） | AIR&summary="
           
           >
           
@@ -482,16 +479,16 @@
                       <span class="art-item-left">
                           <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;Previous</h6>
                           <h4>
-                              <a href="/2020/02/09/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%EF%BC%88%E4%B8%80%EF%BC%89/" rel="prev" title="卷积神经网络（一）">
+                              <a href="/2020/02/16/%E6%99%BA%E8%83%BD%E7%AE%97%E6%B3%95/" rel="prev" title="智能算法">
                                 
-                                    卷积神经网络（一）
+                                    智能算法
                                 
                               </a>
                           </h4>
                           
                               
                               <h6 class="tags">
-                                  <a class="tag" href="/tags/CNN/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> CNN</a>
+                                  <a class="tag" href="/tags/AI%E5%A4%A7%E6%95%B0%E6%8D%AE/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> AI大数据</a>
                               </h6>
                           
                       </span>
@@ -502,16 +499,16 @@
                       <span class="art-item-right" aria-hidden="true">
                           <h6>Next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                           <h4>
-                              <a href="/2020/02/09/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/" rel="prev" title="线性回归的几种解法">
+                              <a href="/2020/02/16/%E5%85%B3%E4%BA%8Enumpy%E7%9F%A9%E9%98%B5%E8%BF%90%E7%AE%97%E7%9A%84%E5%B0%8F%E8%AE%B0/" rel="prev" title="关于numpy矩阵运算的小记">
                                   
-                                      线性回归的几种解法
+                                      关于numpy矩阵运算的小记
                                   
                               </a>
                           </h4>
                           
                               
                               <h6 class="tags">
-                                  <a class="tag" href="/tags/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 线性回归</a>
+                                  <a class="tag" href="/tags/Numpy/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Numpy</a>
                               </h6>
                           
                       </span>
@@ -555,7 +552,7 @@
 
   <script>
     window.subData = {
-      title: 'STM32单片机系列(一)',
+      title: 'STM32单片机系列（二）',
       tools: true
     }
   </script>
