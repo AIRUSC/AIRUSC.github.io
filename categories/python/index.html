@@ -788,7 +788,7 @@
         
           <li><a class="flat-box child" title="/categories/openCV/%E5%9B%BE%E7%89%87%E5%8F%98%E5%8C%96/" href="/categories/openCV/%E5%9B%BE%E7%89%87%E5%8F%98%E5%8C%96/"><div class='name'>图片变化</div><div class='badge'>(2)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/python/" href="/categories/python/"><div class='name'>python</div><div class='badge'>(3)</div></a></li>
+          <li><a class="flat-box" title="/categories/python/" href="/categories/python/"><div class='name'>python</div><div class='badge'>(4)</div></a></li>
         
           <li><a class="flat-box" title="/categories/python%E5%9F%BA%E7%A1%80/" href="/categories/python%E5%9F%BA%E7%A1%80/"><div class='name'>python基础</div><div class='badge'>(1)</div></a></li>
         
@@ -1239,7 +1239,96 @@ setInterval("createtime()",250);
 <!--color="56,239,243" opacity='0.9' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">-->
 <!--</script>-->
 </html>
-绘画的函数
+t ' + style)
+          .html(message)
+          .show()
+          .delay(time)
+          .fadeOut();
+  };
+
+  // 成功提示
+  var success_prompt = function(message, time)
+  {
+      prompt(message, 'alert-success', time);
+  };
+
+  // 失败提示
+  var fail_prompt = function(message, time)
+  {
+      prompt(message, 'alert-danger', time);
+  };
+
+  // 提醒
+  var warning_prompt = function(message, time)
+  {
+      prompt(message, 'alert-warning', time);
+  };
+
+  // 信息提示
+  var info_prompt = function(message, time)
+  {
+      prompt(message, 'alert-info', time);
+  };
+
+</script>
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+  
+  <canvas id="canvas" width="1440" height="900" ></canvas>
+<script>
+	window.onload = function(){
+    //获取画布对象
+    var canvas = document.getElementById("canvas");
+    //获取画布的上下文
+    var context =canvas.getContext("2d");
+    var s = window.screen;
+    var W = canvas.width = s.width;
+    var H = canvas.height;
+    //获取浏览器屏幕的宽度和高度
+    //var W = window.innerWidth;
+    //var H = window.innerHeight;
+    //设置canvas的宽度和高度
+    canvas.width = W;
+    canvas.height = H;
+    //每个文字的字体大小
+    var fontSize = 12;
+    //计算列
+    var colunms = Math.floor(W /fontSize);	
+    //记录每列文字的y轴坐标
+    var drops = [];
+    //给每一个文字初始化一个起始点的位置
+    for(var i=0;i<colunms;i++){
+        drops.push(0);
+    }
+    //运动的文字
+    var str ="WELCOME TO SH.ITRHX.COM";
+    //4:fillText(str,x,y);原理就是去更改y的坐标位置
+    //绘画的函数
     function draw(){
         context.fillStyle = "rgba(238,238,238,.08)";//遮盖层
         context.fillRect(0,0,W,H);
