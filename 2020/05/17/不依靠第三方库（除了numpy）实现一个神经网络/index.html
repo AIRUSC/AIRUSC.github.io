@@ -358,7 +358,7 @@
       <a class='notlink'>
         <i class="fas fa-hourglass-half" aria-hidden="true"></i>
         <p>阅读时长≈</p>
-        <p>4分</p>
+        <p>5分</p>
       </a>
     </div>
   
@@ -402,51 +402,9 @@
 <p>“p_y_given_x”是模型的输出，表示样本属于每个标签的概率，”y”是样本真实标签。</p>
 <p>接着是最小化损失，得到最优模型参数。计算损失函数的最小值采用的是梯度下降算法，其需要计算损失函数在www处的梯度值。</p>
 <h2 id="模型构建与优选"><a href="#模型构建与优选" class="headerlink" title="模型构建与优选"></a>模型构建与优选</h2><p>通常，我们在训练集上训练模型，更新模型参数，在验证集上对模型性能进行验证，当模型在验证集上的性能达到要求时，得到的模型就是最优模型，然后在测试集上测试模型。</p>
-<pre><code>def build_model(datasets, w_initial, alpha, n_epochs, epsilon, batch_size):
-    W = w_initial
-# 训练集，验证集，测试集
-train_set_x, train_set_y = datasets[0]      
-valid_set_x, valid_set_y = datasets[1]
-test_set_x, test_set_y = datasets[2]
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">def build_model(datasets, w_initial, alpha, n_epochs, epsilon, batch_size):</span><br><span class="line">    W &#x3D; w_initial</span><br><span class="line"># 训练集，验证集，测试集</span><br><span class="line">train_set_x, train_set_y &#x3D; datasets[0]      </span><br><span class="line">valid_set_x, valid_set_y &#x3D; datasets[1]</span><br><span class="line">test_set_x, test_set_y &#x3D; datasets[2]</span><br><span class="line"></span><br><span class="line"># 将数据集分成较小的batch</span><br><span class="line">n_train_batches &#x3D; train_set_x.shape[0] &#x2F;&#x2F; batch_size     # 训练集划分成batch数目</span><br><span class="line"></span><br><span class="line"># 模型训练</span><br><span class="line">best_valid_cost &#x3D; 0</span><br><span class="line">validation_frequency &#x3D; 100   # 梯度下降迭代validation_frequency次，在验证集上验证一次模型性能</span><br><span class="line">epoch &#x3D; 0</span><br><span class="line">done_looping &#x3D; False</span><br><span class="line">while (epoch &lt; n_epochs) and (not done_looping):</span><br><span class="line">    epoch +&#x3D; 1</span><br><span class="line">    for batch_index in range(n_train_batches):</span><br><span class="line">        x &#x3D; train_set_x[batch_index * batch_size: (batch_index + 1) * batch_size]  # 每次训练的x</span><br><span class="line">        y &#x3D; train_set_y[batch_index * batch_size: (batch_index + 1) * batch_size]  # 对应的y</span><br><span class="line">        # 训练模型</span><br><span class="line">        W, cost_train &#x3D; gradient_descent(x, y, W, alpha, L1_reg, L2_reg)</span><br><span class="line">        # 验证模型</span><br><span class="line">        cost_valid, error_num_valid &#x3D; valid_model(valid_set_x, valid_set_y, W)</span><br><span class="line">        this_validation_loss &#x3D; error_num_valid &#x2F; valid_set_x.shape[0]       # 错误率</span><br><span class="line">        </span><br><span class="line">        num_iter &#x3D; (epoch - 1) * n_train_batches + batch_index</span><br><span class="line">        if num_iter % validation_frequency &#x3D;&#x3D; 0:</span><br><span class="line">            # 跟踪验证集上性能变化</span><br><span class="line">            print(&quot;梯度下降迭代%d次后，验证集上误差为：%f，准确率为：%f%%&quot; % (num_iter, cost_valid, (1 - this_validation_loss) * 100))</span><br><span class="line">        </span><br><span class="line">        # 判断是否early stopping</span><br><span class="line">        if abs(cost_valid - best_valid_cost) &lt; epsilon:</span><br><span class="line">            done_looping &#x3D; True</span><br><span class="line">            print(&quot;验证集上误差不再下降，模型训练结束&quot;)</span><br><span class="line">            break</span><br><span class="line">        else:</span><br><span class="line">            best_valid_cost &#x3D; cost_valid</span><br><span class="line">          </span><br><span class="line">if not done_looping:</span><br><span class="line">    print(&quot;达到最大epoch次数，模型训练结束&quot;)</span><br><span class="line"></span><br><span class="line"># 模型测试</span><br><span class="line">test_precision &#x3D; test_model(test_set_x, test_set_y, W)</span><br><span class="line">print(&quot;测试集上模型准确率为：%f%%&quot; % (test_precision * 100))</span><br></pre></td></tr></table></figure>
 
-# 将数据集分成较小的batch
-n_train_batches = train_set_x.shape[0] // batch_size     # 训练集划分成batch数目
-
-# 模型训练
-best_valid_cost = 0
-validation_frequency = 100   # 梯度下降迭代validation_frequency次，在验证集上验证一次模型性能
-epoch = 0
-done_looping = False
-while (epoch &lt; n_epochs) and (not done_looping):
-    epoch += 1
-    for batch_index in range(n_train_batches):
-        x = train_set_x[batch_index * batch_size: (batch_index + 1) * batch_size]  # 每次训练的x
-        y = train_set_y[batch_index * batch_size: (batch_index + 1) * batch_size]  # 对应的y
-        # 训练模型
-        W, cost_train = gradient_descent(x, y, W, alpha, L1_reg, L2_reg)
-        # 验证模型
-        cost_valid, error_num_valid = valid_model(valid_set_x, valid_set_y, W)
-        this_validation_loss = error_num_valid / valid_set_x.shape[0]       # 错误率
-
-        num_iter = (epoch - 1) * n_train_batches + batch_index
-        if num_iter % validation_frequency == 0:
-            # 跟踪验证集上性能变化
-            print(&quot;梯度下降迭代%d次后，验证集上误差为：%f，准确率为：%f%%&quot; % (num_iter, cost_valid, (1 - this_validation_loss) * 100))
-
-        # 判断是否early stopping
-        if abs(cost_valid - best_valid_cost) &lt; epsilon:
-            done_looping = True
-            print(&quot;验证集上误差不再下降，模型训练结束&quot;)
-            break
-        else:
-            best_valid_cost = cost_valid
-
-if not done_looping:
-    print(&quot;达到最大epoch次数，模型训练结束&quot;)
-
-# 模型测试
-test_precision = test_model(test_set_x, test_set_y, W)
-print(&quot;测试集上模型准确率为：%f%%&quot; % (test_precision * 100))</code></pre><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>以上实现了一个最简单的Softmax回归和神经网络，上面只贴出了主要步骤的代码实现，完整的代码可以在下面这个链接下载，代码在linux环境下实现，如有问题，欢迎多多交流！</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>以上实现了一个最简单的Softmax回归和神经网络，上面只贴出了主要步骤的代码实现，完整的代码可以在下面这个链接下载，代码在linux环境下实现，如有问题，欢迎多多交流！</p>
 
       </div>
 	  
